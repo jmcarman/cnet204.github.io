@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jason Carman">
+	<meta name="description" content="CNET204 Lab 6">
+	<meta name="keywords" content="cnet204,centennial college,HTML5,CSS3">
+	<meta charset="utf-8">
+    <title>Lab 6</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Lab 1</a></li>
+        <li><a href="lab2.html">Lab 2</a></li>
+        <li><a href="lab3.html">Lab 3</a></li>
+        <li><a href="lab4.html">Lab 4</a></li>
+		<li><a href="lab5.html">Lab 5</a></li>
+		<li><a href="assignment.html">Assignment</a></li>
+		<li><a class="active" href="#">Lab 6</a></li>
+		<li><a href="lab7.html">Lab 7</a></li>
+		<li><a href="lab8.html">Lab 8</a></li>
+		<li><a href="project.html">Final Project</a></li>
+		<li><a href="good.html">Good Formatting</a></li>
+		<li><a href="bad.html">Bad Formatting</a></li>
+		<li><a href="filezilla.html">FileZilla Instructions</a></li>
+   </ul>
+</nav>
+<main>
+    <h1>Lab 6 - CSS For Images &amp; Tables</h1>
+	<h2>Overview</h2>
+    <p>This week's lab will cover the following:</p>
+	<ul>
+		<li>Learning how to implement CSS to float images</li>
+		<li>Learning how to apply CSS to stylize text</li>
+		<li>Learning how to position HTML elements using CSS</li>
+	</ul>
+	
+	<!-- Float the image left -->
+	<h2>Resizing and floating the image</h2>
+	<p>Open your stylesheet (style.css).  Before we float our image, we should probably resize it.  You could open it in Photoshop or Paint (in Windows), but that takes additional time and work.  Instead, we can resize the image using CSS.  When you're resizing an image you should pick either the width or height to resize, and set the other to auto.  You may have to play around with this a bit by making changes and refreshing in your browser.  The following code will resize the image.  Change the values as needed (since the size of your image might be bigger or smaller than mine).</p>
+	
+	<pre>
+	img {
+		width: 25%;
+		height: auto;
+	}
+	</pre>
+	
+	<p>Next, we're going to float the image to the left of the text by adding adding the float parameter in the img selector we just created.</p>
+	
+	<pre>
+	img {
+		float: left;
+	}
+	</pre>
+	<p>If you refresh your page, you should notice the text now appears to the right of the image.</p>
+	
+	<h3>Stylizing our table</h3>
+	<p>The first thing we're going to do, is give our table & the cells within a border.  We're going to accomplish this using a complex selector.</p>
+	<pre>
+	th, td {
+	
+	}
+	</pre>	
+	<p>There are a couple different ways we can add a border.  We can use the simpler, longer drawn out method of specifying each of the following:</p>
+	<ul>
+		<li>border-width: .25em;</li>
+		<li>border-style: solid;</li>
+		<li>border-color: #000000;</li>
+	</ul>
+	<p>Alternatively, we can use a more complex shorthand to declare the same.  The following would apply the exact same specifications as above, note the difference in syntax.</p>
+	<pre>
+		th, td {
+			border: .25em solid #000000;
+		}
+	</pre>
+	<p>Using the above syntax as an example, choose a thickness, style and colour for your border.  The styles you have to choose from are:</p>
+	<ul>
+		<li>none</li>
+		<li>hidden</li>
+		<li>dotted</li>
+		<li>dashed</li>
+		<li>solid</li>
+		<li>double</li>
+		<li>groove</li>
+		<li>ridge</li>
+		<li>inset</li>
+		<li>outset</li>
+	</ul>
+	<p>Feel free to explore the use of the border-radius parameter with any of the table contents (tr, th, td).</p>
+	
+	<h2>Applying some finishing touches</h2>
+	<h3>Fixing the paragraph background color</h3>
+	<p>You may notice your background colour from your paragraph appears behind your image.  We can remove this by applying a class or id to that particular paragraph, and modify the left margin.  You may need to play around with the units to get it to appear in a manor you're satisfied with.  First, apply an ID to that paragraph.</p>
+	<pre>
+	&lt;p id="about"&gt;
+	</pre>
+	<p>Now using a complex selector, modify the left margin for paragraphs with the id we just created.</p>
+	<pre>
+	p#about {
+		margin-left: 5em;
+	}
+	</pre>
+	<p>Increase this number as much as needed, until the paragraph background color appears similar to the provided sample (located at the end of the lab instructions).</p>
+	<h3>Centering your table</h3>
+	<p>The easiest way to center a table, is to set the left and right margin to auto.  Use the following example to center your table.</p>
+	<pre>
+	table {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	</pre>
+	
+	<h3>Cleaning up the table formatting</h3>
+	<p>Add line breaks between each course code and room in your table, to make your timetable look nicer.</p>
+	
+	<p>You may also want to increase the padding on your th & td tags, to make your table look a little nicer.  To do that, find the <strong>td, th</strong> selector we used before and add the padding attribute (sample below).  Feel free to play around with the values to get it where you like it.</p>
+	
+	<pre>
+	td, th {
+		padding: .5em;
+	}
+	</pre>
+	
+	<h2>Completing the Lab</h2>
+	<p>Upon completion of this lab you should have a web page with a picture of yourself, a paragraph or two about yourself and your course schedule as a table.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
+	<img src="images/lab6.png" alt="Assignment 3 sample" />
+	<h2>Exploration Questions</h2>
+	<ol>
+		<li>What does the float parameter do?</li>
+		<li>What does setting the margin attribute to auto accomplish?</li>
+	</ol>
+</main>
+</body>
+</html>

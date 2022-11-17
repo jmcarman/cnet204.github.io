@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jason Carman">
+	<meta name="description" content="CNET204 Lab 5">
+	<meta name="keywords" content="cnet204,centennial college,HTML5,CSS3">
+	<meta charset="utf-8">
+    <title>Lab 5</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Lab 1</a></li>
+        <li><a href="lab2.html">Lab 2</a></li>
+        <li><a href="lab3.html">Lab 3</a></li>
+        <li><a href="lab4.html">Lab 4</a></li>
+		<li><a class="active" href="#">Lab 5</a></li>
+		<li><a href="assignment.html">Assignment</a></li>
+		<li><a href="lab6.html">Lab 6</a></li>
+		<li><a href="lab7.html">Lab 7</a></li>
+		<li><a href="lab8.html">Lab 8</a></li>
+		<li><a href="project.html">Final Project</a></li>
+		<li><a href="good.html">Good Formatting</a></li>
+		<li><a href="bad.html">Bad Formatting</a></li>
+		<li><a href="filezilla.html">FileZilla Instructions</a></li>
+   </ul>
+</nav>
+<main>
+    <h1>Lab 5 - Images &amp; Tables</h1>
+	<h2>Overview</h2>
+    <p>This week's lab will cover the following:</p>
+	<ul>
+		<li>Creating a new page, called lab5.html</li>
+		<li>Learning how to insert images into a web page</li>
+		<li>Learning how to use tables to format and display content</li>
+	</ul>
+	
+	<h2>Creating a new page</h2>
+	<p>Create a new page called lab5.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+	<ol>
+		<li>Use the HTML5 doctype declaration</li>
+		<li>Set the Title to "Lab 5", without the quotes</li>
+		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
+		<li>Insert a comment indicating your name and student number</li>
+		<li>Link your style sheet to the page</li>
+		<li>Make use of the main tag, as we did in Lab 3</li>
+	</ol>
+	
+	<h2>Modifying your navigation bar</h2>
+	<p>Copy your navigation bar from your index page and paste it at the top of the body, above the &lt;main&gt; section.  We're going to modify it to properly indicate your current page.</p>
+	<ol>
+		<li>Move the class attribute from it's current position (Lab 1) to the link for Lab 5</li>
+		<li>Modify the hyperlink for Lab 1 to direct you to "index.html"</li>
+		<li>Modify the hyperlink for Lab 5 to point to an empty ID ("#")</li>
+	</ol>
+	
+	<h2>Inserting a heading</h2>
+	<p>Use the H1 tag to insert a heading with the text "About Me"</p>
+	
+	<h2>Inserting an image</h2>
+	<p>You're going to insert an image of yourself, with a few paragraphs about yourself beside it.  In order to insert an image of yourself, you'll first have to <a href="filezilla.html">connect to the server using filezilla</a> and upload it.</p>
+	
+	<!-- Upload your image -->
+	<h3>To do:</h3>
+	<p>Create a new folder on the server called images, and upload the picture there.</p>
+	
+	<!-- Insert an image of yourself -->
+	<h3>Insert the image</h3>
+	<p>To insert an image, we're going to use the image tag and provide it with a few parameters, the main ones we'll use are:</p>
+	<ul>
+		<li>src - means source, a relative path to the image in this case</li>
+		<li>alt - alternate text, this will show up if the image can't be loaded</li>
+	</ul>
+	<p>Using the following code example, insert the image you uploaded to the server with FileZilla.</p>
+	<pre>
+	&lt;img src="images/file.jpg" /&gt;
+	</pre>
+	
+	<!-- Paragraph about yourself, and implement a list -->
+	<h3>To do:</h3>
+	<p>Using the paragraph tag, write an introduction paragraph about yourself.  Implement an ordered or unordered list (your choice) within this, describing your interests.  These can be activities, games, tv shows or movies you watch, etc.</p>
+	
+	<!-- Table, with your course schedule -->
+	<h2>Introducing Tables</h2>
+	<p>Tables consist of several structural tags.  They're opened and closed with the &lt;table&gt; and &lt;/table&gt; tags respectively.  Tables contain 3 main tags for structure.</p>
+
+	<ul>
+		<li>&lt;tr&gt; and &lt;/tr&gt; - Specifies a table row</li>
+		<li>&lt;th&gt; and &lt;/th&gt; - Specifies a heading</li>
+		<li>&lt;td&gt; and &lt;/td&gt; - Specifies a cell within the row, or table data</li>
+	</ul>
+	<p>We're going to insert a table containing your course schedule.  This is useful, as you'll be able to access your schedule from your phone as a web page after completion of this lab!</p>
+	<p>Add an opening table tag, an example follows.</p>
+	<pre>
+		&lt;table&gt;
+	</pre>
+	<p>Start a row, and using the table heading tag specify headings for days of the week.  Leave the first cell blank, as that column is going to contain the start time for our classes.  Your table should include days for every day Monday-Saturday, unlike the sample.</p>
+
+	<pre>
+	&lt;tr&gt;
+	&lt;th&gt;&lt;/th&gt;
+	&lt;th&gt;Monday&lt;/th&gt;
+	&lt;th&gt;Tuesday&lt;/th&gt; 
+	... 
+	&lt;/tr&gt;
+	</pre>
+	<p>Start a new row, and using the table data tag populate your table.  The first column is our time, so that should indicate 08:30 - 10:20.  You're going to list every class in that time slot, following the sequence outlined in your table header.</p>
+
+	<pre>
+	&lt;tr&gt;
+		&lt;td&gt;08:30 - 10:20&lt;/td&gt;
+		...
+	&lt;/tr&gt;
+	</pre>
+	<p>Times for classes, for reference include:</p>
+	<ul>
+		<li>08:30 - 10:20</li>
+		<li>10:30 - 12:20</li>
+		<li>12:30 - 14:20</li>
+		<li>14:30 - 16:20</li>
+		<li>16:30 - 18:20</li>
+		<li>18:30 - 20:20</li>
+	</ul>
+	<p>Once you have your class schedule entered in, close your table.</p>
+	<pre>
+	&lt;/table&gt;
+	</pre>
+	
+	<p>If you save and refresh your page, you'll notice the table has inherited the positioning of the list above making it not quite centred.  There's a couple different approaches to fix this; the easiest of which is to insert a break tag in between your list and table.</p>
+	<h3>To do:</h3>
+	<p>Insert a break tag between your list and table.</p>
+	<pre>&lt;br /&gt;</pre>
+	<h2>Completing the Lab</h2>
+	<p>Upon completion of this lab you should have a web page with a picture of yourself, a paragraph or two about yourself and your course schedule as a table.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
+	<img src="images/lab5.png" alt="Lab 5 sample" />
+	<h2>Exploration Questions</h2>
+	<ol>
+		<li>What two tags can table rows contain?</li>
+		<li>How do you open and close a table?</li>
+		<li>What do the src and alt parameters mean for images?</li>
+	</ol>
+</main>
+</body>
+</html>

@@ -1,0 +1,116 @@
+body {
+    background: #ffffff;
+    color: #000000;
+    margin: 0;
+	font-size: 12pt;
+}
+
+main {
+	margin: 3em 3em;
+}
+
+h2, h3, h4, h5, h6 {
+	color: #000000;
+	background-color: #bcce1e;
+	padding: 0.25em;
+	border-radius: 0.25em;
+}
+
+h1 {
+	color: #000000;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h2, h3 {
+	text-decoration: underline;
+}
+
+.tip {
+	background: #666666;
+	color: #ffffff;
+	display: block;
+	padding: .25em;
+	border-radius: 0.25em;
+	margin-bottom: 1em;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+pre {
+	margin-left: 1em;
+	margin-right: 1em;
+	color: #bcce1e;
+	background-color: #000000;
+	white-space: pre-line;
+	padding: 0.25em;
+}
+
+/* start of navigation */
+nav ul  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul  li a:hover:not(.active) {
+    background-color: #111111;
+}
+
+nav ul li a.active {
+    background-color: #bcce1e;
+	color: #000000;
+}
+
+nav ul li.right {
+    float: right;
+}
+/* Table */
+table {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5em;
+}
+
+div#table {
+	overflow-x: auto;
+}
+
+td, th {
+	border: .1em solid #333333;
+	border-radius: .25em;
+	padding: 1em;
+	text-align: center;
+}
+
+#office {
+	font-size: 1.5em;
+}
+/* End Table */
+
+/* Mobile accessible */
+@media screen and (max-width: 600px){
+    nav ul li.right, 
+    nav ul li {float: none;}
+}
+
+/* end of navigation*/
+
+img {
+	max-width: 100%;
+	height: auto;
+}

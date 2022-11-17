@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jason Carman">
+	<meta name="description" content="studentweb filezilla connection instructions">
+	<meta name="keywords" content="comp213,centennial college,HTML5,CSS3">
+	<meta charset="utf-8">
+    <title>FileZilla Connection Instructions</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Lab 1</a></li>
+        <li><a href="lab2.html">Lab 2</a></li>
+        <li><a href="lab3.html">Lab 3</a></li>
+        <li><a href="lab4.html">Lab 4</a></li>
+		<li><a href="lab5.html">Lab 5</a></li>
+		<li><a href="assignment.html">Assignment</a></li>
+		<li><a href="lab6.html">Lab 6</a></li>
+		<li><a href="lab7.html">Lab 7</a></li>
+		<li><a href="lab8.html">Lab 8</a></li>
+		<li><a href="project.html">Final Project</a></li>
+		<li><a href="good.html">Good Formatting</a></li>
+		<li><a href="bad.html">Bad Formatting</a></li>
+		<li><a class="active" href="#">FileZilla Instructions</a></li>
+   </ul>
+</nav>
+<main>
+    <h1>Directory Structure & FileZilla Connection Instructions</h1>
+	<h2>Directory Structure</h2>
+	<p>On your H drive, create the following directory structure, replacing coursecode with that respective of your course (for example cnet204 or comp213):</p>
+	<pre>
+	coursecode
+	|---- images
+	</pre>
+	<p>All your html & css documents will go in the course folder.  All your images will go in the images folder.</p>
+	<p>You're going to create the same directory structure on the server as well with coursecode on H, and in your default directory on the server matching exactly in lay out.  This will allow you to use a relative path for linking files together and embedding images, and will ensure things work in both places.</p>
+	<h2>Connecting With FileZilla</h2>
+	<ol>
+		<li>Install the <a href="https://filezilla-project.org/download.php?platform=win64">Filezilla client</a> (skip this step if it's already installed on the PC)</li>
+		<li>Open the site manager (the left most icon in the menu bar).  You should see something like this: </li>
+		<img src="images/filezilla_site_manager_general.png" alt="filezilla site manager general tab" />
+		<li>Click "New Site"</li>
+		<li>Name your connection with your respective course code (for example, cnet204) and enter the following information
+			<ul>
+				<li>Host: studentwebftp.centennialcollege.ca</li>
+				<li>Encryption: Require explicit FTP over TLS</li>
+				<li>Logon type: Normal</li>
+				<li>User: <em>yourstudentnumber</em></li>
+				<li>Password: the same one you use to log into the PC in the lab</li>
+			</ul>
+		</li>
+		<li>Click on the advanced tab.  You screen should look something like this:</li>
+		<img src="images/filezilla_site_manager_advanced.png" alt="filezilla site manager advanced tab" />
+		<li>Enter the following information
+			<ul>
+				<li>Default local directory: <em>The directory you created on your H drive</em></li>
+				<li>Default remote directory: <em>/firstpartofyourcentennialemail</em></li>
+			</ul>
+		</li>
+		<li>Click connect.</li>
+	</ol>
+</main>
+</body>
+</html>
