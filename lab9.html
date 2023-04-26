@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jason Carman">
+	<meta name="description" content="CNET204 Lab 9">
+	<meta name="keywords" content="cnet204,centennial college,HTML5,CSS3">
+	<meta charset="utf-8">
+    <title>Lab 9</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Lab 1</a></li>
+        <li><a href="lab2.html">Lab 2</a></li>
+        <li><a href="lab3.html">Lab 3</a></li>
+        <li><a href="lab4.html">Lab 4</a></li>
+		<li><a href="lab5.html">Lab 5</a></li>
+		<li><a href="assignment.html">Assignment</a></li>
+		<li><a href="lab6.html" >Lab 6</a></li>
+		<li><a class="active" href="#">Lab 7</a></li>
+		<li><a href="lab8.html">Lab 8</a></li>
+		<li><a href="lab9.html">Lab 9</a></li>
+		<li><a href="lab10.html">Lab 10</a></li>
+		<li><a href="project.html">Final Project</a></li>
+		<li><a href="good.html">Good Formatting</a></li>
+		<li><a href="bad.html">Bad Formatting</a></li>
+		<li><a href="filezilla.html">FileZilla Instructions</a></li>
+   </ul>
+</nav>
+<main>
+    <h1>Lab 9 - Forms</h1>
+	<h2>Overview</h2>
+    <p>This week's lab will cover the following:</p>
+	<ul>
+		<li>Creating a new page, called lab7.html</li>
+		<li>Learning how to build forms to collect user information</li>
+		<li>Learning how to use different types of input fields</li>
+		<li>Learning how to submit user information to the server</li>
+	</ul>
+		
+	<h2>Creating a new page</h2>
+	<p>Create a new page called lab7.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+	<ol>
+		<li>Use the HTML5 doctype declaration</li>
+		<li>Set the Title to "Lab 7", without the quotes</li>
+		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
+		<li>Insert a comment indicating your name and student number</li>
+		<li>Link your style sheet to the page</li>
+		<li>Make use of the main tag, as we did in Lab 3</li>
+		<li>Copy your navigation bar from your index page and modify it to properly indicate your current page</li>
+	</ol>
+	<h2>Introducing html forms</h2>
+	<p>Forms are used as a tool to take user input data and pass it to a program running on a server for server side processing.  Our form will not interact with a server, as you require a server side scripting language (such as PHP) for this.  HTML forms are however, pretty complicated and necessary to understand if you're going to learn any server side development.  Forms will be the focus of this assignment.</p>
+	<h2>Beginning your form</h2>
+	<p>Forms begin and end with the &lt;form&gt; tag.  They can contain several different tags, such as buttons and various types of input fields.  The types of input fields have been expanded on substantially in HTML5.</p>
+	<h2>Adding some attributes</h2>
+	<p>The form tag has two commonly used attributes.  These are action and method.  Action defines the action to be performed when the form is submitted.  This is always the name of the script on the server that will be processing your form.  You won't be using this attribute in your form, as server side scripting is the content of another course.</p>
+	<p>The method attribute specifies the HTTP method to be used when submitting the form data.  Thse can be either GET or POST.  When you submit a form using GET, the form data is sent in the packet header and is visible in the page address field.  This should not be used if your data is sensitive.  When you submit a form using POST, the form data is sent in the packet body and isn't visible in the page address field.</p>
+	<h3>To do:</h3>
+	<p>Add the method attribute to your form tag, and set it to "post".  A sample of what you should have follows.</p>
+	<pre>&lt;form method="post"&gt;</pre>
+	<p>Add a heading level 1 tag, with the contents "User Registration"</p>
+	
+	<h2>About input fields</h2>
+	<p>Some common input types are:</p>
+	<ul>
+		<li>text - will appear as plain text</li>
+		<li>password - will display the input as centered dots to the user</li>
+		<li>radio - will display a radio button, used for a single input in that selection</li>
+		<li>checkbox - will display a check box, used for zero or more choices in that selection</li>
+		<li>submit - will display a submit button</li>
+		<li>reset - will display a reset button</li>
+	</ul>
+	<p>HTML5 adds several new input types, such as:</p>
+	<ul>
+		<li>date - will allow you to chose a date through a pop up calendar</li>
+		<li>email - used to validate an email address client side</li>
+		<li>tel - used to validate a telephone number client side</li>
+	</ul>
+	<p>For a more complete list of form input types, have a look at <a href="https://www.w3schools.com/html/html_form_input_types.asp">w3schools</a>.</p>
+	
+	<h2>Adding input fields</h2>
+	<p>Add a field for First Name, with a type of text and a name of firstName</p>
+	<pre>First Name: &lt;input type="text" name="firstName"&gt;</pre>
+	<p>Each input field must have a name attribute to be submitted.  If you leave this out, the data from that field won't be sent to the server for processing.  In our case, we're not sending the form for processing at all; however when you learn a server side scripting langauge such as PHP you'll require forms.</p>
+	
+	<h3>To do:</h3>
+	<p>Using the above First Name input field syntax, and the input types described above that add the following fields to your form:</p>
+	<ul>
+		<li>Last Name with a type of text</li>
+		<li>Email with a type of email</li>
+		<li>Password with a type of password</li>
+		<li>Date of Birth with a type of date</li>
+		<li>Phone Number with a type of tel</li>
+		<li>Address with a type of text</li>
+		<li>City with a type of text</li>
+	</ul>
+	<h2>Adding a dropdown list for province</h2>
+	<p>Below your city input field, we're going to add a drop down list where the user can select their province.  This requires a couple different tags.  To create a dropdown list, use the &lt;select&gt; tag, as demonstrated below.</p>
+	<pre>
+		&lt;select name="province"&gt;
+		&lt;/select&gt;
+	</pre>
+	<p>Notice the name parameter.  This won't do anything for our form, but in the event you were interacting with a server-side scripting language, this would define the name in the form data that would store the information - like a variable.  Ideally when learning server-side scripting, the variable in use on the server should match this for simplicity (but doesn't have to).</p>
+	<p>Now it's time to add some options to our list.  List options are encapsulated with an &lt;option&gt; tag, contain a value and text inbetween the opening and closing tag will appear as the option in the drop-down.  Add the following option to your select list.</p>
+	<pre>
+		&lt;option value="Alberta"&gt;Alberta&lt;/option&gt;
+	</pre>
+	<p>Options will appear in the order you put them in.  There is no way to sort them using html.</p>
+	
+	<h3>To do:</h3>
+	<p>Using the above sample, add options to your list for the following provinces</p>
+	<ol>
+		<li>British Columbia</li>
+		<li>Manitoba</li>
+		<li>New Brunswick</li>
+		<li>Newfoundland and Labrador</li>
+		<li>Northwest Territories</li>
+		<li>Nova Scotia</li>
+		<li>Nunavut</li>
+		<li>Ontario</li>
+		<li>Prince Edward Island</li>
+		<li>Quebec</li>
+		<li>Saskatchewan</li>
+		<li>Yukon</li>
+	</ol>
+	<h2>Finishing Touches</h2>
+	<p>All our form needs now, are a submit and clear button, as well as the closing tag.  Add the buttons using the following sample.  Note whatever text you add to the value parameter, is what appears on the button.</p>
+	<pre>
+		&lt;input type="submit" name="submit" value="Submit"&gt;&lt;input type="reset" name="clear" value="Clear"&gt;
+	</pre>
+	<p>And finally, close your form with the &lt;/form&gt; tag.</p>
+	<p>Save and view your page in the browser.  Notice all the input boxes appear on one line, as they're in-line tags.  We can clean this up a bit by adding some break tags at the end of each.</p>
+	<h3>To do:</h3>
+	<p>Make use of the &lt;br /&gt; tag to clean up your form so it looks similar to the sample provided.</p>
+	<h2>Stylizing our form with CSS</h2>
+	<p>Forms have a lot of styling options that can be applied using CSS.  Use the resources provided by <a href="https://www.w3schools.com/css/css_form.asp">w3schools</a> to apply some CSS to your form.</p>
+	
+	<h2>Completing the Lab</h2>
+	<p>Upon completion of this lab you should have a somewhat functional form.  To it to be completely functional would require server side scripting, which is the content of another course entirely.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
+	<img src="images/lab6.png" alt="Lab 6 sample" />
+	<h2>Exploration Questions</h2>
+	<ol>
+		<li>What tag did you use to start your form?</li>
+		<li>What is the difference between a form submitted through GET vs POST?</li>
+		<li>What input types did we use for the form?</li>
+		<li>How do you add different items to a select dropdown list?</li>
+		<li>What is the difference between a submit button and a reset button?</li>
+		<li>What does the float parameter do?</li>
+		<li>What does setting the margin attribute to auto accomplish?</li>
+	</ol>
+</main>
+</html>

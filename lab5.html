@@ -13,7 +13,7 @@
 <nav>
     <ul>
         <li><a href="index.html">Lab 1</a></li>
-        <li><a href="lab2.html">Lab 2</a></li>
+		<li><a href="lab2.html">Lab 2</a></li>
         <li><a href="lab3.html">Lab 3</a></li>
         <li><a href="lab4.html">Lab 4</a></li>
 		<li><a class="active" href="#">Lab 5</a></li>
@@ -28,119 +28,93 @@
    </ul>
 </nav>
 <main>
-    <h1>Lab 5 - Images &amp; Tables</h1>
+    <h1>Lab 5 - Introduction to CSS3</h1>
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Creating a new page, called lab5.html</li>
-		<li>Learning how to insert images into a web page</li>
-		<li>Learning how to use tables to format and display content</li>
+		<li>Creating an external style sheet, called style.css</li>
+		<li>Learning some introductory CSS styling</li>
+		<li>Learning how to apply CSS using an external style sheet</li>
 	</ul>
-	
-	<h2>Creating a new page</h2>
-	<p>Create a new page called lab5.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
-	<ol>
-		<li>Use the HTML5 doctype declaration</li>
-		<li>Set the Title to "Lab 5", without the quotes</li>
-		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
-		<li>Insert a comment indicating your name and student number</li>
-		<li>Link your style sheet to the page</li>
-		<li>Make use of the main tag, as we did in Lab 3</li>
-	</ol>
-	
-	<h2>Modifying your navigation bar</h2>
-	<p>Copy your navigation bar from your index page and paste it at the top of the body, above the &lt;main&gt; section.  We're going to modify it to properly indicate your current page.</p>
-	<ol>
-		<li>Move the class attribute from it's current position (Lab 1) to the link for Lab 5</li>
-		<li>Modify the hyperlink for Lab 1 to direct you to "index.html"</li>
-		<li>Modify the hyperlink for Lab 5 to point to an empty ID ("#")</li>
-	</ol>
-	
-	<h2>Inserting a heading</h2>
-	<p>Use the H1 tag to insert a heading with the text "About Me"</p>
-	
-	<h2>Inserting an image</h2>
-	<p>You're going to insert an image of yourself, with a few paragraphs about yourself beside it.  In order to insert an image of yourself, you'll first have to <a href="filezilla.html">connect to the server using filezilla</a> and upload it.</p>
-	
-	<!-- Upload your image -->
-	<h3>To do:</h3>
-	<p>Create a new folder on the server called images, and upload the picture there.</p>
-	
-	<!-- Insert an image of yourself -->
-	<h3>Insert the image</h3>
-	<p>To insert an image, we're going to use the image tag and provide it with a few parameters, the main ones we'll use are:</p>
-	<ul>
-		<li>src - means source, a relative path to the image in this case</li>
-		<li>alt - alternate text, this will show up if the image can't be loaded</li>
-	</ul>
-	<p>Using the following code example, insert the image you uploaded to the server with FileZilla.</p>
-	<pre>
-	&lt;img src="images/file.jpg" /&gt;
-	</pre>
-	
-	<!-- Paragraph about yourself, and implement a list -->
-	<h3>To do:</h3>
-	<p>Using the paragraph tag, write an introduction paragraph about yourself.  Implement an ordered or unordered list (your choice) within this, describing your interests.  These can be activities, games, tv shows or movies you watch, etc.</p>
-	
-	<!-- Table, with your course schedule -->
-	<h2>Introducing Tables</h2>
-	<p>Tables consist of several structural tags.  They're opened and closed with the &lt;table&gt; and &lt;/table&gt; tags respectively.  Tables contain 3 main tags for structure.</p>
+	<!-- Lab 2 -->
+	<h2>Getting started</h2>
+	<p>Open the file you created in Lab 1 (index.html).  You'll be making changes to this file for Lab 2.</p>
+	<h2>Blockquote and pre-formatted text</h2>
+	<p>Add the following quote (below the paragraph you wrote in Lab 1) using the paragraph(&lt;p&gt; and &lt;/p&gt;), blockquote(&lt;blockquote&gt; and &lt;/blockquote&gt;) and pre-formatted(&lt;pre&gt; and &lt;/pre&gt;) text tags to the body of your web page.  The blockquote and pre-formatted tag are applied to the appropriate text in the same method you learned to use the paragraph quote.</p>
+	<blockquote>
+	"Heroes are people who face down their fears. It is that simple. A child afraid of the dark who one day blows out the candle; a woman terrified of the pain of childbirth who says, 'It is time to become a mother'. Heroism does not always live on the battlefield." - David Gemmell
+	</blockquote>
+	<span class="tip">Tip: Save!
+	Remember to save regularly, in the event of power outage or other situations that could cause loss of work.</span>
+	<h2>Implementing Cascading Style Sheets(CSS)</h2>
+	<p>Any HTML tag can have a CSS style applied to it.  CSS can be implemented on your page in a variety of ways.  These are:</p>
 
 	<ul>
-		<li>&lt;tr&gt; and &lt;/tr&gt; - Specifies a table row</li>
-		<li>&lt;th&gt; and &lt;/th&gt; - Specifies a heading</li>
-		<li>&lt;td&gt; and &lt;/td&gt; - Specifies a cell within the row, or table data</li>
+		<li>Inline:  Used within an html tag to apply a style uniquely in that place.  This should be used sparingly, if at all.</li>
+		<li>Internal:  CSS is applied in a style block in the header.  This is more desirable than Inline, however becomes problematic when trying to maintain a unique style across multiple pages on a website.</li>
+		<li>External:  CSS is applied using a separate file that can be then linked your page in the header.  This is ideal, as you can manage the appearance of your website from one common place.  We will be focusing on this method.</li>
 	</ul>
-	<p>We're going to insert a table containing your course schedule.  This is useful, as you'll be able to access your schedule from your phone as a web page after completion of this lab!</p>
-	<p>Add an opening table tag, an example follows.</p>
-	<pre>
-		&lt;table&gt;
-	</pre>
-	<p>Start a row, and using the table heading tag specify headings for days of the week.  Leave the first cell blank, as that column is going to contain the start time for our classes.  Your table should include days for every day Monday-Saturday, unlike the sample.</p>
 
-	<pre>
-	&lt;tr&gt;
-	&lt;th&gt;&lt;/th&gt;
-	&lt;th&gt;Monday&lt;/th&gt;
-	&lt;th&gt;Tuesday&lt;/th&gt; 
-	... 
-	&lt;/tr&gt;
-	</pre>
-	<p>Start a new row, and using the table data tag populate your table.  The first column is our time, so that should indicate 08:30 - 10:20.  You're going to list every class in that time slot, following the sequence outlined in your table header.</p>
-
-	<pre>
-	&lt;tr&gt;
-		&lt;td&gt;08:30 - 10:20&lt;/td&gt;
-		...
-	&lt;/tr&gt;
-	</pre>
-	<p>Times for classes, for reference include:</p>
-	<ul>
-		<li>08:30 - 10:20</li>
-		<li>10:30 - 12:20</li>
-		<li>12:30 - 14:20</li>
-		<li>14:30 - 16:20</li>
-		<li>16:30 - 18:20</li>
-		<li>18:30 - 20:20</li>
-	</ul>
-	<p>Once you have your class schedule entered in, close your table.</p>
-	<pre>
-	&lt;/table&gt;
-	</pre>
+	<h2>Creating Your Style Sheet</h2>
+	<p>Create a new file (called style.css) in the same directory as your labs.</p>
 	
-	<p>If you save and refresh your page, you'll notice the table has inherited the positioning of the list above making it not quite centred.  There's a couple different approaches to fix this; the easiest of which is to insert a break tag in between your list and table.</p>
-	<h3>To do:</h3>
-	<p>Insert a break tag between your list and table.</p>
-	<pre>&lt;br /&gt;</pre>
+	<h2>Linking Your Style Sheet to Your Index Page</h2>
+	<p>Add a link to the head portion of your index page using the following syntax:</p>
+	<pre>
+	&lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+	</pre>
+	<p>Note the link tag has 3 modifiers we're using in this context.  Rel defines the relationship (ie: How is the linked content relevant to the page), type describes the type of content being linked (in our case text/css is the proper type to reference a CSS style sheet), and href lists the name of the file and location that is being included.  In our case the style sheet exists in the same directory as our web page, so an absolute path to the included file is not necessary.</p>
+	
+	<h2>CSS Comments</h2>
+	<p>Comments are often helpful when dealing with large blocks of CSS code.  Adding comments allows anyone looking at the code to understand what's going on (assuming you've clearly explained it in the comment).  Using the following sample, add your name and student number as a comment in the top of the CSS file.</p>
+	<pre>
+	/* Jason Carman 000000000 */
+	</pre>
+	<h2>Creating your style</h2>
+
+	<p>CSS references HTML tags, and applies different attributes to them.  Each tag has a variety of attributes that can be modified.  Some attributes can apply to multiple tags and work similarly with different tags.  For example, to set the body background to black, you would add the following syntax to your style sheet.</p>
+
+    <pre>
+	body {
+		background-color: #000000;
+	}
+	</pre>
+	<p>In the above sample, the tag you're modifying (in this case the body tag) is referred to as the selector.  The things you can modify that appear between the curly braces are referred to as the attributes.  Notice the color code begins with a # and consists of 6 digits.  Each of these is a hexadecimal digit, which are grouped into 3 categories respectively.  The first two represent the red balance in the colour, the second two green and the final two blue (as demonstrated by the sample below).</p>
+	#<span class="red">RR</span><span class="green">GG</span><span class="blue">BB</span>;
+	<p>Blending these three colours together works the same as mixing paints/colours (which you may have experienced in high school art class).  You can play with the numbers to get the colour you wish, or use an online resource such as the one <a href="https://www.w3schools.com/colors/colors_picker.asp">w3schools</a> provides.</p>
+	<h2>To do:</h2>
+	<p>Using the <a href="https://www.w3schools.com/cssref/default.asp">following reference</a> material complete the following.  It may be useful to refresh your page each time you change a value in the css to view the changes.</p>
+	<ul>
+		<li>Set the body background colour to a color of your choosing.</li>
+		<li>Set the body text colour (using the color attribute) to a color of your choosing.</li>
+		<li>Set the font for the body (using the font-family attribute) to arial or verdana.</li>
+		<li>Set the heading tag you used to centered (using the text-align attribute) and uppercase (using the text-transform attribute).</li>
+		<li>Give your heading a colour uniquely different from the text colour.</li>
+	</ul>
+	<p>Notice the pre-formatted text runs off the side of the screen and requires scrolling to read.  This isn't very user friendly.  To correct this we can modify the pre tag through css to allow word wrapping.  Add a selector for the pre tag and give it the following attribute.</p>
+    <pre>white-space: pre-wrap;</pre>
+
+	<p>You can specify multiple selectors to be modified together.  This is useful if you wish to apply an attribute uniformly across multiple tags.  We'll use this to assign a slightly darker shade to the background of the paragraph, blockquote and pre tags.  To specify multiple selectors, list them separated by commas as below:</p>
+
+	<pre>p, blockquote, pre {
+	}</pre>
+	
 	<h2>Completing the Lab</h2>
-	<p>Upon completion of this lab you should have a web page with a picture of yourself, a paragraph or two about yourself and your course schedule as a table.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
-	<img src="images/lab5.png" alt="Lab 5 sample" />
+	<p>To view your page, use the following URL (substituting your information where appropriate).  studentweb.cencol.ca/<em>firstpartofemail</em></p>
+	<p>Your page should look similar to the following output.  If it does not, go back and complete whatever you've missed.</p>
+	
+    <img src="images/lab2.png" alt="Lab 2 sample" />
+
+	<p>Upon completion of this lab you should have a simple web page using several tags we talked about in our first lecture.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  The following questions are for furthering your knowledge only, and may appear on quizzes or tests at any time later in this course.</p>
+
 	<h2>Exploration Questions</h2>
 	<ol>
-		<li>What two tags can table rows contain?</li>
-		<li>How do you open and close a table?</li>
-		<li>What do the src and alt parameters mean for images?</li>
+		<li>What does CSS stand for?</li>
+		<li>What is the difference between a selector and an attribute?</li>
+		<li>What are the three ways to implement CSS?  Which of these did we use in the assignment?</li>
+		<li>How do you specify multiple selectors in CSS?</li>
+		<li>Colour codes are three groups of two hex digits per group.  What do the three groups of hex digits represent in terms of colours?</li>
 	</ol>
-</main>
+	</main>
 </body>
 </html>

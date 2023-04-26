@@ -18,9 +18,11 @@
         <li><a href="lab4.html">Lab 4</a></li>
 		<li><a href="lab5.html">Lab 5</a></li>
 		<li><a href="assignment.html">Assignment</a></li>
-		<li><a href="lab6.html" >Lab 6</a></li>
+		<li><a href="lab6.html">Lab 6</a></li>
 		<li><a href="lab7.html">Lab 7</a></li>
 		<li><a class="active" href="#">Lab 8</a></li>
+		<li><a href="lab9.html">Lab 9</a></li>
+		<li><a href="lab10.html">Lab 10</a></li>
 		<li><a href="project.html">Final Project</a></li>
 		<li><a href="good.html">Good Formatting</a></li>
 		<li><a href="bad.html">Bad Formatting</a></li>
@@ -28,77 +30,210 @@
    </ul>
 </nav>
 <main>
-    <h1>Lab 8 - Audio &amp; Video</h1>
+    <h1>Lab 8 - Images &amp; Tables</h1>
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Creating a new page, called lab8.html</li>
-		<li>Learning how to use HTML5 to embed audio and video navtively</li>
+		<li>Creating a new page, called lab5.html</li>
+		<li>Learning how to insert images into a web page</li>
+		<li>Learning how to use tables to format and display content</li>
+		<li>Learning how to implement CSS to float images</li>
+		<li>Learning how to apply CSS to stylize text</li>
+		<li>Learning how to position HTML elements using CSS</li>
 	</ul>
-		
+	
 	<h2>Creating a new page</h2>
-	<p>Create a new page called lab8.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+	<p>Create a new page called lab5.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
 	<ol>
 		<li>Use the HTML5 doctype declaration</li>
-		<li>Set the Title to "Lab 8", without the quotes</li>
+		<li>Set the Title to "Lab 5", without the quotes</li>
 		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
 		<li>Insert a comment indicating your name and student number</li>
 		<li>Link your style sheet to the page</li>
 		<li>Make use of the main tag, as we did in Lab 3</li>
-		<li>Copy your navigation bar from your index page and modify it to properly indicate your current page</li>
 	</ol>
-	<!-- Introducing audio and video -->
-	<h2>Introducing audio and video</h2>
-	<p>Prior to HTML5, plugins (like Flash) were required to play audio or video in the browser.  With HTML5, audio and video playback are now natively available (without a plugin).</p>
 	
-	<!-- Audio tag -->
-	<h2>Insert the audio tag</h2>
-	<p>Add the opening audio tag and it's corresponding closing tag (at the top of your main section) by adding the following tag.</p>
-	<pre>&lt;audio controls&gt;
-		&lt;/audio&gt;
-	</pre>
-	<p>Notice the controls attribute.  Without this, the element won't appear in the browser (as there's no way to interact with it).</p>
-	
-	<!-- Adding audio -->
-	<h2>Adding some content</h2>
-	<p>Using this <a href="https://www.videvo.net/royalty-free-music/">free resource (provided by videvo)</a>, select an audio file of your choice and add it using the <a href="https://www.w3schools.com/html/html5_audio.asp">w3schools example</a>.  For this to work you will have to first download the audio file.  You can then upload the file to your server (if you are able to access it).</p>
-
-	<!-- Video tag -->
-	<h2>Insert the video tag</h2>
-		<p>Add the opening video tag and it's corresponding closing tag (at the top of your main section) by adding the following tag.</p>
-	<pre>&lt;video&gt;
-		&lt;/video&gt;
-	</pre>
-	
-	<!-- Adding video -->
-	<p>Using this <a href="https://www.videvo.net/stock-video-footage/">free resource (provided by the videvo)</a>, select an video of your choice and add it using the <a href="https://www.w3schools.com/html/html5_video.asp">w3schools example</a>.  Be sure to select a video labelled <strong>free</strong>.  Again, for this to work you will have to first download the file.  You can then upload the file to your server (if you are able to access it).  Note the optional autoplay attribute, which isn't ideal - omit this.</p>
-	<p>You may wish to resize your video, using the width and height parameters (included in the w3schools example).  Experiment with these until you achieve a result you're happy with.  You may also wish to add a few line breaks in, to assist in spacing the audio and video elements.</p>
-	
-	<!-- Adding a video from YouTube -->
-	<h2>Adding a video from YouTube</h2>
-	<p>Sometimes you may wish to embed a video from another platform (such as YouTube) instead of hosting your own.  These take up less space, as they are being stored by YouTube, not you.  You can do this using the iframe tag.</p>
-	<p>To add a video from <a href="https://youtube.com">YouTube</a>, first browse to a video you want.  Once you have found your video:</p>
+	<h2>Modifying your navigation bar</h2>
+	<p>Copy your navigation bar from your index page and paste it at the top of the body, above the &lt;main&gt; section.  We're going to modify it to properly indicate your current page.</p>
 	<ol>
-		<li>Click the share button.</li>
-		<li>Click Embed (the button labelled with &lt; &gt;).</li>
-		<li>Note the embed options you can select.</li>
-		<li>Copy the iframe code and paste it into your html document.</li>
+		<li>Move the class attribute from it's current position (Lab 1) to the link for Lab 5</li>
+		<li>Modify the hyperlink for Lab 1 to direct you to "index.html"</li>
+		<li>Modify the hyperlink for Lab 5 to point to an empty ID ("#")</li>
 	</ol>
+	
+	<h2>Inserting a heading</h2>
+	<p>Use the H1 tag to insert a heading with the text "About Me"</p>
+	
+	<h2>Inserting an image</h2>
+	<p>You're going to insert an image of yourself, with a few paragraphs about yourself beside it.  In order to insert an image of yourself, you'll first have to <a href="filezilla.html">connect to the server using filezilla</a> and upload it.</p>
+	
+	<!-- Upload your image -->
+	<h3>To do:</h3>
+	<p>Create a new folder on the server called images, and upload the picture there.</p>
+	
+	<!-- Insert an image of yourself -->
+	<h3>Insert the image</h3>
+	<p>To insert an image, we're going to use the image tag and provide it with a few parameters, the main ones we'll use are:</p>
+	<ul>
+		<li>src - means source, a relative path to the image in this case</li>
+		<li>alt - alternate text, this will show up if the image can't be loaded</li>
+	</ul>
+	<p>Using the following code example, insert the image you uploaded to the server with FileZilla.</p>
+	<pre>
+	&lt;img src="images/file.jpg" /&gt;
+	</pre>
+	
+	<!-- Paragraph about yourself, and implement a list -->
+	<h3>To do:</h3>
+	<p>Using the paragraph tag, write an introduction paragraph about yourself.  Implement an ordered or unordered list (your choice) within this, describing your interests.  These can be activities, games, tv shows or movies you watch, etc.</p>
+	
+	<!-- Table, with your course schedule -->
+	<h2>Introducing Tables</h2>
+	<p>Tables consist of several structural tags.  They're opened and closed with the &lt;table&gt; and &lt;/table&gt; tags respectively.  Tables contain 3 main tags for structure.</p>
+
+	<ul>
+		<li>&lt;tr&gt; and &lt;/tr&gt; - Specifies a table row</li>
+		<li>&lt;th&gt; and &lt;/th&gt; - Specifies a heading</li>
+		<li>&lt;td&gt; and &lt;/td&gt; - Specifies a cell within the row, or table data</li>
+	</ul>
+	<p>We're going to insert a table containing your course schedule.  This is useful, as you'll be able to access your schedule from your phone as a web page after completion of this lab!</p>
+	<p>Add an opening table tag, an example follows.</p>
+	<pre>
+		&lt;table&gt;
+	</pre>
+	<p>Start a row, and using the table heading tag specify headings for days of the week.  Leave the first cell blank, as that column is going to contain the start time for our classes.  Your table should include days for every day Monday-Saturday, unlike the sample.</p>
+
+	<pre>
+	&lt;tr&gt;
+	&lt;th&gt;&lt;/th&gt;
+	&lt;th&gt;Monday&lt;/th&gt;
+	&lt;th&gt;Tuesday&lt;/th&gt; 
+	... 
+	&lt;/tr&gt;
+	</pre>
+	<p>Start a new row, and using the table data tag populate your table.  The first column is our time, so that should indicate 08:30 - 10:20.  You're going to list every class in that time slot, following the sequence outlined in your table header.</p>
+
+	<pre>
+	&lt;tr&gt;
+		&lt;td&gt;08:30 - 10:20&lt;/td&gt;
+		...
+	&lt;/tr&gt;
+	</pre>
+	<p>Times for classes, for reference include:</p>
+	<ul>
+		<li>08:30 - 10:20</li>
+		<li>10:30 - 12:20</li>
+		<li>12:30 - 14:20</li>
+		<li>14:30 - 16:20</li>
+		<li>16:30 - 18:20</li>
+		<li>18:30 - 20:20</li>
+	</ul>
+	<p>Once you have your class schedule entered in, close your table.</p>
+	<pre>
+	&lt;/table&gt;
+	</pre>
+	
+	<p>If you save and refresh your page, you'll notice the table has inherited the positioning of the list above making it not quite centred.  There's a couple different approaches to fix this; the easiest of which is to insert a break tag in between your list and table.</p>
+	<h3>To do:</h3>
+	<p>Insert a break tag between your list and table.</p>
+	<pre>&lt;br /&gt;</pre>
+
+	<!-- Float the image left -->
+	<h2>Resizing and floating the image</h2>
+	<p>Open your stylesheet (style.css).  Before we float our image, we should probably resize it.  You could open it in Photoshop or Paint (in Windows), but that takes additional time and work.  Instead, we can resize the image using CSS.  When you're resizing an image you should pick either the width or height to resize, and set the other to auto.  You may have to play around with this a bit by making changes and refreshing in your browser.  The following code will resize the image.  Change the values as needed (since the size of your image might be bigger or smaller than mine).</p>
+	
+	<pre>
+	img {
+		width: 25%;
+		height: auto;
+	}
+	</pre>
+	
+	<p>Next, we're going to float the image to the left of the text by adding adding the float parameter in the img selector we just created.</p>
+	
+	<pre>
+	img {
+		float: left;
+	}
+	</pre>
+	<p>If you refresh your page, you should notice the text now appears to the right of the image.</p>
+	
+	<h3>Stylizing our table</h3>
+	<p>The first thing we're going to do, is give our table & the cells within a border.  We're going to accomplish this using a complex selector.</p>
+	<pre>
+	th, td {
+	
+	}
+	</pre>	
+	<p>There are a couple different ways we can add a border.  We can use the simpler, longer drawn out method of specifying each of the following:</p>
+	<ul>
+		<li>border-width: .25em;</li>
+		<li>border-style: solid;</li>
+		<li>border-color: #000000;</li>
+	</ul>
+	<p>Alternatively, we can use a more complex shorthand to declare the same.  The following would apply the exact same specifications as above, note the difference in syntax.</p>
+	<pre>
+		th, td {
+			border: .25em solid #000000;
+		}
+	</pre>
+	<p>Using the above syntax as an example, choose a thickness, style and colour for your border.  The styles you have to choose from are:</p>
+	<ul>
+		<li>none</li>
+		<li>hidden</li>
+		<li>dotted</li>
+		<li>dashed</li>
+		<li>solid</li>
+		<li>double</li>
+		<li>groove</li>
+		<li>ridge</li>
+		<li>inset</li>
+		<li>outset</li>
+	</ul>
+	<p>Feel free to explore the use of the border-radius parameter with any of the table contents (tr, th, td).</p>
+	
+	<h2>Applying some finishing touches</h2>
+	<h3>Fixing the paragraph background color</h3>
+	<p>You may notice your background colour from your paragraph appears behind your image.  We can remove this by applying a class or id to that particular paragraph, and modify the left margin.  You may need to play around with the units to get it to appear in a manor you're satisfied with.  First, apply an ID to that paragraph.</p>
+	<pre>
+	&lt;p id="about"&gt;
+	</pre>
+	<p>Now using a complex selector, modify the left margin for paragraphs with the id we just created.</p>
+	<pre>
+	p#about {
+		margin-left: 5em;
+	}
+	</pre>
+	<p>Increase this number as much as needed, until the paragraph background color appears similar to the provided sample (located at the end of the lab instructions).</p>
+	<h3>Centering your table</h3>
+	<p>The easiest way to center a table, is to set the left and right margin to auto.  Use the following example to center your table.</p>
+	<pre>
+	table {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	</pre>
+	
+	<h3>Cleaning up the table formatting</h3>
+	<p>Add line breaks between each course code and room in your table, to make your timetable look nicer.</p>
+	
+	<p>You may also want to increase the padding on your th & td tags, to make your table look a little nicer.  To do that, find the <strong>td, th</strong> selector we used before and add the padding attribute (sample below).  Feel free to play around with the values to get it where you like it.</p>
+	
+	<pre>
+	td, th {
+		padding: .5em;
+	}
+	</pre>
 	
 	<h2>Completing the Lab</h2>
-	<p>Upon completion of this lab you should have a web page with an embedded audio and video file.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
-
-	<img src="images/lab8.png" alt="Lab 8 sample" />
+	<p>Upon completion of this lab you should have a web page with a picture of yourself, a paragraph or two about yourself and your course schedule as a table.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
+	<img src="images/lab5.png" alt="Lab 5 sample" />
 	<h2>Exploration Questions</h2>
 	<ol>
-		<li>What tag did you use to insert an audio clip?</li>
-		<li>What tag did you use to insert an video clip?</li>
-		<li>What happens when you omit the controls attribute for video?</li>
-		<li>How do you make a video auto play?</li>
-		<li>What happens when you omit the controls attribute for audio?</li>
-		<li>Does video autoplay work on mobile devices?</li>
-		<li>What video formats are supported in HTML5?</li>
-		<li>What audio formats are supported in HTML5?</li>
+		<li>What two tags can table rows contain?</li>
+		<li>How do you open and close a table?</li>
+		<li>What do the src and alt parameters mean for images?</li>
 	</ol>
 </main>
+</body>
 </html>

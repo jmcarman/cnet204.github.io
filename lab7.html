@@ -15,12 +15,14 @@
         <li><a href="index.html">Lab 1</a></li>
         <li><a href="lab2.html">Lab 2</a></li>
         <li><a href="lab3.html">Lab 3</a></li>
-        <li><a href="lab4.html">Lab 4</a></li>
+		<li><a href="lab4.html">Lab 4</a></li>
 		<li><a href="lab5.html">Lab 5</a></li>
 		<li><a href="assignment.html">Assignment</a></li>
-		<li><a href="lab6.html" >Lab 6</a></li>
-		<li><a class="active" href="#">Lab 7</a></li>
+		<li><a href="lab6.html">Lab 6</a></li>
+        <li><a class="active" href="#">Lab 7</a></li>
 		<li><a href="lab8.html">Lab 8</a></li>
+		<li><a href="lab9.html">Lab 9</a></li>
+		<li><a href="lab10.html">Lab 10</a></li>
 		<li><a href="project.html">Final Project</a></li>
 		<li><a href="good.html">Good Formatting</a></li>
 		<li><a href="bad.html">Bad Formatting</a></li>
@@ -28,124 +30,114 @@
    </ul>
 </nav>
 <main>
-    <h1>Lab 7 - Forms</h1>
+    <h1>Lab 7 - Navigation Bar</h1>
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Creating a new page, called lab7.html</li>
-		<li>Learning how to build forms to collect user information</li>
-		<li>Learning how to use different types of input fields</li>
-		<li>Learning how to submit user information to the server</li>
+		<li>Learning how to implement CSS comments</li>
+		<li>Learning how to create and use CSS classes &amp; IDs</li>
+		<li>Learning how to create a mobile friendly navigation bar</li>
 	</ul>
-		
-	<h2>Creating a new page</h2>
-	<p>Create a new page called lab7.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
-	<ol>
-		<li>Use the HTML5 doctype declaration</li>
-		<li>Set the Title to "Lab 7", without the quotes</li>
-		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
-		<li>Insert a comment indicating your name and student number</li>
-		<li>Link your style sheet to the page</li>
-		<li>Make use of the main tag, as we did in Lab 3</li>
-		<li>Copy your navigation bar from your index page and modify it to properly indicate your current page</li>
+	
+	<h3>Stylizing our navigation bar with CSS</h3>
+	<p>Open the style sheet (style.css) that you created back in Lab 2.  We're going to add some CSS to it, to stylize our navigation bar.  Since the code we're adding is strictly for the navigation, it's good to separate it from the rest of our code within a block of comments.  This of course means, we need to introduce comments in CSS.</p>
+	<p>If you recall in html, you're able to enter in a comment with the &lt;!-- --&gt; tags.  In CSS, comments begin with /* and close with */.  They can also span multiple lines, or be confined to a single line.  Either way, the syntax is the same.  An example follows for clarity.</p>
+	<h4>CSS Comment</h4>
+	<pre>
+		/* 
+		This comment 
+		spans 
+		multiple lines
+		*/
+		/* This comment spans one line */
+	</pre>
+	<h3>To do:</h3>
+	<p>Now that we know how comments work, create comments at the bottom of your CSS file.  One that says "start navigation" and the other "end navigation".  Everything in between these comments will be the CSS for our navigation.  This isn't technically required for the code to work, but it does make our code easier to read.</p>
+	<p>The majority of the magic that makes a navigation bar appear as such is done via CSS.  Structurally it's simply a list of links within a special tag designating it as a navigation bar.  To do this we use some a slightly more complex CSS selector than we've seen up to this point.  It is recommended you apply these attributes individually and refresh the page each time, to understand what each of them are doing.</p>
+    
+	<pre>
+	nav ul {
+	}
+	</pre>
+    <p>To best describe what the above selector is doing, it is simplest to think of it in a series of spoken or written instructions.  Find the navigation tag (nav), within the nav find the unordered list (ul).</p>
+	<p>The first few attributes you'll want to change are:</p>
+    <ol>
+		<li>remove the bullets, by setting the attribute list-style-type to none</li>
+		<li>set margin and padding to 0 - this will cause the nav to fill the top of the screen</li>
+		<li>set the overflow attribute to hidden - this will cause any content that fills more of the elements box than is available (hence overflow) to remain hidden</li>
+		<li>apply a background color of your choice</li>
+		<li>Optional: apply a border-radius to give the appearance of rounded corners</li>
 	</ol>
-	<h2>Introducing html forms</h2>
-	<p>Forms are used as a tool to take user input data and pass it to a program running on a server for server side processing.  Our form will not interact with a server, as you require a server side scripting language (such as PHP) for this.  HTML forms are however, pretty complicated and necessary to understand if you're going to learn any server side development.  Forms will be the focus of this assignment.</p>
-	<h2>Beginning your form</h2>
-	<p>Forms begin and end with the &lt;form&gt; tag.  They can contain several different tags, such as buttons and various types of input fields.  The types of input fields have been expanded on substantially in HTML5.</p>
-	<h2>Adding some attributes</h2>
-	<p>The form tag has two commonly used attributes.  These are action and method.  Action defines the action to be performed when the form is submitted.  This is always the name of the script on the server that will be processing your form.  You won't be using this attribute in your form, as server side scripting is the content of another course.</p>
-	<p>The method attribute specifies the HTTP method to be used when submitting the form data.  Thse can be either GET or POST.  When you submit a form using GET, the form data is sent in the packet header and is visible in the page address field.  This should not be used if your data is sensitive.  When you submit a form using POST, the form data is sent in the packet body and isn't visible in the page address field.</p>
+	<p>Note the list still appears as stacked, even with the bullet points removed.  We want to display a horizontal navigation bar.  To accomplish this we must modify another attribute, and use another selector.  This can be done a few different ways, one of the simplest of which is to change the display attribute.</p>
 	<h3>To do:</h3>
-	<p>Add the method attribute to your form tag, and set it to "post".  A sample of what you should have follows.</p>
-	<pre>&lt;form method="post"&gt;</pre>
-	<p>Add a heading level 1 tag, with the contents "User Registration"</p>
+	<p>Using the selector nav ul li, set the float parameter to left.</p>
 	
-	<h2>About input fields</h2>
-	<p>Some common input types are:</p>
-	<ul>
-		<li>text - will appear as plain text</li>
-		<li>password - will display the input as centered dots to the user</li>
-		<li>radio - will display a radio button, used for a single input in that selection</li>
-		<li>checkbox - will display a check box, used for zero or more choices in that selection</li>
-		<li>submit - will display a submit button</li>
-		<li>reset - will display a reset button</li>
-	</ul>
-	<p>HTML5 adds several new input types, such as:</p>
-	<ul>
-		<li>date - will allow you to chose a date through a pop up calendar</li>
-		<li>email - used to validate an email address client side</li>
-		<li>tel - used to validate a telephone number client side</li>
-	</ul>
-	<p>For a more complete list of form input types, have a look at <a href="https://www.w3schools.com/html/html_form_input_types.asp">w3schools</a>.</p>
-	
-	<h2>Adding input fields</h2>
-	<p>Add a field for First Name, with a type of text and a name of firstName</p>
-	<pre>First Name: &lt;input type="text" name="firstName"&gt;</pre>
-	<p>Each input field must have a name attribute to be submitted.  If you leave this out, the data from that field won't be sent to the server for processing.  In our case, we're not sending the form for processing at all; however when you learn a server side scripting langauge such as PHP you'll require forms.</p>
-	
-	<h3>To do:</h3>
-	<p>Using the above First Name input field syntax, and the input types described above that add the following fields to your form:</p>
-	<ul>
-		<li>Last Name with a type of text</li>
-		<li>Email with a type of email</li>
-		<li>Password with a type of password</li>
-		<li>Date of Birth with a type of date</li>
-		<li>Phone Number with a type of tel</li>
-		<li>Address with a type of text</li>
-		<li>City with a type of text</li>
-	</ul>
-	<h2>Adding a dropdown list for province</h2>
-	<p>Below your city input field, we're going to add a drop down list where the user can select their province.  This requires a couple different tags.  To create a dropdown list, use the &lt;select&gt; tag, as demonstrated below.</p>
+	<h2>Setting the anchor tags to display as block</h2>
+	<p>Enter the following code into your CSS following the nav ul li selector, and see what it does.</p>
 	<pre>
-		&lt;select name="province"&gt;
-		&lt;/select&gt;
+    nav ul li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
 	</pre>
-	<p>Notice the name parameter.  This won't do anything for our form, but in the event you were interacting with a server-side scripting language, this would define the name in the form data that would store the information - like a variable.  Ideally when learning server-side scripting, the variable in use on the server should match this for simplicity (but doesn't have to).</p>
-	<p>Now it's time to add some options to our list.  List options are encapsulated with an &lt;option&gt; tag, contain a value and text inbetween the opening and closing tag will appear as the option in the drop-down.  Add the following option to your select list.</p>
+	<h2>CSS classes and events</h2>
+	<p>Everything we've applied using CSS thus far has been applied to specific tags (reffered to as selectors in CSS).  Sometimes it's necessary to apply changes uniquely by using a class or ID (we'll look more at IDs in a future lab).  Additionally CSS can be applied when an specific event occurs (like hovering over the tag).  Here's a small list of events you can use to apply CSS.</p>
+	<ul>
+		<li>hover - when the user mouses over the selector</li>
+		<li>focus - when the element has focus - used more in forms, we'll look at this in a later lab</li>
+		<li>visited - Applies to all visted links</li>
+		<li>link - Applies to all unvisted links</li>
+	</ul>
+	<p>For more refference, see <a href="https://www.w3schools.com/cssref/css_selectors.asp">w3schools</a>.</p>
+	<h2>Applying what you just learned</h2>
+	<p>You're going to use a very complex selector that will change the background colour when you hover over a link, as long as it's not the active link.  Apply a background colour of your choice using the following selector.</p>
 	<pre>
-		&lt;option value="Alberta"&gt;Alberta&lt;/option&gt;
+	nav ul  li a:hover:not(.active) {
+		background-color: #111111;
+	}
 	</pre>
-	<p>Options will appear in the order you put them in.  There is no way to sort them using html.</p>
+	<p>Now we're going to apply some CSS to active links.  Apply the following, modifying the colours to something you of your choice.</p>
+	<pre>
+	nav ul li a.active {
+		background-color: #bcce1e;
+		color: #000000;
+	}
+	</pre>
 	
-	<h3>To do:</h3>
-	<p>Using the above sample, add options to your list for the following provinces</p>
-	<ol>
-		<li>British Columbia</li>
-		<li>Manitoba</li>
-		<li>New Brunswick</li>
-		<li>Newfoundland and Labrador</li>
-		<li>Northwest Territories</li>
-		<li>Nova Scotia</li>
-		<li>Nunavut</li>
-		<li>Ontario</li>
-		<li>Prince Edward Island</li>
-		<li>Quebec</li>
-		<li>Saskatchewan</li>
-		<li>Yukon</li>
-	</ol>
-	<h2>Finishing Touches</h2>
-	<p>All our form needs now, are a submit and clear button, as well as the closing tag.  Add the buttons using the following sample.  Note whatever text you add to the value parameter, is what appears on the button.</p>
+	<h2>Creating a mobile friendly navigation bar</h2>
+	<p>This last bit will make our navigation mobile friendly, as it'll display differently based on the size of the screen.  First we're going stylize a class to float right.</p>
 	<pre>
-		&lt;input type="submit" name="submit" value="Submit"&gt;&lt;input type="reset" name="clear" value="Clear"&gt;
+	nav ul li.right {
+		float: right;
+	}
 	</pre>
-	<p>And finally, close your form with the &lt;/form&gt; tag.</p>
-	<p>Save and view your page in the browser.  Notice all the input boxes appear on one line, as they're in-line tags.  We can clean this up a bit by adding some break tags at the end of each.</p>
-	<h3>To do:</h3>
-	<p>Make use of the &lt;br /&gt; tag to clean up your form so it looks similar to the sample provided.</p>
-	<h2>Stylizing our form with CSS</h2>
-	<p>Forms have a lot of styling options that can be applied using CSS.  Use the resources provided by <a href="https://www.w3schools.com/css/css_form.asp">w3schools</a> to apply some CSS to your form.</p>
+	<p>Notice you're using a class we didn't create anywhere in the html.  We're going to apply this class in a slightly different way.  The following code will apply the above class only when the screen's maximum width is 600px.</p>
+	<pre>
+	@media screen and (max-width: 600px){
+		nav ul li.right, 
+		nav ul li {float: none;}
+	}
+	</pre>
+	<p>Save your CSS, refresh your page in the browser and try resizing the browser window to simulate the size of a mobile device.  Notice what happens!</p>
+	<!-- end navigation -->
 	
 	<h2>Completing the Lab</h2>
-	<p>Upon completion of this lab you should have a somewhat functional form.  To it to be completely functional would require server side scripting, which is the content of another course entirely.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
-	<img src="images/lab7.png" alt="Lab 7 sample" />
+	<span class="tip">Tip: Validation!
+	Your page should pass the <a href="https://validator.w3.org/">w3schools validation</a> tool.</span>
+	<p>Upon completion of the lab you should have added a menu that links to the other pages that we're going to create this semester.  Your page should look similar to the following output (your choice of colours will likely be different).  If it does not, go back and complete whatever you've missed.</p>
+	
+	<img src="images/lab4.png" alt="Lab 4 sample" />
+
 	<h2>Exploration Questions</h2>
 	<ol>
-		<li>What tag did you use to start your form?</li>
-		<li>What is the difference between a form submitted through GET vs POST?</li>
-		<li>What input types did we use for the form?</li>
-		<li>How do you add different items to a select dropdown list?</li>
-		<li>What is the difference between a submit button and a reset button?</li>
+		<li>What does display: inline-block; do?</li>
+		<li>What example of a CSS event did we use in the lab?</li>
+		<li>What does float: right; do?</li>
+		<li>How do you reference classes and IDs in CSS?</li>
 	</ol>
 </main>
+</body>
 </html>

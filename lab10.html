@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jason Carman">
+	<meta name="description" content="CNET204 Lab 10">
+	<meta name="keywords" content="cnet204,centennial college,HTML5,CSS3">
+	<meta charset="utf-8">
+    <title>Lab 10</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="index.html">Lab 1</a></li>
+			<li><a href="lab2.html">Lab 2</a></li>
+			<li><a href="lab3.html">Lab 3</a></li>
+			<li><a href="lab4.html">Lab 4</a></li>
+			<li><a href="lab5.html">Lab 5</a></li>
+			<li><a href="assignment.html">Assignment</a></li>
+			<li><a href="lab6.html">Lab 6</a></li>
+			<li><a href="lab7.html">Lab 7</a></li>
+			<li><a href="lab8.html">Lab 8</a></li>
+			<li><a href="lab9.html">Lab 9</a></li>
+			<li><a class="active" href="#">Lab 10</a></li>
+			<li><a href="project.html">Final Project</a></li>
+			<li><a href="good.html">Good Formatting</a></li>
+			<li><a href="bad.html">Bad Formatting</a></li>
+			<li><a href="filezilla.html">FileZilla Instructions</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h1>Lab 10 - Audio &amp; Video</h1>
+		<h2>Overview</h2>
+		<p>This week's lab will cover the following:</p>
+		<ul>
+			<li>Creating a new page, called lab8.html</li>
+			<li>Learning how to use HTML5 to embed audio and video navtively</li>
+		</ul>
+			
+		<h2>Creating a new page</h2>
+		<p>Create a new page called lab8.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+		<ol>
+			<li>Use the HTML5 doctype declaration</li>
+			<li>Set the Title to "Lab 8", without the quotes</li>
+			<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
+			<li>Insert a comment indicating your name and student number</li>
+			<li>Link your style sheet to the page</li>
+			<li>Make use of the main tag, as we did in Lab 3</li>
+			<li>Copy your navigation bar from your index page and modify it to properly indicate your current page</li>
+		</ol>
+		<!-- Introducing audio and video -->
+		<h2>Introducing audio and video</h2>
+		<p>Prior to HTML5, plugins (like Flash) were required to play audio or video in the browser.  With HTML5, audio and video playback are now natively available (without a plugin).</p>
+		
+		<!-- Audio tag -->
+		<h2>Insert the audio tag</h2>
+		<p>Add the opening audio tag and it's corresponding closing tag (at the top of your main section) by adding the following tag.</p>
+		<pre>&lt;audio controls&gt;
+			&lt;/audio&gt;
+		</pre>
+		<p>Notice the controls attribute.  Without this, the element won't appear in the browser (as there's no way to interact with it).</p>
+		
+		<!-- Adding audio -->
+		<h2>Adding some content</h2>
+		<p>Using this <a href="https://www.videvo.net/royalty-free-music/">free resource (provided by videvo)</a>, select an audio file of your choice and add it using the <a href="https://www.w3schools.com/html/html5_audio.asp">w3schools example</a>.  For this to work you will have to first download the audio file.  You can then upload the file to your server (if you are able to access it).</p>
+
+		<!-- Video tag -->
+		<h2>Insert the video tag</h2>
+			<p>Add the opening video tag and it's corresponding closing tag (at the top of your main section) by adding the following tag.</p>
+		<pre>&lt;video&gt;
+			&lt;/video&gt;
+		</pre>
+		
+		<!-- Adding video -->
+		<p>Using this <a href="https://www.videvo.net/stock-video-footage/">free resource (provided by the videvo)</a>, select an video of your choice and add it using the <a href="https://www.w3schools.com/html/html5_video.asp">w3schools example</a>.  Be sure to select a video labelled <strong>free</strong>.  Again, for this to work you will have to first download the file.  You can then upload the file to your server (if you are able to access it).  Note the optional autoplay attribute, which isn't ideal - omit this.</p>
+		<p>You may wish to resize your video, using the width and height parameters (included in the w3schools example).  Experiment with these until you achieve a result you're happy with.  You may also wish to add a few line breaks in, to assist in spacing the audio and video elements.</p>
+		
+		<!-- Adding a video from YouTube -->
+		<h2>Adding a video from YouTube</h2>
+		<p>Sometimes you may wish to embed a video from another platform (such as YouTube) instead of hosting your own.  These take up less space, as they are being stored by YouTube, not you.  You can do this using the iframe tag.</p>
+		<p>To add a video from <a href="https://youtube.com">YouTube</a>, first browse to a video you want.  Once you have found your video:</p>
+		<ol>
+			<li>Click the share button.</li>
+			<li>Click Embed (the button labelled with &lt; &gt;).</li>
+			<li>Note the embed options you can select.</li>
+			<li>Copy the iframe code and paste it into your html document.</li>
+		</ol>
+		
+		<h2>Completing the Lab</h2>
+		<p>Upon completion of this lab you should have a web page with an embedded audio and video file.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
+
+		<img src="images/lab8.png" alt="Lab 8 sample" />
+		<h2>Exploration Questions</h2>
+		<ol>
+			<li>What tag did you use to insert an audio clip?</li>
+			<li>What tag did you use to insert an video clip?</li>
+			<li>What happens when you omit the controls attribute for video?</li>
+			<li>How do you make a video auto play?</li>
+			<li>What happens when you omit the controls attribute for audio?</li>
+			<li>Does video autoplay work on mobile devices?</li>
+			<li>What video formats are supported in HTML5?</li>
+			<li>What audio formats are supported in HTML5?</li>
+		</ol>
+	</main>
+</html>

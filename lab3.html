@@ -10,128 +10,28 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="index.html">Lab 1</a></li>
-        <li><a href="lab2.html">Lab 2</a></li>
-        <li><a class="active" href="#">Lab 3</a></li>
-        <li><a href="lab4.html">Lab 4</a></li>
-		<li><a href="lab5.html">Lab 5</a></li>
-		<li><a href="assignment.html">Assignment</a></li>
-		<li><a href="lab6.html">Lab 6</a></li>
-		<li><a href="lab7.html">Lab 7</a></li>
-		<li><a href="lab8.html">Lab 8</a></li>
-		<li><a href="project.html">Final Project</a></li>
-		<li><a href="good.html">Good Formatting</a></li>
-		<li><a href="bad.html">Bad Formatting</a></li>
-		<li><a href="filezilla.html">FileZilla Instructions</a></li>
-   </ul>
-</nav>
+	<nav>
+		<ul>
+			<li><a href="index.html">Lab 1</a></li>
+			<li><a href="lab2.html">Lab 2</a></li>
+            <li><a class="active" href="#">Lab 3</a></li>
+            <li><a href="lab4.html">Lab 4</a></li>
+			<li><a href="lab5.html">Lab 5</a></li>
+			<li><a href="assignment.html">Assignment</a></li>
+			<li><a href="lab6.html">Lab 6</a></li>
+			<li><a href="lab7.html">Lab 7</a></li>
+			<li><a href="lab8.html">Lab 8</a></li>
+			<li><a href="lab9.html">Lab 9</a></li>
+			<li><a href="lab10.html"></a>Lab 10</a></li>
+			<li><a href="project.html">Final Project</a></li>
+			<li><a href="good.html">Good Formatting</a></li>
+			<li><a href="bad.html">Bad Formatting</a></li>
+			<li><a href="filezilla.html">FileZilla Instructions</a></li>
+		</ul>
+	</nav>
 <main>
-    <h1>Lab 3 - Hyperlinks &amp; Navigation</h1>
-	<h2>Overview</h2>
-    <p>This week's lab will cover the following:</p>
-	<ul>
-		<li>Learning how to insert hyperlinks</li>
-		<li>Learning how to format ordered and unordered lists</li>
-		<li>Learning how to apply classes &amp; ids and describe when to use them</li>
-	</ul>
-	
-	<!-- Ordered & Unordered lists -->
-	<h2>Ordered &amp; Unordered lists</h2>
-	<p>The only difference between ordered and unordered lists is how you open and close them, and the way they appear (and a very slight difference in code).  Ordered lists appear as numbered by default.  Unordered lists appear as bulleted by default.  Ordered lists open with the &lt;ol&gt; tag.  Unordered lists open with the &lt;ul&gt; tag.</p>
-	
-	<h3>Creating an unordered list</h3>
-	<p>Open your index.html, and add an unordered list to very top of the body section, below the opening body tag.  It's a good idea to close this immediately too, then go back and fill in the middle.  This way it's less likely you'll get to the end of the list and forget to close it.<p>
-	<pre>
-	&lt;ul&gt;
-	&lt;/ul&gt;
-	</pre>
-	
-	<h3>Adding items to our list</h3>
-	<p>The inner html portions of ordered and unordered lists work exactly the same.  Each item in the list is encapsulated by &lt;li&gt; tags.  Add an item to your unordered list with the text "Lab 1" using the following code sample:</p>
-	<pre>
-	&lt;li&gt;Lab 1&lt;/li&gt;
-	</pre>
-	<p>Feel free to refresh your page in the browser to see how it appears.</p>
-	
-	<h3>To do:</h3>
-	<p>Using what we just learned, add additional list items for Lab 5, Lab 7, Lab 8 &amp; Project.  We'll create hyperlinks with these in the next step.</p>
-	
-	<!-- End Ordered & Unordered lists -->
-	<!-- Hyperlinks -->
-	<h2>Hyperlinks</h2>
-	<p>Hyperlinks are an important building block of the Internet.  They're one of those key technologies that without which, the Internet wouldn't work.  Hyperlinks allow us to link pages to other pages on the internet.  They can take a couple different formats:</p>
-	<ul>
-		<li>Internal - Linking to an anchor point identified with a unique ID (more on this later), placed on the same page</li>
-		<li>External - Linking to another page</li>
-	</ul>
-	<p>Hyperlinks can also be referred to as either relative or absolute.  An absolute hyperlink means it provides a full path to the resource, starting with an http://.  A relative hyperlink is provides a link to the path that is relative to the page you're linking from.  Relative hyperlinks are preferable when linking to other pages on your own site, as if we decide to change the directory structure or migrate to another server they'll still work; whereas an absolute hyperlink will not.  See below for examples.</p>
-	<a href="http://facultyweb.centennialcollege.ca/jcarman/cnet204/index.html">Absolute link to Lab 1 - http://facultyweb.centennialcollege.ca/jcarman/cnet204/index.html</a><br />
-	<a href="index.html">Relative link to Lab 1 - index.html</a><br />
-	<p>Notice both of the above links take you to the instructions for Lab 1.  If you view the page source, you'll notice they're different links.  If I were to move this page and the Lab 1 instructions to a new location, as long as they stay in the same folder, the relative link would still work; the absolute one would not.</p>
-	<p>Hyper links can also (for the purposes of creating a naviation menu) link to null or nothing.  This is always done in a navigation bar for the entry pertaining to the current page.  There are a couple ways of doing this, the simplest of which is to create the link with the reference of "#" (without the quotes).  Add the following code inside the list item for assignment one you created earlier, surrounding the text so it appears as follows.</p>
-	<pre>
-		&lt;a href="#"&gt;Lab 1&lt;/a&gt;
-	</pre>
-	<h3>To do:</h3>
-	<p>Add relative hyperlinks for the following pages.  They won't exist yet, but we'll create them as we progress through the semester.</p>
-	<ul>
-		<li>Lab 5 as lab5.html</li>
-		<li>Lab 7 as lab7.html</li>
-		<li>Lab 8 as lab8.html</li>
-		<li>Project as home.html</li>
-	</ul>
-	<!-- end hyperlinks -->
-	
-	<!-- begin main -->
-	<h2>The main tag</h2>
-	<p>The main tag is new to HTML5.  It is a structural tag used within the body to separate the main content from the navigation bar (which we'll be creating next).</p>
-	<h3>To do:</h3>
-	<ul>
-		<li>Add an opening &lt;main&gt; tag at the top of the body, but below the list of hyperlinks you created earlier</li>
-		<li>Add a closing &lt;/main&gt; tag at the bottom of the body, just above the closing body tag</li>
-	</ul>
-	<!-- end main -->
-	
-	<!-- begin navigation -->
-	<h2>Meta Tag - Viewport</h2>
-	<p>Adding the viewport attribute to the meta tag provides the browser instructions on how to scale the page based on the size of the device it's being viewed on.  For more information, see <a href="https://www.w3schools.com/css/css_rwd_viewport.asp">w3schools</a>.<p>
-	<h3>Adding the viewport attribute</h3>
-	<p>Add the following code to the head section of your index.html.  You will need to add this to all future pages you create as well.</p>
-	<pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre>
-	<h2>Navigation</h2>
-	<p>Most of what makes a navigation bar appear as such is done through the use of CSS.  There are several different approaches to how to create and style a navigation bar, this method is just one of those.  The first thing we need to do, is use the nav tag to specify what elements of our page will be part of the navigation bar.  This tag is going to surround the list of hyperlinks you created at the top of the page earlier.</p>
-	<h3>To do:</h3>
-	<ul>
-		<li>Add an opening &lt;nav&gt; tag above the opening &lt;ul&gt; tag  you added earlier in the assignment</li>
-		<li>Add a closing &lt;/nav&gt; tag below the closing &lt;ul&gt; tag you added earlier in the assignment</li>
-	</ul>
-	<p>Notice if you save and refresh your page the list of hyperlinks we created doesn't appear any different than it did before you added the nav tag.  That is because the nav tag is simply used to tell the browser that the block of text within belongs together.  It also allows us to uniquely identify that block and it's internal elements, so we can apply css to change it's appearance.</p>
-	
-	<h3>Classes & IDs</h3>
-	<p>Now's a good time to introduce the concept of classes and IDs.  Both are used to uniquely identify tags, so you can apply CSS to that specific tag;  For example, if you wanted to change the background colour of one paragraph on the page, but not the others you'd assign an ID to it.  Both classes and IDs are used to do the same thing, the main difference being if you intend to use that style only once, use an ID.  ID's should be unique.  If you're going to apply that style to multiple elements, on multiple pages, it's best to use a class.</p>
-	<p>To assign a class, you add the paramater class to the opening tag that you wish to assign it to.  For an ID, simply change the parameter to id.  Then assign it a name accordingly.<p>
-	<h4>An example</h4>
-	<p>Remember how we added a hyperlink to the current page that was self referential using the # symbol?  Now we're going to add a class to it, so we can stylize that particular hyperlink slightly differently than the rest (in the next lab).  Find the link in your navigation that you set the hyperlink reference to #, and add the appropriate code demonstrated below.</p>
-	<pre>
-		&lt;li&gt;&lt;a class="active" href="#"&gt;Lab 1&lt;/a&gt;&lt;/li&gt;
-	</pre>
-	
-	<h2>Completing the Lab</h2>
-	<span class="tip">Tip: Validation!
-	Your page should pass the <a href="https://validator.w3.org/">w3schools validation</a> tool.</span>
-	<p>Upon completion of the lab you should have added a menu that links to the other pages that we're going to create this semester.  Your page should look similar to the following output (your choice of colours will likely be different).  If it does not, go back and complete whatever you've missed.</p>
-	
-	<img src="images/lab3.png" alt="Lab 3 sample" />
+    <h1>Lab 3 - Configuring an Apache Server in the Cloud</h1>
 
-	<h2>Exploration Questions</h2>
-	<ol>
-		<li>What tag was used to designate a navigation bar?</li>
-		<li>What is a hyperlink used for?</li>
-		<li>What is the main tag used for?</li>
-		<li>What is a class?  ID?  When do we use them?</li>
-	</ol>
 </main>
 </body>
 </html>

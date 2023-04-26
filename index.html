@@ -10,150 +10,28 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a class="active" href="#">Lab 1</a></li>
-        <li><a href="lab2.html">Lab 2</a></li>
-        <li><a href="lab3.html">Lab 3</a></li>
-        <li><a href="lab4.html">Lab 4</a></li>
-	<li><a href="lab5.html">Lab 5</a></li>
-	<li><a href="assignment.html">Assignment</a></li>
-	<li><a href="lab6.html">Lab 6</a></li>
-	<li><a href="lab7.html">Lab 7</a></li>
-	<li><a href="lab8.html">Lab 8</a></li>
-	<li><a href="project.html">Final Project</a></li>
-	<li><a href="good.html">Good Formatting</a></li>
-	<li><a href="bad.html">Bad Formatting</a></li>
-	<li><a href="filezilla.html">FileZilla Instructions</a></li>
-   </ul>
-</nav>
+	<nav>
+		<ul>
+			<li><a class="active" href="#">Lab 1</a></li>
+			<li><a href="lab2.html">Lab 2</a></li>
+			<li><a href="lab3.html">Lab 3</a></li>
+			<li><a href="lab4.html">Lab 4</a></li>
+			<li><a href="lab5.html">Lab 5</a></li>
+			<li><a href="assignment.html">Assignment</a></li>
+			<li><a href="lab6.html">Lab 6</a></li>
+			<li><a href="lab7.html">Lab 7</a></li>
+			<li><a href="lab8.html">Lab 8</a></li>
+			<li><a href="lab9.html">Lab 9</a></li>
+			<li><a href="lab10.html"></a>Lab 10</a></li>
+			<li><a href="project.html">Final Project</a></li>
+			<li><a href="good.html">Good Formatting</a></li>
+			<li><a href="bad.html">Bad Formatting</a></li>
+			<li><a href="filezilla.html">FileZilla Instructions</a></li>
+		</ul>
+	</nav>
 <main>
-	<h1>Lab 1 - Introduction to HTML5</h1>
-	<h2>Overview</h2>
-	<p>This week's lab will cover the following:</p>
-	<ul>
-        <li>Identifing the basic elements of a simple web page.</li>
-		<li>Describing HTML syntax, tags, attributes and values.</li>
-		<li>Entering and Formatting Text.</li>
-		<li>Previewing Site Content in a Browser.</li>
-		<li>Posting a web page to the college web server.</li>
-	</ul>
-	<h2>Verifing Your Connection With FileZilla</h2>
-	<p>	Before you begin, verify you can connect to your server with <a href="filezilla.html">FileZilla</a>.  If you can't connect, skip this next section ("Configuring Notepad++ with ftp access"), and continue from "Creating your first web page" onwards.</p>
-	
-	<h2>Configuring Notepad++ with ftp access</h2>
-	<span class="tip">Tip: If you're installing in a Windows 7 environment, use the 32 bit version.  For Windows 10, use the 64 bit version.  The ftp plugin won't work in the other versions.	
-	</span>
-	<ol>
-        <li>If you're setting up Notepad++ at home, Download and install it from the <a href="https://notepad-plus-plus.org/">notepad++ website</a></li>
-		<li>Open Notepad++ by going to the Windows start menu > All Programs > Notepad++ and selecting the executable.</li>
-		<li>Download the <a href="https://github.com/ashkulz/NppFTP/releases/tag/v0.27.1">ftp plugin</a> (nppftp) apprpriate for the verson of Notepad++ you installed (x86 for 32 bit, x64 for 64 bit).</li>
-		<li>Extract the zip file, by right clicking on it in the windows file explorer.</li>
-		<li>In Notepad++ go to Settings > Import > Import Plugin and select the .dll in the folder you've unzipped (it should be in a sub folder called "bin")</li>
-		<li>Close Notepad++ &amp; re-open it.</li>
-		<li>Go to Plugins > NppFTP > Show NppFTP Window</li>
-        <li>Click the icon that looks like a gear and select Profile settings.  Your screen should look similar to the following.<br /><img src="images/nppftp_profile_settings.png" alt="Notepad++ profile settings"/></li>
-		<li>Click "create new connection" and name your profile whatever you wish (Centennial College seems sensible).</li>
-		<li>Enter the following information in the Connection tab
-			<ul>
-				<li>Hostname: studentwebftp.centennialcollege.ca</li>
-                <li>Port: 21</li>
-				<li>Protocol Type: FTPES</li>
-				<li>Username: <em>yourstudentnumber</em></li>
-				<li>Password: <em>the password you use to log into the lab PC</em></li>
-				<li>Initial remote directory: /<em>thefirstpartofyourcentennialemailaddress</em></li>
-			</ul>
-		</li>
-		<li>Click the left most icon in the NppFTP window (that looks like a cable) and select the connection you just added from the dropdown menu.
-	</ol>
+    <h1>Lab 1 - Introduction to Amazon Web Services (AWS)</h1>
 
-	<span class="tip">Tip: Safety!
-	If you're using a shared environment (ie the lab computers), you will need to remember to remove your credentials from Notepad++'s ftp plug in (nppftp).  Failure to do so may result in someone else having access to your account.</span>
-	<span class="tip">Tip: Save!
-	Remember to save regularly, in the event of power outage or other situations that could cause loss of work.</span>
-	<span class="tip">Tip: Saving takes time!
-	When you upload a file using NppFTP, wait until you see it successfully complete before trying to refresh your page.
-	</span>
-	<h2>Creating your first web page</h2>
-	<p>Before creating your first web page, it's best to lay out the required structural tags (an example follows).  You can then fill in the rest of the data using this simple template.  Remember, a web page is everything that exists between the opening and closing html tags (&lt;html&gt; and &lt;/html&gt; respectively).  It consists of two main parts:</p>
-
-	<ol>
-		<li>The head, consisting of everything between the head tags (&lt;head&gt; and &lt;/head&gt; respectively).  This section contains information about the document, and won't appear on the page itself.</li>
-		<li>The body, consisting of everything between the body tags (&lt;body&gt; and &lt;/body&gt;).  This section contains the document itself, everything in here will appear as your web page.</li>
-	</ol>
-
-	<pre>
-	&lt;html&gt;
-		&lt;head&gt;
-		&lt;/head&gt;
-		&lt;body&gt;
-		&lt;/body&gt;
-	&lt;/html&gt;
-	</pre>
-	
-    <p>Create a new file named <em>index.html</em> and fill in the structure using the above sample.  This is the file you'll be editing for the rest of the lab.</p>
-	<h2>The document type declaration</h2>
-	<h3>Add the doctype</h3>
-	<p>The document type declaration tells the browser what type of document to expect.  There are many different doctypes, however for this course we will be using the one for HTML5.  Add the following to your webpage above the opening HTML tag (the doctype declaration must be the first thing in your document).</p>
-
-    <pre>&lt;!DOCTYPE html&gt;</pre>
-
-
-	<p><a href="https://www.w3schools.com/tags/tag_doctype.asp">W3Schools</a> has some useful information on the different doctypes and their uses.</p>
-
-	<h2>Filling in the head</h2>
-	<h3>Add a title</h3>
-	<p>Add the title of "Lab 1" (without the quotes) to the header section of your document.</p>
-
-    <pre>&lt;title&gt;Lab 1&lt;/title&gt;</pre>
-
-	<h3>Add some meta tags</h3>
-	<p>Meta tags provide additional information about our page.  These include what character encoding you're using, and data used by search engines to index your page.</p>
-	<p>Using the meta tag, define the character set as "UTF-8" (Unicode).  This tag defines metadata about the document, and can contain many attributes.  We will use several of them over the duration of this course.</p>
-
-	<pre>&lt;meta charset="utf-8"&gt;</pre>
-
-	<p>Use the meta tag to add author information to your web page (with the content of your name).  An example follows.</p>
-
-	<pre>&lt;meta name="author" content="Linus Torvalds"&gt;</pre>
-
-	<p>The header can contain many other things such as embedded or external links to CSS or JavaScript, which we will visit later.</p>
-
-	<h2>Filling in the body</h2>
-	<h3>Add a heading</h3>
-	<p>Headings when done properly should be used in number of importance, with 1 being most important and 2-6 used for sub-headings in order of descending importance.</p>
-	<p>Insert the follwing using an H1 tag:<p>
-
-	<pre>&lt;h1&gt;Your Name CNET204 Page&lt;/h1&gt;</pre>
-
-	<h3>Add a paragraph</h3>
-	<p>Using the paragraph tag (&lt;p&gt; to open and &lt;/p&gt; to close), add a paragraph below your heading about what you hope to learn from this course.</p>
-
-	<h3>Comments</h3>
-	<p>The comment tag can be extremely useful when you're first learning HTML, or when you have a large block of code and want to clearly define where it begins and ends.  Comments can make your code easier to read and understand, either by someone else or yourself after quite a bit of time has passed.  Comments are not used as frequently in HTML as they are in other languages.  To add a comment you require an opening (&lt;!--) and closing (--&gt;) tag.  A sample follows below, please feel free to include comments in your labs whenever you encounter something that may be useful to remembering what you've learned later.</p>
-
-	<pre>&lt;!-- This is a comment, it's contents will only appear when you view the page source through the browser. Comments in HTML can span multiple lines. This is not always true of comments in a other languages, and some can even have a variety of methods for designating a comment --&gt;</pre>
-
-	<h3>To do:</h3>
-	<p>Using what you learned about comments above, add a comment indicating your name and student number as the first line of the body.</p>
-	
-	<h2>Completing the Lab</h2>
-	<p>To view your page, use the following URL (substituting your information where appropriate).  studentweb.cencol.ca/<em>firstpartofemail</em></p>
-	<p>Your page should look similar to the following output.  If it does not, go back and complete whatever you've missed.</p>
-	
-    <img src="images/lab1.png" alt="Lab 1 sample" />
-
-	<p>Upon completion of this lab you should have a simple web page using several tags we talked about in our first lecture.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a>.  The following questions are for furthering your knowledge only, and may appear on quizzes or tests at any time later in this course.</p>
-
-	<h2>Exploration Questions</h2>
-	<ol>
-		<li>What does html stand for?</li>
-		<li>What are the two main parts of a web page?</li>
-		<li>What sort of things appear in the header?  Which two did we use in this assignment?</li>
-		<li>What sort of things appear in the body?  Which two did we use in this assignment?</li>
-		<li>What is the range of heading tags?  Which is the biggest?  The smallest?</li>
-		<li>How do you access your assignments (on the web server) in the browser?</li>
-	</ol>
 </main>
 </body>
 </html>
