@@ -54,13 +54,13 @@ dl {
 	margin-right: 0;
   }
   
-  dt {
+dt {
 	font-weight: bold;
-  }
+ }
 
-  dd {
-	  margin-bottom: 1em;
-  }
+dd {
+	margin-bottom: 1em;
+}
 
 /* start of navigation */
 nav ul  {
