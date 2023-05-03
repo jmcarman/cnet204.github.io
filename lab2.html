@@ -63,54 +63,57 @@
 	<ul>
 		<li>Start the AWS learner lab.</li>
 		<li>Login to the Ubuntu Server instance (named first) using SSH.  You created this in Lab 1.</li>
-		<li>Issue the following command and observe the output:</li>
-		<pre>pwd</pre>
-		<p>The pwd command displays your current working directory.  In fact, pwd stands for print working directory.  Linux commands are commonly a short form describing the purpose they fulfill.  Knowing what the command means will help you remember the syntax.</p>
+	</ul>
 
-		<li>Issue the following command and observe the output:</li>
-		<pre>ls</pre>
-		<p>The ls command is used to list files.  Remember what you learned above about commands describing the purpose they fulfill.  You will find it useful time and again.</p>
+	<p>Issue the following command and observe the output:</p>
+	<pre>pwd</pre>
+	<p>The pwd command displays your current working directory.  In fact, pwd stands for print working directory.  Linux commands are commonly a short form describing the purpose they fulfill.  Knowing what the command means will help you remember the syntax.</p>
 
-		<li>Now lets try something a little more challenging.  Issue the following commands:</li>
-		<pre>cd /bin</pre>
-		<pre>pwd</pre>
-		<p>Based on the output of the pwd command, what do you think cd /bin did?</p>
+	<p>Issue the following command and observe the output:</p>
+	<pre>ls</pre>
+	<p>The ls command is used to list files.  Remember what you learned above about commands describing the purpose they fulfill.  You will find it useful time and again.</p>
 
-		<li>Issue the following commands and note the differences between them.</li>
-		<pre>ls</pre>
-		<pre>ls -l</pre>
-		<p>You just used an option.  Options modify the output of the command.  Commands have many options.  You will get to know some through common usage.</p>
+	<p>Now lets try something a little more challenging.  Issue the following commands:</p>
+	<pre>cd /bin</pre>
+	<pre>pwd</pre>
+	<p>Based on the output of the pwd command, what do you think cd /bin did?</p>
 
+	<p>Issue the following commands and note the differences between them.</p>
+	<pre>ls</pre>
+	<pre>ls -l</pre>
+	<p>You just used an option.  Options modify the output of the command.  Commands have many options.  You will get to know some through common usage.  Try each of the following:</p>
+	<ul>
 		<li>Try issuing the cd command again, but without any option.</li>
 		<li>Now issue the pwd command again.  Notice what happened.</li>
 		<li>Lets try adding a different option to the ls command.  Issue the following:</li>
 		<pre>ls /bin</pre>
 		<p>Note, you can provide the directory you wish a file listing of without having to change to that directory first.</p>
-
-		<li>Try combining options by issuing the following:</li>
-		<pre>ls -l /bin</pre>
-
-		<li>Our screen has gotten a bit cluttered.  Why don't we clear it?</li>
-		<pre>clear</pre>
-
-		<li>Now try the following command:</li>
-		<pre>who</pre>
-		<p>Who isn't going to display very interesting output in our particular case.  The who command shows you who is currently logged on to the system.  In our case, the only user connected to your instance is going to be you.  In a production environment though, who can provide some extremely useful information.</p>
-
-		<li>Issue the following command:</li>
-		<pre>whoami</pre>
-		<p>What does this command display?</p>
-
-		<li>Issue the following command and observe the output:</li>
-		<pre>cal</pre>
-		<p>cal can be a pretty useful command too.  In fact, it takes options to make it even more useful.  Try the following.</p>
-
-		<li>Issue the command:</li>
-		<pre>cal 2023</pre>
-
-		<li>Now with some different options:</li>
-		<pre>cal 9 2023</pre>
 	</ul>
+
+	<p>Try combining options by issuing the following:</p>
+	<pre>ls -l /bin</pre>
+
+	<p>Our screen has gotten a bit cluttered.  Why don't we clear it?</p>
+	<pre>clear</pre>
+
+	<p>Now try the following command:</p>
+	<pre>who</pre>
+	<p>Who isn't going to display very interesting output in our particular case.  The who command shows you who is currently logged on to the system.  In our case, the only user connected to your instance is going to be you.  In a production environment though, who can provide some extremely useful information.</p>
+
+	<p>Issue the following command:</p>
+	<pre>whoami</pre>
+	<p>What does this command display?</p>
+
+	<p>Issue the following command and observe the output:</p>
+	<pre>cal</pre>
+	<p>cal can be a pretty useful command too.  In fact, it takes options to make it even more useful.  Try the following.</p>
+
+	<p>Issue the command:</p>
+	<pre>cal 2023</pre>
+
+	<p>Now with some different options:</p>
+	<pre>cal 9 2023</pre>
+
 
 	<p>There are many different commands in Linux.  In fact, there are over <strong>2500</strong> different commands and utilities.  It is important to be able to know where to look for help, so you can learn as you go.  You will always be discovering new things in Linux, no matter how long you have used it.  Fortunately, the man command (short for manual) provides useful information such as:</p>
 	<ul>
