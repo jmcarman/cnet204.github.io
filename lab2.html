@@ -35,6 +35,9 @@
 	<p>This week's lab will cover the following:</p>
 	<ul>
 		<li>Using the Linux Shell.</li>
+		<li>Accessing help from the Linux command line.</li>
+		<li>Editing the command line.</li>
+		<li>Accessing command history.</li>
         <li>Navigating the Linux filesystem.</li>
 		<li>Using command line text editors.</li>
 	</ul>
@@ -67,7 +70,7 @@
 
 	<p>Issue the following command and observe the output:</p>
 	<pre>pwd</pre>
-	<p>The pwd command displays your current working directory.  In fact, pwd stands for print working directory.  Linux commands are commonly a short form describing the purpose they fulfill.  Knowing what the command means will help you remember the syntax.</p>
+	<p>The <strong>pwd</strong> command displays your current working directory.  In fact, pwd stands for print working directory.  Linux commands are commonly a short form describing the purpose they fulfill.  Knowing what the command means will help you remember the syntax.</p>
 
 	<p>Issue the following command and observe the output:</p>
 	<pre>ls</pre>
@@ -76,7 +79,7 @@
 	<p>Now lets try something a little more challenging.  Issue the following commands:</p>
 	<pre>cd /bin</pre>
 	<pre>pwd</pre>
-	<p>Based on the output of the pwd command, what do you think cd /bin did?</p>
+	<p>Based on the output of the pwd command, what do you think <strong>cd /bin</strong> did?</p>
 
 	<p>Issue the following commands and note the differences between them.</p>
 	<pre>ls</pre>
@@ -105,7 +108,7 @@
 
 	<p>Issue the following command and observe the output:</p>
 	<pre>cal</pre>
-	<p>cal can be a pretty useful command too.  In fact, it takes options to make it even more useful.  Try the following.</p>
+	<p><strong>cal</strong> can be a pretty useful command too.  In fact, it takes options to make it even more useful.  Try the following.</p>
 
 	<p>Issue the command:</p>
 	<pre>cal 2023</pre>
@@ -113,7 +116,7 @@
 	<p>Now with some different options:</p>
 	<pre>cal 9 2023</pre>
 
-
+	<h2>Accessing help in Linux</h2>
 	<p>There are many different commands in Linux.  In fact, there are over <strong>2500</strong> different commands and utilities.  It is important to be able to know where to look for help, so you can learn as you go.  You will always be discovering new things in Linux, no matter how long you have used it.  Fortunately, the man command (short for manual) provides useful information such as:</p>
 	<ul>
 		<li>command usage</li>
@@ -121,13 +124,51 @@
 		<li>command options</li>
 		<li>examples</li>
 	</ul>
-	<!-- 
-		To do in this section:
-		man man
-		man ls
-		navigating man pages
-		command line editing
-	-->
+
+	<p>There is even a man page for the man command!  Issue the following command to view it's contents.</p>
+	<pre>man man</pre>
+
+	<p>Once you are in the man page you can navigate through them using the following methods:</p>
+	<dl>
+		<dt>ENTER</dt>
+			<dd>Moves down one line.</dd>
+		<dt>SPACEBAR</dt>
+			<dd>Moves down one screen.</dd>
+		<dt>ctrl + b</dt>
+			<dd>Moves up one screen.</dd>
+		<dt>/pattern/</dt>
+			<dd>Searches for the word pattern within the man page.  You can use this to search for words within a man page.</dd>
+		<dt>q</dt>
+			<dd>Quit the man page.</dd>
+	</dl>
+	<p>Feel free to browse through the man page for the man command if you wish.  Press <strong>q</strong> to quit when you are ready.</p>
+
+	<h3>To do:</h3>
+	<p>Using what you have learned, access the man page for the <strong>ls</strong> command.  Browse through and make note of the following options:</p>
+	<ul>
+		<li>Use a long listing format</li>
+		<li>Do not ignore entries starting with . (which are hidden files)</li>
+	</ul>
+
+	<p>Return to your home directory and issue the <strong>ls</strong> command for each of the options you just learned.  Note the differences in output.</p>
+
+	<h2>Editing the command line</h2>
+	<p>Shortcut keys allow you to increase your productivity by doing things more efficiently (with less key strokes).  In this section you will learn a few common Bash shortcuts.</p>
+	<p>Type the following command but do not press the ENTER key:</p>
+	<pre>cd /bin</pre>
+	<ul>
+		<li>Press <strong>ctrl + a</strong> at the same time and observe what happens.</li>
+		<li>Now try <strong>alt + f</strong> at the same time.  Repeat this a second time.</li>
+		<li>Press <strong>alt +b</strong> at the same time.  What happened?</li>
+		<li>Press <strong>ctrl + w</strong>.  What did this do?</li>
+		<li>Type <strong>ls</strong> followed by <strong>ctrl + e</strong>, and hit enter to execute the modified command.</li>
+		<!-- ctrl + u, ctrl + l -->
+	</ul>
+	
+	<h3>Accessing command history</h3>
+	<!-- up arrow, history command-->
+	
+
 
 	<h2>Exploration Questions</h2>
 	<ol>
