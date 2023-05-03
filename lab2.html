@@ -6,7 +6,7 @@
 	<meta name="description" content="CNET204 Lab 2">
 	<meta name="keywords" content="cnet204,centennial college,HTML5,CSS3">
 	<meta charset="utf-8">
-    <title>Lab 1</title>
+    <title>Lab 2</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -36,7 +36,6 @@
 	<ul>
 		<li>Using the Linux Shell.</li>
         <li>Navigating the Linux filesystem.</li>
-		<li>Using linux commands to perform simple file operations.</li>
 		<li>Using command line text editors.</li>
 	</ul>
 
@@ -87,10 +86,54 @@
 		<li>Lets try adding a different option to the ls command.  Issue the following:</li>
 		<pre>ls /bin</pre>
 		<p>Note, you can provide the directory you wish a file listing of without having to change to that directory first.</p>
+
 		<li>Try combining options by issuing the following:</li>
 		<pre>ls -l /bin</pre>
-		
+
+		<li>Our screen has gotten a bit cluttered.  Why don't we clear it?</li>
+		<pre>clear</pre>
+
+		<li>Now try the following command:</li>
+		<pre>who</pre>
+		<p>Who isn't going to display very interesting output in our particular case.  The who command shows you who is currently logged on to the system.  In our case, the only user connected to your instance is going to be you.  In a production environment though, who can provide some extremely useful information.</p>
+
+		<li>Issue the following command:</li>
+		<pre>whoami</pre>
+		<p>What does this command display?</p>
+
+		<li>Issue the following command and observe the output:</li>
+		<pre>cal</pre>
+		<p>cal can be a pretty useful command too.  In fact, it takes options to make it even more useful.  Try the following.</p>
+
+		<li>Issue the command:</li>
+		<pre>cal 2023</pre>
+
+		<li>Now with some different options:</li>
+		<pre>cal 9 2023</pre>
 	</ul>
+
+	<p>There are many different commands in Linux.  In fact, there are over <strong>2500</strong> different commands and utilities.  It is important to be able to know where to look for help, so you can learn as you go.  You will always be discovering new things in Linux, no matter how long you have used it.  Fortunately, the man command (short for manual) provides useful information such as:</p>
+	<ul>
+		<li>command usage</li>
+		<li>acceptable command arguments</li>
+		<li>command options</li>
+		<li>examples</li>
+	</ul>
+	<!-- 
+		To do in this section:
+		man man
+		man ls
+		navigating man pages
+		command line editing
+	-->
+
+	<h2>Exploration Questions</h2>
+	<ol>
+		<li>What is the difference between a Linux command and an argument?</li>
+		<li>What is the purpose of a Linux command option?</li>
+		<li>What character(s) are used to separate commands and arguments?</li>
+		<li>How can you access help from the command line?</li>
+	</ol>
 </main>
 </body>
 </html>
