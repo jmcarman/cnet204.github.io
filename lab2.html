@@ -98,24 +98,6 @@
 	<p>Our screen has gotten a bit cluttered.  Why don't we clear it?</p>
 	<pre>clear</pre>
 
-	<p>Now try the following command:</p>
-	<pre>who</pre>
-	<p>Who isn't going to display very interesting output in our particular case.  The <strong>who</strong> command shows you who is currently logged on to the system.  In our case, the only user connected to your instance is going to be you.  In a production environment though, who can provide some extremely useful information.</p>
-
-	<p>Issue the following command:</p>
-	<pre>whoami</pre>
-	<p>What does this command display?</p>
-
-	<p>Issue the following command and observe the output:</p>
-	<pre>cal</pre>
-	<p><strong>cal</strong> can be a pretty useful command too.  In fact, it takes options to make it even more useful.  Try the following.</p>
-
-	<p>Issue the command:</p>
-	<pre>cal 2023</pre>
-
-	<p>Now with some different options:</p>
-	<pre>cal 9 2023</pre>
-
 	<h2>Accessing help in Linux</h2>
 	<p>There are many different commands in Linux.  In fact, there are over <strong>2500</strong> different commands and utilities.  It is important to be able to know where to look for help, so you can learn as you go.  You will always be discovering new things in Linux, no matter how long you have used it.  Fortunately, the man command (short for manual) provides useful information such as:</p>
 	<ul>
@@ -162,20 +144,52 @@
 		<li>Press <strong>alt +b</strong> at the same time.  What happened?</li>
 		<li>Press <strong>ctrl + w</strong>.  What did this do?</li>
 		<li>Type <strong>ls</strong> followed by <strong>ctrl + e</strong>, and hit enter to execute the modified command.</li>
-		<!-- ctrl + u, ctrl + l -->
+		<li>Press <strong>ctrl + u</strong> to clear your command line.</li>
 	</ul>
 	
+	<p>Once again, our screen has gotten a little cluttered.  You could clear it with a command you have already used, or you could learn a new useful shortcut.  Try pressing <strong>ctrl + l</strong> at the same time.</p>
+
+	<p>Here is a reference some useful shortcut keys and their purpose:</p>
+
+	<dl>
+		<dt>ctrl + l</dt>
+			<dd>Clear the screen.</dd>
+		<dt>ctrl + u</dt>
+			<dd>Clear the command line.</dd>
+		<dt>up arrow / down arrow</dt>
+			<dd>Scroll up / down through your command history.</dd>
+		<dt>backspace, ctrl + backspace, ctrl + h</dt>
+			<dd>Delete the character before the cursor.</dd>
+		<dt>ctrl + w</dt>
+			<dd>Delete the word before the cursor.</dd>
+		<dt>ctrl + a</dt>
+			<dd>Move the cursor to the beginning of the command line.</dd>
+		<dt>ctrl + e</dt>
+			<dd>Move the cursor to the endof the command line.</dd>
+		<dt>alt + f / alt + b (on Mac: OPTION + right/left arrow)</dt>
+			<dd>Move forward/backward one word.</dd>		
+	</dl>
+
 	<h3>Accessing command history</h3>
-	<!-- up arrow, history command-->
+	<p>Recalling commands from your history is another very useful, time saving task in Linux.  There are a couple of ways you can access this.</p>
+	<ul>
+		<li>You can use the up arrow on your keyboard to bring up (but not execute) the last command you issued.  This is particularly useful if you are reissuing the command same with slight changes.  Use the up arrow to continue browsing backwards one command at a time.  If you go to far, you can reverse direction with the down arrow.</li>
+		<li>Sometimes the command you want to re-issue is far enough back in your history that scrolling through one item at a time is tedious.  Fortunately, the <strong>history</strong> command provides additional functionality to speed things up a bit.  It gives you a listing of all the commands stored in your command history.  You can re-execute any of them by issuing a ! followed by the number in front of it.  Alternatively, issuing ! with a partially completed command will re-execute the last command that began the same way.  Both are extremly useful.</li>
+	</ul>
 	
-
-
+	<h3>To do:</h3>
+	<ul>
+		<li>Scroll through your command history using the up arrow until you find the <strong>ls</strong> command.  Don't forget you can scroll back if you have gone too far.  Once you have the command on your terminal, hit the <strong>enter</strong> key to execute it.</li>
+		<li>Issue the command <strong>!cd</strong> and hit enter.  What happened?  Use <strong>pwd</strong> to confirm you have changed directories.</li>
+	
 	<h2>Exploration Questions</h2>
 	<ol>
 		<li>What is the difference between a Linux command and an argument?</li>
 		<li>What is the purpose of a Linux command option?</li>
 		<li>What character(s) are used to separate commands and arguments?</li>
 		<li>How can you access help from the command line?</li>
+		<li>How can you access your command history?</li>
+		<li>What are two ways to re-execute a command found in your history?</li>
 	</ol>
 </main>
 </body>
