@@ -39,6 +39,7 @@
 		<li>Editing the command line.</li>
 		<li>Accessing command history.</li>
         <li>Navigating the Linux filesystem.</li>
+		<li>Creating and managing directories.</li>
 		<li>Using command line text editors.</li>
 	</ul>
 
@@ -91,7 +92,7 @@
 		<li>Lets try adding a different option to the ls command.  Issue the following:</li>
 	</ul>
 	<pre>ls /bin</pre>
-	
+
 	<p>Note, you can provide the directory you wish a file listing of without having to change to that directory first. Try combining options by issuing the following:</p>
 	<pre>ls -l /bin</pre>
 
@@ -182,6 +183,54 @@
 		<li>Scroll through your command history using the up arrow until you find the <strong>ls</strong> command.  Don't forget you can scroll back if you have gone too far.  Once you have the command on your terminal, hit the <strong>enter</strong> key to execute it.</li>
 		<li>Issue the command <strong>!cd</strong> and hit enter.  What happened?  Use <strong>pwd</strong> to confirm you have changed directories.</li>
 	</ul>
+
+	<h2>Navigating the Linux filesystem</h2>
+	<p>The Linux file system is hierarchical, like other operating systems (such as Windows).  However, there are no drive letters in Linux.  Everything descends from the <strong>root directory</strong>, which is represented by a <strong>/</strong>.  Other directories found under root are referred to as child directories, grandchild directories, etc.  This hierarchical structure resembles an "upside-down tree". There is actually a <strong>tree</strong> command that displays a "directory tree diagram"!</p>
+	
+	<h3>Directory Pathnames</h3>
+	<p>A pathname is used to specify a route to a file within the file system.</p>
+
+	<p>A pathname points to a file system location by following the directory tree hierarchy expressed in a string of characters in which path components, separated by a delimiting character, represent each directory. The delimiting character is most commonly the slash ("/"). <a href="https://en.wikipedia.org/wiki/Path_(computing)">Reference</a>.  The following displays and defines <strong>commonly used directories</strong> for all Linux filesystems.</p>
+
+	<dl>
+		<dt>/</dt>
+			<dd>Root directory (ancestor to all directories).</dd>
+		<dt>/home</dt>
+			<dd>Used to store users' home directories.</dd>
+		<dt>/home/username</dt>
+			<dd>A specific User's Home Director.</dd>
+		<dt>/bin</dt>
+			<dd>Common system binaries (commands).</dd>
+		<dt>/usr/bin</dt>
+			<dd>Common utilities (commands) for users.</dd>
+		<dt>/usr/sbin</dt>
+			<dd>Common utilities for system administration.</dd>
+		<dt>/etc</dt>
+			<dd>System administration files (eg. passwd).</dd>
+		<dt>/var</dt>
+			<dd>Dynamic files (log and mail files).</dd>
+		<dt>/tmp, /var/tmp</dt>
+			<dd>Temporary files for programs.</dd>
+		<dt>/dev</dt>
+			<dd>Device driver files (terminals, printers, etc.)</dd>
+	</dl>
+
+	<h2>Creating & managing directories</h2>
+	<h3>Directory & File naming rules</h3>
+	<p>Before you learn how to create directories, it is important to understand what represents an appropriate directory filename.  Here are some common file-naming rules:</p>
+	<ul>
+		<li>Linux characters are case sensitive. It is recommended to be consistent (e.g. use all lowercase letters)</li>
+		<li>Adopt a consistent directory naming scheme (this will help you to navigate within your directory structure)</li>
+		<li>Make your directory names meaningful</li>
+		<li>Avoid non-alphanumeric characters, as they may have a special meaning to the system that will make your work more difficult when changing to directories, etc.</li>
+		<li>Avoid using spaces for directory names (consider periods, hyphens, and underscores instead)</li>
+	</ul>
+
+	<h3>Creating Directories</h3>
+	<p>Login to your instance in AWS if you haven't already.  Issue a command to confirm you are in your home directory (you have learned this one already in the lab).  You are going to issue a series of commands to create the following directory structure.</p>
+	<img src="images/directory-structure.png" alt="Sample directory structure" />
+	<h2>Using command line text editors</h2>
+
 	<h2>Exploration Questions</h2>
 	<ol>
 		<li>What is the difference between a Linux command and an argument?</li>
