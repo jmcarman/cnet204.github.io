@@ -91,6 +91,15 @@ nav ul li a.active {
 nav ul li.right {
     float: right;
 }
+
+/* Mobile accessible */
+@media screen and (max-width: 600px){
+    nav ul li.right, 
+    nav ul li {float: none;}
+}
+
+/* end of navigation*/
+
 /* Table */
 table {
 	margin-left: auto;
@@ -114,15 +123,12 @@ td, th {
 }
 /* End Table */
 
-/* Mobile accessible */
-@media screen and (max-width: 600px){
-    nav ul li.right, 
-    nav ul li {float: none;}
-}
-
-/* end of navigation*/
-
 img {
 	max-width: 100%;
+	height: auto;
+}
+
+img.sample {
+	width: 25%;
 	height: auto;
 }
