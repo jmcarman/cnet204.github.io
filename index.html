@@ -34,16 +34,16 @@
 	<h2>Overview</h2>
 	<p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Accessing the AWS Learner Lab.</li>
-		<li>Navigating the AWS Console interface.</li>
-		<li>Configuring Virtual Private Cloud (VPC).</li>
-		<li>Navigating Amazon Elastic Cloud Compute (EC2).</li>
-		<li>Configuring VPC Security Groups.</li>
-		<li>Deploying an instance in AWS.</li>
-		<li>Implementing SSH key pairs &amp; paired key encryption.</li>
+		<li>Investigating the AWS Learner Lab.</li>
+		<li>Using the AWS Console interface.</li>
+		<li>Modifying and configuring Virtual Private Cloud (VPC).</li>
+		<li>Modifying VPC Security Groups.</li>
+		<li>Exploring Amazon Elastic Cloud Compute (EC2).</li>
+		<li>Adding an instance in AWS.</li>
+		<li>Creating SSH key pairs &amp; paired key encryption.</li>
 	</ul>
 	
-	<h2>Accessing the AWS Learner Lab</h2>
+	<h2>Investigating the AWS Learner Lab</h2>
 	<p>You should have recieved an email (in your Centennial College email) from your professor inviting you to participate in the AWS Academy Learner Lab.  If you have recieved and accepted this invitation you may proceed with this lab.  If you have not recieved this invitation you should contact your professor immediately.  You may continue with the rest of the lab once you have recieved the invitation.</p>
 	
 	<p>The AWS Learner Lab provides a sandbox environment where you can build, configure and deploy AWS assets such as instances.  There are some limitations as to what you can do, however it provides all the functionality we require for this course.  In the first 3 labs you will be learning how to build an Apache Web Server in AWS.  You will use this Apache Web Server to publish your web pages on in Labs 4-10.  You are limited to $100 credit at no cost within the learner lab.  Once this runs out, all your work will be deleted automatically.  Additionally, there is no way to add funds to this pool.  If you follow the lab instructions properly you should not have any issues.</p>
@@ -62,12 +62,12 @@
 			<dt>AWS with a red dot next to it</dt>
 				<dd>Once your lab has started, this will turn green.  You can then click on this to open the environment.</dd>
 		</dl>
-	<h2>Navigating the AWS Console interface</h2>
+	<h2>Using the AWS Console interface</h2>
 	<p>Start your session in the Learner Lab by clicking on the <strong>Start Lab</strong> button.  Once the red dot has turned green, click on it to enter the Learner Lab.  This will take you to the AWS Console (depicted below), which will be where you will do most of your work.  It also mirrors a production AWS interface.  Note: Your screen may not look 100% identical to the one depicted, but should be mostly the same.</p>
 	<img src="images/awsconsole.png" alt="AWS Console"/>
 	<p>If you click on <strong>Services</strong> in the top left corner (beside the AWS logo), you will see all the services you can configure in the AWS learner lab.  Common ones we will use are EC2 and VPC.  You can search for these in the search bar, or browse the categories.  Recently visited services will show up under the heading <strong>Recently visited</strong>.  If you hover over any service you will see a greyed in star to the left of the name.  You can click on this to add it to your favourites for easy access.</p>
 
-	<h2>Configuring Virtual Private Cloud (VPC)</h2>
+	<h2>Modifying VPC Security Groups</h2>
 	<p>An Amazon Virtual Private Cloud (VPC) is a dedicated virtual network within AWS' public cloud.  It work similar to how a traditional network does in a data center.  To access the VPC settings, click on Services (top left corner beside the AWS icon), and navigate to <strong>Networking &amp; Content Delivery &gt; VPC.  Click on VPC.</strong>  Click on Security Groups.  Your screen should look like the following:</p>
 
 	<img src="images/awssecuritygroups.png" alt="AWS Security Groups"/>
@@ -80,12 +80,12 @@
 	<p>This will allow incoming SSH connections from anywhere.  We will use this in the next part to connect to your instance.  The screenshot below shows what your inbound rules should look like:</p>
 	<img src="images/awssg-inboundrules.png" alt="AWS Inbound Rules - Lab 1"/>
 
-	<h2>Navigating Amazon Elastic Cloud Compute (EC2)</h2>
+	<h2>Exploring Amazon Elastic Cloud Compute (EC2))</h2>
 	<p>EC2 is where you will end up spending the most amount of time configuring things in this course.  From here you can do things like launch instances, manage networking services and many more.  To access EC2, click on Services (top left corner beside the AWS icon), and navigate to <strong>Compute &gt; EC2.  Click on VPC.</strong>  You may wish to add this to your favourites for easy access by hovering over and clicking the star.  Your initial screen should look something like the following.</p>
 
 	<img src="images/awsec2.png" alt="AWS EC2"/>
 
-	<h2>Deploying an instance in AWS</h2>
+	<h2>Adding an instance in AWS</h2>
 	<p>Click on Launch instance just below the Resources pane.  From the Launch an instance screen, select the following options:</p>
 	<ul>
 		<li><strong>Name: </strong>First</li>
@@ -93,6 +93,7 @@
 		<li><strong>Amazon Machine Image (AMI): </strong> Make sure Ubuntu Sever 22.04 is selected</li>
 	</ul>
 
+	<h2>Creating SSH key pairs &amp; paired key encryption</h2>
 	<p>Under <strong>Key pair (login)</strong> click Create new key pair.  Give it the name cnet204, accept the rest of the defaults and click "Create key pair".</p>  <span class="tip">Important: Do not lose your key pair or you will be unable to connect to your instance using SSH.</span>
 
 	<p>Under <strong>Network settings</strong> click Select existing security group.  Click the dropdown and check the default.  Click Launch instance.  Once it has finished completing (you should see a success message), click <strong>Connect to instance</strong>.</p>
@@ -102,7 +103,6 @@
 		<li>SSH client: Allows you to connect to your instance using the SSH key pair.</li>
 	</ul>
 
-	<h2>Implementing SSH key pairs &amp; paired key encryption</h2>
 	<p>We will be accessing our new Linux VM remotely using SSH, which is a command-line (CLI) only protocol. We'll be learning some Linux command line basics in Lab 2.</p>
 
 	<h3>Requirements: An SSH Client</h3>
