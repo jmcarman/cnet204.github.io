@@ -308,21 +308,72 @@
 
 	<p>You will notice within the editor there is a list at the bottom of commonly used commands.  Note the control key is represented by a ^ symbol.  Here is a handy reference:</p>
 	<dl>
-		<dt>&lt;ctrl&gt;&lt;spacebar&gt;</dt>
-			<dd></dd>
-		<dt></dt>
-			<dd></dd>
-		<dt></dt>
-			<dd></dd>
-		<dt></dt>
-			<dd></dd>
-		<dt></dt>
-			<dd></dd>
-		<dt></dt>
-			<dd></dd>
-		<dt></dt>
-			<dd></dd>
+		<dt>&lt;ctrl&gt;&lt;spacebar&gt;, &lt;esc&gt;&lt;6&gt;</dt>
+			<dd>Move forward/backward one word.</dd>
+		<dt>&lt;ctrl&gt;&lt;a&gt;, &lt;ctrl&gt;&lt;e&gt;</dt>
+			<dd>Move to beginning/end of line.</dd>
+		<dt>&lt;ctrl&gt;&lt;k&gt;</dt>
+			<dd>Cut the line.</dd>
+		<dt>&lt;esc&gt;&lt;6&gt;</dt>
+			<dd>Copy the Line.</dd>
+		<dt>&lt;ctrl&gt;&lt;u&gt;</dt>
+			<dd>Paste Cut/Copied Text.</dd>
+		<dt>&lt;ctrl&gt;&lt;g&gt;</dt>
+			<dd>Display help screen (ctrl + x to exit).</dd>
+		<dt>&lt;ctrl&gt;&lt;x&gt;</dt>
+			<dd>Save and exit.</dd>
 	</dl>
+	
+	<p>Refer to the above reference, and press the key combination to save your session.  You will be prompted to modify your file, type the letter <strong>y</strong> for yes.  The name of the file will then display, press the <strong>enter</strong> key to save your changes.</p>
+	<span class="tip">The prompt for the file name allows you to change the name of the file if you wish.  By pressing <strong>enter</strong>, it accepts the default filename.</span>
+
+	<p>Practice some editing options until you feel comfortable.  The <strong>save</strong> and <strong>exit</strong> nano.</p>
+
+	<h3>Vi (vim)</h3>
+	<p>The vi (vim) text editor (although taking longer to learn) has outstanding features to increase coding productivity. The major different between nano and vi is that vi starts in COMMAND LINE mode. You need to issue letter commands to enter text. Also you can press colon “: ” in COMMAND mode to enter more complex commands.  Just like with nano, you can launch vi in the same two ways (with an argument to both open an existing file/or create a file, or without an argument).</p>
+	<p>Issue the following command to create the file called <strong>othertext.txt</strong> (in your home directory) and open it for editing.</p>
+	<pre>vi othertext.txt</pre>
+
+	<p>Vi places you in <strong>command</strong> mode first.  You will need to issue a command to switch to input mode.  To enter input mode, press the letter <strong>i</strong> on your keyboard.  Now enter the following text:</p>
+	<img src="images/vi-text-editor.png" alt="vi text" />
+
+	<p>Now that you have entered some text you are ready to save and exit.  First, you have to exit input mode and return to command mode.  To do that, hit the <strong>ESC</strong> key.  Now you can save and exit by issuing either the following commands (note the colon is part of the command):</p>
+	<pre>:wq</pre>
+
+	<p>or</p>
+
+	<pre>:x</pre>
+
+	<p>Here is a useful table of common vi (vim) commands:</p>
+	<dl>
+		<dt>i</dt>
+			<dd>Enter <strong>INPUT</strong>mode.</dd>
+		<dt>&lt;esc&gt;</dt>
+			<dd>Enter <strong>COMMAND</strong>mode.</dd>
+		<dt>x</dt>
+			<dd>Delete text to the right in COMMAND mode.</dd>
+		<dt>W</dt>
+			<dd>Move forward one word in COMMAND mode.</dd>
+		<dt>B</dt>
+			<dd>Move back one word in COMMAND mode.</dd>
+		<dt>dd</dt>
+			<dd>Cut line in COMMAND mode.</dd>
+		<dt>yy</dt>
+			<dd>Copy Line in COMMAND mode.</dd>
+		<dt>p / P</dt>
+			<dd>Paste Cut/Copied Text below/above line in COMMAND mode.</dd>
+		<dt>u</dt>
+			<dd>Undo previous editing command.</dd>
+		<dt>:help</dt>
+			<dd>Display help screen in COMMAND mode.</dd>
+		<dt>:x</dt>
+			<dd>Save editing changes and exit (in COMMAND mode).</dd>
+		<dt>:w name</dt>
+			<dd>Save editing changes to "name" in COMMAND mode.  Without a name provided, it will save the current file (assuming you have opened an existing file for editing).</dd>
+		<dt>:q!</dt>
+			<dd>Abort editing session and exit (in COMMAND mode).</dd>
+	</dl>
+
 	<h2>Exploration Questions</h2>
 	<ol>
 		<li>What is the difference between a Linux command and an argument?</li>
