@@ -40,7 +40,27 @@
         <li>Configuring your server's firewall.</li>
         <li>Implementing an elastic IP in AWS.</li>
 	</ul>
+	<h2>Creating a new instance in AWS</h2>
+	<p>Create a new instance in AWS (like you did in <a href="index.html">Lab 1</a>), with the following configuration:</p>
+	<ol>
+		<li><strong>Name:</strong> www</li>
+		<li><strong>OS:</strong> Ubuntu</li>
+		<li><strong>Amazon Machine Image (AMI):</strong> Make sure Ubuntu Sever 22.04 is selected</li>
+		<li>Add it to your existing security group.</li>
+		<li>Use your existing key pair (from Lab 1).  If you lost your key, then generate a new one.  Don't lose this one.</li>
+	</ol>
+
+	<p>Connect to your server using SSH and your key pair.  You will be performing the remainder of this lab on your new instance.  By the end of this lab you will have configured an Apache web server.  You will be using this web server to deploy your website to for the rest of the labs, as well as assignment 1.</p>
+
 	<h2>Accessing elevated privileges in Linux</h2>
+	<p>Your regular user in Linux can create files and directories, as well as remove them; but only in your home directory.  To do anything that changes the configuration of the system you need root access.  You can accomplish this in two ways:</p>
+	
+	<ol>
+		<li>Switch to the root user</li>
+		<li>Use sudo</li>
+	</ol>
+
+	<p>Switching to root to install software, updates and configure the system is not a good practice.</p>
 </main>
 </body>
 </html>
