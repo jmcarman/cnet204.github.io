@@ -34,11 +34,11 @@
     <h2>Overview</h2>
 	<p>This week's lab will cover the following:</p>
 	<ul>
+		<li>Implementing an elastic IP in AWS.</li>
         <li>Accessing elevated privileges in Linux.</li>
 		<li>Managing Linux packages and updating the system.</li>
 		<li>Managing user permissions.</li>
         <li>Configuring your server's firewall.</li>
-        <li>Implementing an elastic IP in AWS.</li>
 	</ul>
 	<h2>Creating a new instance in AWS</h2>
 	<p>Create a new instance in AWS (like you did in <a href="index.html">Lab 1</a>), with the following configuration:</p>
@@ -52,6 +52,9 @@
 
 	<p>Connect to your server using SSH and your key pair.  You will be performing the remainder of this lab on your new instance.  By the end of this lab you will have configured an Apache web server.  You will be using this web server to deploy your website to for the rest of the labs, as well as assignment 1.</p>
 
+	<h2>Implementing an elastic IP in AWS</h2>
+
+
 	<h2>Accessing elevated privileges in Linux</h2>
 	<p>Your regular user in Linux can create files and directories, as well as remove them; but only in your home directory.  To do anything that changes the configuration of the system you need root access.  You can accomplish this in two ways:</p>
 	
@@ -60,7 +63,36 @@
 		<li>Use sudo</li>
 	</ol>
 
-	<p>Switching to root to install software, updates and configure the system is not a good practice.</p>
+	<p>Switching to root to install software, updates and configure the system is not a good practice.  Sudo can be configured to allow multiple users administrative access without giving anyone else the root password.  Additionally you can configure sudo to only allow users to execute specific commands with elevated (root) privileges.  Sudo works much the same as Run As Administrator in Windows.  To use sudo, all you need to do is add <strong>sudo</strong> in front of any command you wish to execute with elevated (root) privileges.  Lets see this in action.  In your www instance, issue the command:</p>
+
+	<pre>whoami</pre>
+
+	<p>Now issue:</p>
+	<pre>sudo whoami</pre>
+
+	<p>Note the different output.</p>
+
+	<h2>Managing Linux packages and updating the system</h2>
+	<p>Installing software in Linux requires both an active Internet connection and knowledge of which package management tool to use for your distribution (or distro). Linux software and updates come from special sources hosted on other servers, known as repositories (or repos). All the major Linux distros host their own repos, though anyone can host a repository for a distribution - and many organizations do. Due to the Open Source nature of Linux, certain repos may contain specialized software that is not available in the main repository (such as EPEL - Extra Packages for Enterprise Linux); or they may contain a mirror of the main repo.</p>
+	
+	<p>Accessing these and installing software requires using your Linux distro's command line package management tool. The major ones you will encounter when you use Linux are:</p>
+	
+	<dl>
+		<dt><a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">DNF (Dandified Yum)</a></dt>
+			<dd>Which is an update of YUM (Yellowdog Updater, Modified). Both of these operate as a front end for <a href="https://man7.org/linux/man-pages/man8/rpm.8.html">RPM (Red Hat Package Manager)</a>. These are used in Red Hat based Linux distros</dd>
+		<dt><a href="https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html">APT (Aptitude Package Manager)</a></dt>
+			<dd>This is used in Debian based Linux distributions such as Ubuntu, Linux Mint, and Kali Linux.</dd>
+		<dt><a href="https://archlinux.org/pacman/pacman.8.html">Pacman (Pacman Package Manager)</a></dt>
+			<dd>This is used in Arch Linux, as well as a few others.</dd>
+		<dt><a href="https://www.unix.com/man-page/suse/8/zypper/">Zypper Package Manager</a></dt>
+			<dd>This is used in OpenSUSE, which is popular for use on servers in Europe.</dd>
+	</dl>
+	
+	<p>Since you are using Ubuntu, you will be using <strong>APT</strong> to install software and update the system.  To install updates, issue the following command:</p>
+	<pre>sudo apt update</pre>
+	
+	<p>Now that your system is up to date it's time to install Apache, which is the software that will be powering your web server.  In Ubuntu, the Apache package is called <strong>apache2</strong>.  Also, you can use <strong>apt</strong> with the <strong>-y</strong> option to auto assume yes.  This can save a little time when you know you want to install the software or updates.</p>
+	<pre>sudo apt -y install apache2</pre>
 </main>
 </body>
 </html>
