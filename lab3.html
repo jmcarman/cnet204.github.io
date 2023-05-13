@@ -39,7 +39,6 @@
 		<li>Managing Linux packages and updating the system.</li>
 		<li>Managing Linux services.</li>
 		<li>Modifying VPC Security Groups.</li>
-		<li>Managing user permissions.</li>
         <li>Configuring your server's firewall.</li>
 	</ul>
 	<h2>Creating a new instance in AWS</h2>
@@ -129,6 +128,18 @@
 	<h2>Modifying VPC Security Groups</h2>
 	<p>Browse to Security Groups (in EC2 under Network & Security), and click on the Security Group ID for the default security group.  Under InBound rules, click on <strong>Edit inbound rules</strong>, and select HTTP from the drop down with a source of 0.0.0.0/0, and click <strong>Save rules</strong>.  Your screen should look like the following:</p>
 	<img src="images/sg-inbound-http.png" alt="Adding inbound HTTP to the security group" />
+
+	<h2>Accessing your Apache server from a web browser</h2>
+	<p>It's time to test to see if everything's working properly.  Browse to your instance details in EC2 by clicking on Instances, then the Instance ID next to your www instance (screenshot below).</p>
+	<img src="images/aws-instance-id.png" alt="AWS Instance ID">
+
+	<p>!!!!! Insert a screenshot obtaining elastic IP</p>
+	<p>Click open address beside your Public IPv4 address.  You should see the default Apache test page (screenshot below).  If you do not, edit your url and change <strong>https://</strong> to <strong>http://</strong>.</p>
+	<img src="images/apache-default.png" alt="Apache Test Page" />
+
+	<h2>Submitting the lab</h2>
+
+	<h2>Exploration Questions</h2>
 </main>
 </body>
 </html>
