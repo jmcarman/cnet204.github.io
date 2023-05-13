@@ -53,9 +53,6 @@
 
 	<p>Connect to your server using SSH and your key pair.  You will be performing the remainder of this lab on your new instance.  By the end of this lab you will have configured an Apache web server.  You will be using this web server to deploy your website to for the rest of the labs, as well as assignment 1.</p>
 
-	<h2>Implementing an elastic IP in AWS</h2>
-
-
 	<h2>Accessing elevated privileges in Linux</h2>
 	<p>Your regular user in Linux can create files and directories, as well as remove them; but only in your home directory.  To do anything that changes the configuration of the system you need root access.  You can accomplish this in two ways:</p>
 	
@@ -133,9 +130,26 @@
 	<p>It's time to test to see if everything's working properly.  Browse to your instance details in EC2 by clicking on Instances, then the Instance ID next to your www instance (screenshot below).</p>
 	<img src="images/aws-instance-id.png" alt="AWS Instance ID">
 
-	<p>!!!!! Insert a screenshot obtaining elastic IP</p>
 	<p>Click open address beside your Public IPv4 address.  You should see the default Apache test page (screenshot below).  If you do not, edit your url and change <strong>https://</strong> to <strong>http://</strong>.</p>
 	<img src="images/apache-default.png" alt="Apache Test Page" />
+
+	<h2>Implementing an elastic IP in AWS</h2>
+	<p>When you are configuring network resources you want them to have a static IP, which doesn't change.  Currently our AWS instance pulls a new IP from Amazon's DHCP server every time it boots up.  Fortunately, you can configure a static IP through what AWS calls an <strong>Elastic IP</strong>.  These cost money when they're not in use, and will be the biggest expense item from our free $100 credits this semester (since your instance will be offline unless you are working on things for this course).  To obtain an Elastic IP in EC2k, click on <strong>Elastic IPs</strong> under <strong>Network &amp; Security</strong>:</p>
+
+	<img src="images/elastic-ip.png" alt="Accessing the Elastic IP settings" />
+
+	<p>Then click <strong>Allocate Elastic IP address</strong> in the top right corner.  On the bottom of the new screen, leave the rest of the defaults and click <strong>Allocate</strong> (screenshot below).</p>
+	<img src="images/elastic-ip2.png" alt="Allocating an elastic IP" />
+
+	<p>Now you've reserved your Elastic IP.  It is yours for as long as you want (which will be the entire semester).  However, you need to associate it with the instance you want to access it through (in this case, www).  To do that check the box beside your Elastic IP, then click the <strong>Actions</strong> drop down and click <strong>Associate Elastic IP address</strong>.</p>
+
+	<p>Next, click on the <strong>Instance</strong> box and select the instance with <strong>(www)</strong> in the name (screenshot below), and click <strong>Associate</strong> in the bottom right corner.</p>
+	<img src="images/associate-elastic-ip.png" alt="Associating an Elastic IP" />
+
+	<p>Now you can access your www instance from anywhere by using the same IP address.  You should write this IP down somewhere for future use.</p>
+
+	<h3>To do:</h3>
+	<p>Either copy and paste, or type out your elastic IP in a web browser (make sure the url is being requested using <strong>http</strong> and not <strong>https</strong> to confirm you can still access your Apache test page.  Next week's lab we will configure our development environment and create your first web page using HTML.</p>
 
 	<h2>Submitting the lab</h2>
 
