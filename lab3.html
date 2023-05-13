@@ -37,6 +37,8 @@
 		<li>Implementing an elastic IP in AWS.</li>
         <li>Accessing elevated privileges in Linux.</li>
 		<li>Managing Linux packages and updating the system.</li>
+		<li>Managing Linux services.</li>
+		<li>Modifying VPC Security Groups.</li>
 		<li>Managing user permissions.</li>
         <li>Configuring your server's firewall.</li>
 	</ul>
@@ -79,7 +81,7 @@
 	
 	<dl>
 		<dt><a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">DNF (Dandified Yum)</a></dt>
-			<dd>Which is an update of YUM (Yellowdog Updater, Modified). Both of these operate as a front end for <a href="https://man7.org/linux/man-pages/man8/rpm.8.html">RPM (Red Hat Package Manager)</a>. These are used in Red Hat based Linux distros</dd>
+			<dd>Which is an update of YUM (Yellowdog Updater, Modified). Both of these operate as a front end for <a href="https://man7.org/linux/man-pages/man8/rpm.8.html">RPM (Red Hat Package Manager)</a>. These are used in Red Hat based Linux distros.</dd>
 		<dt><a href="https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html">APT (Aptitude Package Manager)</a></dt>
 			<dd>This is used in Debian based Linux distributions such as Ubuntu, Linux Mint, and Kali Linux.</dd>
 		<dt><a href="https://archlinux.org/pacman/pacman.8.html">Pacman (Pacman Package Manager)</a></dt>
@@ -93,6 +95,33 @@
 	
 	<p>Now that your system is up to date it's time to install Apache, which is the software that will be powering your web server.  In Ubuntu, the Apache package is called <strong>apache2</strong>.  Also, you can use <strong>apt</strong> with the <strong>-y</strong> option to auto assume yes.  This can save a little time when you know you want to install the software or updates.</p>
 	<pre>sudo apt -y install apache2</pre>
+
+	<h2>Managing Linux services</h2>
+	<p>Normally the next thing you would want to do is start the service using the <strong>systemctl</strong> command, then confirm it is running.  However, when you installed Apache2 this was automatically done.  It's still a good idea to confirm the service is running. The <strong>systemctl</strong> command always requires elevated privileges, and follows the same format:</p>
+	<strong>sudo systemctl <em>action service</em></strong>
+
+	<p>The action can be any of the following:</p>
+	<dl>
+		<dt>start</dt>
+			<dd>Starts the service.</dd>
+		<dt>stop</dt>
+			<dd>Stops the service.</dd>
+		<dt>restart</dt>
+			<dd>Restarts the service.</dd>
+		<dt>status</dt>
+			<dd>Displays information about the current status of the service, such as whether is running or not.</dd>
+		<dt>enable</dt>
+			<dd>Configures the service to start automatically on boot.</dd>
+		<dt>disable</dt>
+			<dd>Prevents the service from starting automatically on boot.</dd>
+	</dl>
+
+	<p>This isn't a complete list, but it covers all of the things you will require for most system administration tasks.  Using what you have just learned, check to see if the apache2 service is running.</p>
+
+	<pre>sudo systemctl status apache2</pre>
+
+	<p>You should see the following output:</p>
+	<img src="images/apache-running.png" alt="Confirming Apache is running" />
 </main>
 </body>
 </html>
