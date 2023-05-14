@@ -117,34 +117,34 @@
 	<pre>sudo systemctl status apache2</pre>
 
 	<p>You should see the following output:</p>
-	<img src="images/apache-running.png" alt="Confirming Apache is running" />
+	<img src="images/apache-running.png" alt="Confirming Apache is running">
 
 	<h2>Accessing your Apache server through a browser</h2>
 	<p>In EC2, Navigate to Instances and click on the Instance ID for your www instance.  In the right side, under <strong>Public IPv4 DNS</strong> click on the open address link.  This will send an HTTP request to your Apache server.  This will fail, because we haven't allowed inbound HTTP (port 80) traffic in the Security Group settings.</p>
 
 	<h2>Modifying VPC Security Groups</h2>
 	<p>Browse to Security Groups (in EC2 under Network & Security), and click on the Security Group ID for the default security group.  Under InBound rules, click on <strong>Edit inbound rules</strong>, and select HTTP from the drop down with a source of 0.0.0.0/0, and click <strong>Save rules</strong>.  Your screen should look like the following:</p>
-	<img src="images/sg-inbound-http.png" alt="Adding inbound HTTP to the security group" />
+	<img src="images/sg-inbound-http.png" alt="Adding inbound HTTP to the security group">
 
 	<h2>Accessing your Apache server from a web browser</h2>
 	<p>It's time to test to see if everything's working properly.  Browse to your instance details in EC2 by clicking on Instances, then the Instance ID next to your www instance (screenshot below).</p>
 	<img src="images/aws-instance-id.png" alt="AWS Instance ID">
 
 	<p>Click open address beside your Public IPv4 address.  You should see the default Apache test page (screenshot below).  If you do not, edit your url and change <strong>https://</strong> to <strong>http://</strong>.</p>
-	<img src="images/apache-default.png" alt="Apache Test Page" />
+	<img src="images/apache-default.png" alt="Apache Test Page">
 
 	<h2>Implementing an elastic IP in AWS</h2>
 	<p>When you are configuring network resources you want them to have a static IP, which doesn't change.  Currently our AWS instance pulls a new IP from Amazon's DHCP server every time it boots up.  Fortunately, you can configure a static IP through what AWS calls an <strong>Elastic IP</strong>.  These cost money when they're not in use, and will be the biggest expense item from our free $100 credits this semester (since your instance will be offline unless you are working on things for this course).  To obtain an Elastic IP in EC2k, click on <strong>Elastic IPs</strong> under <strong>Network &amp; Security</strong>:</p>
 
-	<img src="images/elastic-ip.png" alt="Accessing the Elastic IP settings" />
+	<img src="images/elastic-ip.png" alt="Accessing the Elastic IP settings">
 
 	<p>Then click <strong>Allocate Elastic IP address</strong> in the top right corner.  On the bottom of the new screen, leave the rest of the defaults and click <strong>Allocate</strong> (screenshot below).</p>
-	<img src="images/elastic-ip2.png" alt="Allocating an elastic IP" />
+	<img src="images/elastic-ip2.png" alt="Allocating an elastic IP">
 
 	<p>Now you've reserved your Elastic IP.  It is yours for as long as you want (which will be the entire semester).  However, you need to associate it with the instance you want to access it through (in this case, www).  To do that check the box beside your Elastic IP, then click the <strong>Actions</strong> drop down and click <strong>Associate Elastic IP address</strong>.</p>
 
 	<p>Next, click on the <strong>Instance</strong> box and select the instance with <strong>(www)</strong> in the name (screenshot below), and click <strong>Associate</strong> in the bottom right corner.</p>
-	<img src="images/associate-elastic-ip.png" alt="Associating an Elastic IP" />
+	<img src="images/associate-elastic-ip.png" alt="Associating an Elastic IP">
 
 	<p>Now you can access your www instance from anywhere by using the same IP address.  You should write this IP down somewhere for future use.</p>
 

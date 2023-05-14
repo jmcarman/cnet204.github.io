@@ -49,7 +49,7 @@
 	<p>The AWS Learner Lab provides a sandbox environment where you can build, configure and deploy AWS assets such as instances.  There are some limitations as to what you can do, however it provides all the functionality we require for this course.  In the first 3 labs you will be learning how to build an Apache Web Server in AWS.  You will use this Apache Web Server to publish your web pages on in Labs 4-10.  You are limited to $100 credit at no cost within the learner lab.  Once this runs out, all your work will be deleted automatically.  Additionally, there is no way to add funds to this pool.  If you follow the lab instructions properly you should not have any issues.</p>
 
 	<p>Once you have accepted your invitation and logged in to the <a href="https://awsacademy.infrastructure.com">AWS Learner Lab</a> navigate to <strong>Courses</strong> (on the left hand side) &gt; <strong>Modules</strong> &gt; <strong>Learner Lab</strong>.  You should see a screen that looks like the following:</p>
-	<img src="images/learnerlabhome.png" alt="AWS Learner Lab first screen"/>
+	<img src="images/learnerlabhome.png" alt="AWS Learner Lab first screen">
 
 	<p>Some important things to note on this screen:</p>
 		<dl>
@@ -64,13 +64,13 @@
 		</dl>
 	<h2>Using the AWS Console interface</h2>
 	<p>Start your session in the Learner Lab by clicking on the <strong>Start Lab</strong> button.  Once the red dot has turned green, click on it to enter the Learner Lab.  This will take you to the AWS Console (depicted below), which will be where you will do most of your work.  It also mirrors a production AWS interface.  Note: Your screen may not look 100% identical to the one depicted, but should be mostly the same.</p>
-	<img src="images/awsconsole.png" alt="AWS Console"/>
+	<img src="images/awsconsole.png" alt="AWS Console">
 	<p>If you click on <strong>Services</strong> in the top left corner (beside the AWS logo), you will see all the services you can configure in the AWS learner lab.  Common ones we will use are EC2 and VPC.  You can search for these in the search bar, or browse the categories.  Recently visited services will show up under the heading <strong>Recently visited</strong>.  If you hover over any service you will see a greyed in star to the left of the name.  You can click on this to add it to your favourites for easy access.</p>
 
 	<h2>Modifying VPC Security Groups</h2>
 	<p>An Amazon Virtual Private Cloud (VPC) is a dedicated virtual network within AWS' public cloud.  It work similar to how a traditional network does in a data center.  To access the VPC settings, click on Services (top left corner beside the AWS icon), and navigate to <strong>Networking &amp; Content Delivery &gt; VPC.  Click on VPC.</strong>  Click on Security Groups.  Your screen should look like the following:</p>
 
-	<img src="images/awssecuritygroups.png" alt="AWS Security Groups"/>
+	<img src="images/awssecuritygroups.png" alt="AWS Security Groups">
 
 	<p>Click on <strong>InBound rules</strong> &gt; <strong>Edit InBound Rules</strong> and add the following rule:</p>
 		<ul>
@@ -78,12 +78,12 @@
 			<li><strong>The box beside the magnifying glass:</strong> 0.0.0.0/0</li>
 		</ul>
 	<p>This will allow incoming SSH connections from anywhere.  We will use this in the next part to connect to your instance.  The screenshot below shows what your inbound rules should look like:</p>
-	<img src="images/awssg-inboundrules.png" alt="AWS Inbound Rules - Lab 1"/>
+	<img src="images/awssg-inboundrules.png" alt="AWS Inbound Rules - Lab 1">
 
 	<h2>Exploring Amazon Elastic Cloud Compute (EC2))</h2>
 	<p>EC2 is where you will end up spending the most amount of time configuring things in this course.  From here you can do things like launch instances, manage networking services and many more.  To access EC2, click on Services (top left corner beside the AWS icon), and navigate to <strong>Compute &gt; EC2.  Click on VPC.</strong>  You may wish to add this to your favourites for easy access by hovering over and clicking the star.  Your initial screen should look something like the following.</p>
 
-	<img src="images/awsec2.png" alt="AWS EC2"/>
+	<img src="images/awsec2.png" alt="AWS EC2">
 
 	<h2>Adding an instance in AWS</h2>
 	<p>Click on Launch instance just below the Resources pane.  From the Launch an instance screen, select the following options:</p>
