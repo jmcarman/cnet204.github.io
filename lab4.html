@@ -68,8 +68,15 @@
 	<h2>Creating your Github Repo for your Labs</h2>
 	<p>Use the following <a href="https://classroom.github.com/a/q3StMC-4" target="_blank">link</a> to set up your Labs repository.  You will be using this for the rest of the Labs in the course (including this one), and for Assignment 1.</p>
 
-	<h2>Cloning Your Repository in VSCode</h2>
+	<h2>Cloning Your Repository in VS Code</h2>
+	<ol>
+		<li>In order to clone your repository in VS Code, you need to first sign in with github.  Open VS Code and click the profile icon in the bottom left.  It is located directly above the settings (gear) icon.  Sign in with GitHub.</li>
+		<li>Next, click on Source Control and click <strong>Clone Repository</strong>.  Select <strong>Clone from GitHub</strong> in the url bar, and select the CNET204/labs-assignment-1-youruser repository.</li>
+		<li>You will now select the local folder to be used as your Repository Destination.  If you are working on a PC at the college, set this to your H drive.  If you are working from your own PC, set this to a folder of your choosing (but remember where it is).  The advantage to using your H drive on a college PC, is it is automatically mounted on any PC you log into.  Additionally, you can access your H drive through <a href="https://my.centennialcollege.ca/">myCentennial</a>.</li>
+	</ol>
 
+	<p>You may be prompted to sign in.  Accept any other prompts, including opening the repository locally and select:<strong>Yes, I trust the authors</strong>.</p>
+	
 	<h2>Creating your first web page</h2>
 	<p>Before creating your first web page, it's best to lay out the required structural tags (an example follows).  You can then fill in the rest of the data using this simple template.  Remember, a web page is everything that exists between the opening and closing html tags (&lt;html&gt; and &lt;/html&gt; respectively).  It consists of two main parts:</p>
 
@@ -87,7 +94,7 @@
 	&lt;/html&gt;
 	</pre>
 	
-    <p>Create a new file named <em>index.html</em> and fill in the structure using the above sample.  This is the file you'll be editing for the rest of the lab.</p>
+    <p>Click on new file (in the welcome screen) and create a new file named <em>index.html</em>.  Save it in your local repository folder and fill in the structure using the above sample.  This is the file you'll be editing for the rest of the lab.</p>
 	<h2>The document type declaration</h2>
 	<h3>Add the doctype</h3>
 	<p>The document type declaration tells the browser what type of document to expect.  There are many different doctypes, however for this course we will be using the one for HTML5.  Add the following to your webpage above the opening HTML tag (the doctype declaration must be the first thing in your document).</p>
@@ -99,9 +106,9 @@
 
 	<h2>Filling in the head</h2>
 	<h3>Add a title</h3>
-	<p>Add the title of "Lab 1" (without the quotes) to the header section of your document.</p>
+	<p>Add the title of "First Page" (without the quotes) to the header section of your document.</p>
 
-    <pre>&lt;title&gt;Lab 1&lt;/title&gt;</pre>
+    <pre>&lt;title&gt;First Page&lt;/title&gt;</pre>
 
 	<h3>Add some meta tags</h3>
 	<p>Meta tags provide additional information about our page.  These include what character encoding you're using, and data used by search engines to index your page.</p>
@@ -120,7 +127,7 @@
 	<p>Headings when done properly should be used in number of importance, with 1 being most important and 2-6 used for sub-headings in order of descending importance.</p>
 	<p>Insert the follwing using an H1 tag:<p>
 
-	<pre>&lt;h1&gt;Your Name CNET204 Page&lt;/h1&gt;</pre>
+	<pre>&lt;h1&gt;Your Name's first web page&lt;/h1&gt;</pre>
 
 	<h3>Add a paragraph</h3>
 	<p>Using the paragraph tag (&lt;p&gt; to open and &lt;/p&gt; to close), add a paragraph below your heading about what you hope to learn from this course.</p>
@@ -132,6 +139,34 @@
 
 	<h3>To do:</h3>
 	<p>Using what you learned about comments above, add a comment indicating your name and student number as the first line of the body.</p>
+
+	<h2>Setting your git username and email</h2>
+	<p>Before you can push your commit to GitHub, you need to set your username and email (to be included in the commit) from the command line within VS Code.  To do this:</p>
+
+	<ol>
+		<li>Click on <strong>Terminal</strong> (in the menu bar across the top of VS Code).</li>
+		<li>Click <strong>New Terminal</strong></li>
+	</ol>
+
+	<p>Then issue the following two commands:</p>
+	<pre>
+	git config user.name "Your Name"
+	git config user.email "youremail@my.centennialcollege.ca"
+	</pre>
+	<span class=".tip">If you are using your personal computer, you may include the --global option to set these semi-permanently.</span>
+
+	<h2>Making your first commit</h2>
+	<p>Your page is done!  You can now commit it to your github repository.  To do this:</p>
+	<ol>
+		<li>Click on source control (on the left side of the screen)</li>
+		<li>Click the three dots at the top of the pane</li>
+		<li>Click <strong>Changes</strong> and select <strong>Stage All Changes</strong></li>
+		<li>Then click Commit.</li>
+		<li>Enter a commit message (a short message describing what you have changed) and click on the check mark in the upper right corner.</li>
+		<li>Click <strong>save</strong> when prompted.</li>
+		<li>Click <strong>Sync Changes</strong> at the top of your Source Control pane, and agree to any prompts.</li>
+	</ol>
+	<p>You've made your first commit!  You will be doing this many times over the course of the semester.  It will get easier with repetition.</p>
 	
 	<h2>Cloning your repository in your Apache server</h2>
 
