@@ -227,7 +227,15 @@
 	</ul>
 
 	<h3>Creating Directories</h3>
-	<p>Login to your instance in AWS if you haven't already.  Issue a command to confirm you are in your home directory (you have learned this one already in the lab).  You are going to issue a series of commands to create the following directory structure.</p>
+	<p>Login to your instance in AWS if you haven't already.  Issue a command to confirm you are in your home directory (you have learned this one already in the lab).</p>
+	
+	<p>Before we begin, you are going to create a directory called bin in your home directory.</p>
+	<pre>mkdir ~/bin</pre>
+
+	<p>Now, use git clone to download check scripts for this lab.  You will run these scripts at different points in the lab (included in the instructions) to check your work.  When you recieve a message indicating everything was successful, take a screenshot.  You will need to upload all three screenshots (from the three lab check scripts) as part of your submission.</p>
+	<pre>git clone https://github.com/CNET204/lab-check ~/bin/ </pre>
+
+	<p>You are going to issue a series of commands to create the following directory structure.</p>
 	<img src="images/directory-structure.png" alt="Sample directory structure" class="sample">
 
 	<p>Issue the following command to create the cnet204 directory.</p>
@@ -257,7 +265,9 @@
 	<p>Now, we're going to issue a single command to recreate the directories and sub-directories.  The -p option allows the creation of parent directories and their decendents in a single command.</p>
 	<pre>mkdir -p cnet204/notes cnet204/labs cnet204/samples cnet104 cnet124</pre>
 
-	<!-- check script (week2-check-1) goes here, with git pull -->
+	<!-- check script (week2-check-1) goes here -->
+	<p>Run the following script to check your work.  If it indicates everything is correct, take a screenshot to include in your submission.</p>
+	<pre>lab2-check-1</pre>
 
 	<h3>Viewing Directory Contents / Copying & Moving Directories</h3>
 	<p>Issue the <strong>tree</strong> command to confirm the directory structure matches the above sample before you proceed.  Then, issue the following command to move the cnet204 directory (and it's contents) into cnet104.</p>
@@ -268,7 +278,9 @@
 
 	<p>Issue the <strong>tree</strong> command again to confirm the directories have been moved.</p>
 
-	<!-- check script (week2-check-2) goes here, with git pull -->
+	<!-- check script (week2-check-2) goes here -->
+	<p>Run the following script to check your work.  If it indicates everything is correct, take a screenshot to include in your submission.</p>
+	<pre>lab2-check-2</pre>
 
 	<h3>Removing Directories</h3>
 	<p>When it comes to removing directories there are a couple different options:</p>
@@ -286,7 +298,9 @@
 
 	<p>Use the <strong>rm -ri</strong> command to remove cnet204 and it's contents.  The -i option is not necessary, however it is sometimes useful when removing a large number of files in a safe manner.  It will cause the rm command to prompt you before it removes a file or directory, or even descends into a directory.</p>
 	<pre>rm -ri cnet204</pre>
-	<!-- check script (week2-check-3) goes here, with git pull -->
+	<!-- check script (week2-check-3) goes here -->
+	<p>Run the following script to check your work.  If it indicates everything is correct, take a screenshot to include in your submission.</p>
+	<pre>lab2-check-3</pre>
 
 	<h2>Using command line text editors</h2>
 	<p>In the Linux file system, everything is a file.  This makes command line text editors extremely powerful tools.  You will need to know how to use them to perform regular system administration tasks like configure services and write scripts (which we will not be learning in this course).  There are two commonly used text editors that we will look at: vi (vim) and nano.</p>
