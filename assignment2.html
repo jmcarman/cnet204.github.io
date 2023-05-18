@@ -31,10 +31,64 @@
 </nav>
 <main>
 	<h1>Assignment 2 - Fall 2023 - Due Friday, December 15th at 11:59pm</h1>
+	<h2>Under Development</h2>
 	<h2>Overview</h2>
-	<p>Individually or (optionally) in a group of 2 (2 people would submit 1 website): You will complete a multi-page website using the tools and techniques we've covered in Labs 1-8.  Choose one of the following topics and fulfill the required pages detailed below.  Make sure you link your project home page to your index page.  <strong>All materials need to be uploaded to your web server and the dropbox on e.centennial by the due date in order to recieve marks.</strong>  If you're completing this as a group, only one group member needs to submit the project (and include both names).</p>
+	<p>Individually or (optionally) in a group of 2 (2 people would submit 1 website): You will complete a multi-page website using the tools and techniques we've covered in Labs 1-10.  Choose one of the following topics and fulfill the required pages detailed below.  <strong>All materials need to be submitted to your GitHub repository and all screenshots uploaded to the dropbox on e.centennial by the due date in order to recieve marks.</strong>  If you're completing this as a group, only one group member needs to submit the project (and include both names).</p>
+
+	<p>In this assignment you are going to learn how to automate deploying a static website from GitHub to Amazon Web Services (AWS) using two services available in AWS: <strong>Amazon Simple Storage Service (S3)</strong> and <strong>AWS CodePipeline</strong>.  Steps for configuring these services and integrating them with GitHub are provided below.  You will then use this infrastructure to build and deploy a website according to the website specifications (see below).</p>
 	
-	<h2>Specifications</h2>
+	<h2>Creating an S3 Bucket &amp; Configuring it for Static Website Hosting</h2>
+	
+	<p>Launch your learner lab and login.  Click on <strong>Services</strong> and navigate to <strong>Storage</strong> &lt; <strong>S3</strong> (see following screenshot).  You may want to add this to your favourites.</p>
+	<img src="images/aws-access-s3.png" alt="Accessing S3">
+
+	<p>You should see the following screen.</p>
+	<img src="images/s3-bucket-name.png" alt="Giving your S3 bucket a name">
+	
+	<h3>Create your S3 bucket with the following configuration</h3>
+	<ul>
+		<li>Give it the name: usernamea2 (where username is your Centennial username, ie: jcarman1a2).  Note: bucket names cannot contain spaces or upercase letters, and must be globally unique.</li>
+		<li>Leave it in the default region.</li>
+		<li>Make sure <strong>Block all public access</strong> is unchecked.</li>
+		<li>Check <strong>Block public and cross-account access to bucket and objects through any public bucket or access point policies</strong>.</li>
+		<li>Click <strong>Create bucket</strong>.</li>
+	</ul>
+
+	<h3>Editing your S3 bucket properties</h3>
+	<ul>
+		<li>Click on the hyperlink to your bucket under <strong>Name</strong>.</li>
+		<li>Click <strong>Properties</strong>.</li>
+		<li>Scroll to <strong>Static website hosting</strong>, click Edit and enable it.</li>
+		<li>Configure the following:</li>
+		<img src="images/s3-static-website-hosting.png" alt="Configuring your S3 bucket to host a static website">
+		<li>Don't forget to click <strong>Save changes</strong>.</li>
+	</ul>
+
+	<h3>Setting the permissions</h3>
+	<ul>
+		<li>Copy the Amazon Resource Name (ARN) from your Bucket Properties tab (under <strong>Bucket overview</strong>).</li>
+		<li>Scroll down to <strong>Bucket Policy</strong>, click Edit and enter the following:</li>
+	</ul>
+
+	<pre>
+	{
+		"Version": "2012-10-17",
+		"Statement": [
+			{
+				"Sid": "PublicReadGetObject",
+				"Effect": "Allow",
+				"Principal": "*",
+				"Action": "s3:GetObject",
+				"Resource": "arn:aws:s3:::jcarman1a2/*"
+			}
+		]
+	}
+	</pre>
+
+
+	<h2>Creating an AWS CodePipeline</h2>
+
+	<h2>Website Specifications</h2>
 	<h3>Pick a topic from the list below (note the attached resources).</h3>
 	<ol>
 		<li><a href="https://www.mcss.gov.on.ca/en/mcss/programs/humanTrafficking/index.aspx">Human Trafficking in Ontario</a></li>
@@ -92,7 +146,7 @@
 		<li>Content is relevant &amp; each page contains a comment with your name(s) and student number(s) (1 mark)</li>
 	</ul>
 	<h2>Submission</h2>
-	<p>Your project should be uploaded to your web server (and linked to your index page), as well as the dropbox (as a zip file) by the due date in order to recieve marks.  As the due date is the final day of the course, any late submissions will recieve a grade of 0.</p>
+	<p>Your project should be submitted to your GitHub repository, and screenshots uploaded to the assignment dropbox by the due date in order to recieve marks.  As the due date is the final day of the course, any late submissions will recieve a grade of 0.</p>
 </main>
 </body>
 </html>
