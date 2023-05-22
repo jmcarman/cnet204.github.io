@@ -36,6 +36,8 @@
 
 	<p>In this assignment you are going to learn how to automate deploying a static website from GitHub to Amazon Web Services (AWS) using two services available in AWS: <strong>Amazon Simple Storage Service (S3)</strong> and <strong>AWS CodePipeline</strong>.  Steps for configuring these services and integrating them with GitHub are provided below.  You will then use this infrastructure to build and deploy a website according to the website specifications (see below).</p>
 	
+	<h2>Accepting the Assignment link to create your GitHub repository</h2>
+	<p>Before you begin, Use the following <a href="https://classroom.github.com/a/pqoYp-Nm">link</a> to set up your Assignment 2 repository.  You wil be using this for Assignment 2.</p>
 	<h2>Creating an S3 Bucket &amp; Configuring it for Static Website Hosting</h2>
 	
 	<p>Launch your learner lab and login.  Click on <strong>Services</strong> and navigate to <strong>Storage</strong> &lt; <strong>S3</strong> (see following screenshot).  You may want to add this to your favourites.</p>
@@ -86,6 +88,28 @@
 
 
 	<h2>Creating an AWS CodePipeline</h2>
+	<p>Now that your S3 bucket is configured, you're going to use CodePipeline to implement a practice known as CI/CD - Coninuous Integration & Continuous Delivery/Deployment.  CodePipeline will allow us to take the code you push to your GitHub repository and automatically clone it to the S3 bucket you configured.  Your website will be deployed from there, with no server required.  To access CodePipeline:</p>
+	<ul>
+		<li>Click on <strong>Services</strong></li>
+		<li>Click on <strong>Developer Tools</strong></li>
+		<li>Click on <strong>CodePipeline</strong></li>
+	</ul>
+	<p>You may want to add this to your favourites.  You should see the following screen:</p>
+	<img src="images/aws-codepipeline.png" alt="AWS Code Pipeline">
+
+	<p>Click on <strong>Create pipeline</strong>.  You should see the following screen:</p>
+	<img src="images/aws-code-pipeline-settings.png" alt="AWS Code Pipeline Settings">
+	
+	<p>Configure the following options:</p>
+	<ul>
+		<li>Pipeline name: <strong>youruserid-a2</strong> (ie jcarman1-a2)</li>
+		<li>Under <strong>Advanced settings</strong> Select Custom Location, click on the <strong>Bucket</strong> input box and select your s3 bucket.</li>
+	</ul>
+	<p>Click next.  You should see the following screen:</p>
+	<img src="images/aws-codepipeline-add-source.png" alt="AWS Code Pipeline Adding a Source">
+	<p>Under <strong>Source provider</strong> select <strong>GitHub (Version 1)</strong> from the drop down.  You'll get a warning about Version 2 being recommended, however you cannot use Version 2 with the learner lab.  Click <strong>Connect to GitHub</strong>.</p>
+	<p>In the <strong>Authorize application</strong> window that opens, click <strong>Authorize aws-codesuite</strong> at the bottom.  Then <strong>Confirm</strong> on the next screen.</p>
+
 
 	<h2>Website Specifications</h2>
 	<h3>Pick a topic from the list below (note the attached resources).</h3>
