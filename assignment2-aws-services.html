@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jason Carman">
+	<meta name="description" content="CNET204 Assignment 2">
+	<meta name="keywords" content="cnet204,centennial college,HTML5,CSS3">
+	<meta charset="utf-8">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Lab 1</a></li>
+        <li><a href="lab2.html">Lab 2</a></li>
+        <li><a href="lab3.html">Lab 3</a></li>
+        <li><a href="lab4.html">Lab 4</a></li>
+		<li><a href="lab5.html">Lab 5</a></li>
+		<li><a href="lab6.html">Lab 6</a></li>
+		<li><a href="lab7.html">Lab 7</a></li>
+		<li><a href="lab8.html">Lab 8</a></li>
+		<li><a href="assignment1.html">Assignment 1</a></li>
+		<li><a href="lab9.html">Lab 9</a></li>
+		<li><a href="lab10.html">Lab 10</a></li>
+		<li><a class="active" href="#">Assignment 2</a></li>
+		<li><a href="good.html">Good Formatting</a></li>
+		<li><a href="bad.html">Bad Formatting</a></li>
+   </ul>
+</nav>
+<main>
+	<h1>Assignment 2 - Fall 2023 - Due Friday, December 15th at 11:59pm</h1>
+	<h2>Under Development</h2>
+	<h2>Overview</h2>
+	<p>In this assignment you are going to learn how to automate deploying a static website from GitHub to Amazon Web Services (AWS) using two services available in AWS: <strong>Amazon Simple Storage Service (S3)</strong> and <strong>AWS CodePipeline</strong>.  Steps for configuring these services and integrating them with GitHub are provided below.  You will then use this infrastructure to build and deploy a website according to the website specifications (see below).</p>
+	
+	<h2>Accepting the Assignment link to create your GitHub repository</h2>
+	<p>Before you begin, Use the following <a href="https://classroom.github.com/a/ggGjJD7F">link</a> to set up your Assignment 2 repository.  You will be using this for Assignment 2.</p>
+	<h2>Creating an S3 Bucket &amp; Configuring it for Static Website Hosting</h2>
+	
+	<p>Launch your learner lab and login.  Click on <strong>Services</strong> and navigate to <strong>Storage</strong> &lt; <strong>S3</strong> (see following screenshot).  You may want to add this to your favourites.</p>
+	<img src="images/aws-access-s3.png" alt="Accessing S3">
+
+	<p>You should see the following screen.</p>
+	<img src="images/s3-bucket-name.png" alt="Giving your S3 bucket a name">
+	
+	<h3>Create your S3 bucket with the following configuration</h3>
+	<ul>
+		<li>Give it the name: usernamea2 (where username is your Centennial username, ie: jcarman1a2).  Note: bucket names cannot contain spaces or upercase letters, and must be globally unique.</li>
+		<li>Leave it in the default region.</li>
+		<li>Make sure <strong>Block all public access</strong> is unchecked.</li>
+		<li>Check <strong>Block public and cross-account access to bucket and objects through any public bucket or access point policies</strong>.</li>
+		<li>Click <strong>Create bucket</strong>.</li>
+	</ul>
+
+	<h3>Editing your S3 bucket properties</h3>
+	<ul>
+		<li>Click on the hyperlink to your bucket under <strong>Name</strong>.</li>
+		<li>Click <strong>Properties</strong>.</li>
+		<li>Scroll to <strong>Static website hosting</strong>, click Edit and enable it.</li>
+		<li>Configure the following:</li>
+		<img src="images/s3-static-website-hosting.png" alt="Configuring your S3 bucket to host a static website">
+		<li>Don't forget to click <strong>Save changes</strong>.</li>
+	</ul>
+
+	<h3>Setting the permissions</h3>
+	<ul>
+		<li>Copy the Amazon Resource Name (ARN) from your Bucket Properties tab (under <strong>Bucket overview</strong>).</li>
+		<li>Scroll down to <strong>Bucket Policy</strong>, click Edit and enter the following:</li>
+	</ul>
+
+	<pre>
+	{
+		"Version": "2012-10-17",
+		"Statement": [
+			{
+				"Sid": "PublicReadGetObject",
+				"Effect": "Allow",
+				"Principal": "*",
+				"Action": "s3:GetObject",
+				"Resource": "arn:aws:s3:::jcarman1a2/*"
+			}
+		]
+	}
+	</pre>
+
+
+	<h2>Creating an AWS CodePipeline</h2>
+	<p>Now that your S3 bucket is configured, you're going to use CodePipeline to implement a practice known as CI/CD - Coninuous Integration & Continuous Delivery/Deployment.  CodePipeline will allow us to take the code you push to your GitHub repository and automatically clone it to the S3 bucket you configured.  Your website will be deployed from there, with no server required.  To access CodePipeline:</p>
+	<ul>
+		<li>Click on <strong>Services</strong></li>
+		<li>Click on <strong>Developer Tools</strong></li>
+		<li>Click on <strong>CodePipeline</strong></li>
+	</ul>
+	<p>You may want to add this to your favourites.  You should see the following screen:</p>
+	<img src="images/aws-codepipeline.png" alt="AWS Code Pipeline">
+
+	<p>Click on <strong>Create pipeline</strong>.  You should see the following screen:</p>
+	<img src="images/aws-code-pipeline-settings.png" alt="AWS Code Pipeline Settings">
+	
+	<p>Configure the following options:</p>
+	<ul>
+		<li>Pipeline name: <strong>youruserid-a2</strong> (ie jcarman1-a2)</li>
+		<li>Under <strong>Advanced settings</strong> Select Custom Location, click on the <strong>Bucket</strong> input box and select your s3 bucket.</li>
+	</ul>
+	<p>Click next.  You should see the following screen:</p>
+	<img src="images/aws-codepipeline-add-source.png" alt="AWS Code Pipeline Adding a Source">
+	<p>Under <strong>Source provider</strong> select <strong>GitHub (Version 1)</strong> from the drop down.  You'll get a warning about Version 2 being recommended, however you cannot use Version 2 with the learner lab.  Click <strong>Connect to GitHub</strong>.</p>
+	
+	<p>In the <strong>Authorize application</strong> window that opens, click <strong>Authorize aws-codesuite</strong> at the bottom.  Then <strong>Confirm</strong> on the next screen.</p>
+	<ul>
+		<li>Under <strong>Repository</strong> select <strong>CNET204/assignment-2-yourusername</strong>.</li>
+		<li>Under <strong>Branch</strong> select <strong>Main</strong>.</li>
+		<li>Under <strong>Change detection options</strong> make sure <strong>GitHub webhooks (recommended)</strong> is selected.</li>
+		<li>Click <strong>Next</strong>.</li>
+		<li>Under <strong>Add build stage</strong> click <strong>Skip build stage</strong>.</li>
+	</ul>
+
+	<p>In <strong>Add deploy stage</strong> select <strong>Amazon S3</strong> from the <strong>Deploy provider</strong> list, and select your bucket.  Under <strong>S3 object key</strong> type in <strong>index.html</strong>, and click <strong>Next</strong>.</p>
+
+	<p>You should see a confirmation screen.  Click to continue.  You can now start adding code to your repostitory.</p>
+
+	<h2>Creating a Website</h2>
+	<p>Individually or (optionally) in a group of 2 (2 people would submit 1 website): You will complete a multi-page website using the tools and techniques we've covered in Labs 1-10.  Choose one of the following topics and fulfill the required pages detailed below.  <strong>All materials need to be submitted to your GitHub repository and all screenshots uploaded to the dropbox on e.centennial by the due date in order to recieve marks.</strong>  If you're completing this as a group, only one group member needs to submit the project (and include both names).</p>
+
+	<h3>Pick a topic from the list below (note the attached resources).</h3>
+	<ol>
+		<li><a href="https://www.mcss.gov.on.ca/en/mcss/programs/humanTrafficking/index.aspx">Human Trafficking in Ontario</a></li>
+		<li><a href="https://www.ontario.ca/page/ending-homelessness-ontario">Affordable Housing and Ending Homelessness</a></li>
+		<li><a href="https://www.mcss.gov.on.ca/en/mcss/programs/community/ihws/index.aspx">Supporting Aboriginal people</a></li>
+		<li><a href="https://www.mcss.gov.on.ca/en/mcss/programs/community/helpingWomen/index.aspx">Helping women flee domestic violence</a></li>
+		<li><a href="https://www.ontario.ca/page/five-year-review-progress-towards-protection-and-recovery-ontarios-species-risk">Endangered Species in Ontario</a></li>
+		<li><a href="https://www.ontario.ca/page/ministry-environment-conservation-parks">Climate Change initiatives in Ontario</a></li>
+		<li><a href="http://ocap.ca/our-work-2/">Any of the Poverty issues listed here</a></li>
+		<li><a href="https://www.ontario.ca/document/changing-workplaces-review-final-report">Any of the labour related issues listed here</a></li>
+	</ol>
+	<h3>Your site needs to include the following pages:</h3>
+	<ol>
+		<li>Home Page: Providing introductory content relating to your topic</li>
+		<li>Five pages: 
+			<ul>
+				<li>Issue details: go into further detailed information about the issue by describing any of the following:
+					<ul>
+						<li>The community</li>
+						<li>The issue</li>
+						<li>Some factors that contribute to the issue</li>
+					</ul>
+				</li>
+				<li>Reflection Practice: Your own personal reflections</li>
+				<li>The power of social media and websites to promote awareness of the issue</li>
+				<li>A Video describing your issue</li>
+				<li>A second video discussing how technology has been used to address the inequality</li>
+			</ul>
+		</li>
+		<li>User Survey Form: Collecting opinions relating to the issue you've selected</li>
+		<li>Resource Page: Listing hyperlinks to all websites you have consulted in gathering information for your project</li>
+	</ol>
+	<h3>Your website should contain the following features:</h3>
+	<ol>
+		<li>Consistent for all pages:
+			<ul>
+				<li>Navigation</li>
+				<li>Fonts and Colours</li>
+				<li>Size and Layout</li>
+			</ul>
+		</li>
+		<li>Each page should have
+			<ul>
+				<li>a unique title</li>
+				<li>a comment indicating your name(s) and student number. <strong>If you're working in a group, every page should contain both members name and student number.</strong></li>
+			</ul>
+		</li>
+		<li>One linked style sheet to implement your CSS in order to ensure uniformity across all pages</li>
+	</ol>
+	<p>Your website will be evaluated for Design, Content, stable transition between pages (navigation options don't move around), relevance (relevant information about your topic on all pages), accessibility, consistency of fonts and colours.  Each page will be marked out of 5, with the individual breakdown as follows:</p>
+	<ul>
+		<li>Navigation options are consistent, and active class is properly utilized (2 marks)</li>
+		<li>Page layout is consistent across your website (1 mark)</li>
+		<li>Page colours are consistent across your website (1 mark)</li>
+		<li>Content is relevant &amp; each page contains a comment with your name(s) and student number(s) (1 mark)</li>
+	</ul>
+	<h2>Submission</h2>
+	<p>Your project should be submitted to your GitHub repository, and screenshots uploaded to the assignment dropbox by the due date in order to recieve marks.  As the due date is the final day of the course, any late submissions will recieve a grade of 0.</p>
+</main>
+</body>
+</html>
