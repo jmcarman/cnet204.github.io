@@ -34,10 +34,11 @@
 	<p>This week's lab will cover the following:</p>
 	<ul>
 		<li>Configuring your development environment.</li>
-        <li>Identifing the basic elements of a simple web page.</li>
+        <li>Identifying the basic elements of a simple web page.</li>
 		<li>Describing HTML syntax, tags, attributes and values.</li>
-		<li>Entering and Formatting Text.</li>
+		<li>Creating a web page.</li>
 		<li>Previewing Site Content in a Browser.</li>
+		<li>Posting your code to GitHub.</li>
 		<li>Posting a web page to your web server.</li>
 	</ul>
 	<h2>Creating a GitHub account</h2>
@@ -115,26 +116,30 @@
 	<p>You may be prompted to sign in.  Accept any other prompts, including opening the repository locally and select:<strong>Yes, I trust the authors</strong>.</p>
 
 	<h2>Creating your first web page</h2>
-	<p>Before creating your first web page, it's best to lay out the required structural tags (an example follows).  You can then fill in the rest of the data using this simple template.  Remember, a web page is everything that exists between the opening and closing html tags (&lt;html&gt; and &lt;/html&gt; respectively).  It consists of two main parts:</p>
+	<p>Before creating your first web page, it's best to lay out the required structural tags (an example follows).  You can then fill in the rest of the data using this simple template.  Remember, a web page is everything that exists between the opening and closing html tags (&lt;html&gt; and &lt;/html&gt; respectively).  It consists of three main parts:</p>
 
-	<ol>
-		<li>The head, consisting of everything between the head tags (&lt;head&gt; and &lt;/head&gt; respectively).  This section contains information about the document, and won't appear on the page itself.</li>
-		<li>The body, consisting of everything between the body tags (&lt;body&gt; and &lt;/body&gt;).  This section contains the document itself, everything in here will appear as your web page.</li>
+	<dl>
+		<dt>The Doctype Declaration</dt>
+			<dd>The document type declaration tells the browser what type of document to expect.  There are many different doctypes, however for this course we will be using the one for HTML5.</dd>
+		<dt>The Head</dt>
+			<dd>consisting of everything between the head tags (&lt;head&gt; and &lt;/head&gt; respectively).  This section contains information about the document, and won't appear on the page itself.</dd>
+		<dt>The Body</dt>
+			<dd>consisting of everything between the body tags (&lt;body&gt; and &lt;/body&gt;).  This section contains the document itself, everything in here will appear as your web page.</dd>
 	</ol>
 
+    <p>Click on new file (in the welcome screen) and create a new file named <em>index.html</em>.  Save it in your local repository folder and fill in the structure using the below sample.  This is the file you'll be editing for the rest of the lab.</p>
+
 	<pre>
-	&lt;html&gt;
-		&lt;head&gt;
-		&lt;/head&gt;
-		&lt;body&gt;
-		&lt;/body&gt;
-	&lt;/html&gt;
+		&lt;html&gt;
+			&lt;head&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
 	</pre>
 	
-    <p>Click on new file (in the welcome screen) and create a new file named <em>index.html</em>.  Save it in your local repository folder and fill in the structure using the above sample.  This is the file you'll be editing for the rest of the lab.</p>
-	<h2>The document type declaration</h2>
 	<h3>Add the doctype</h3>
-	<p>The document type declaration tells the browser what type of document to expect.  There are many different doctypes, however for this course we will be using the one for HTML5.  Add the following to your webpage above the opening HTML tag (the doctype declaration must be the first thing in your document).</p>
+	<p>Add the following to your webpage above the opening HTML tag (the doctype declaration must be the first thing in your document).</p>
 
     <pre>&lt;!DOCTYPE html&gt;</pre>
 
