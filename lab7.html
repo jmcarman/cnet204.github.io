@@ -38,6 +38,11 @@
 		<li>Learning how to create a responsive navigation bar</li>
 	</ul>
 	
+	<h2>Lecture Slides</h2>
+	<div class="container">
+		<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ2iYAbnEOD0gmcrnl-my-JfxW1WV4J-7ufAzkWKev6HNQz7oLnZauz4nIzzc_rS_AbY-UFKyr0KVD5/embed?start=false&loop=false&delayms=5000" class="responsive-iframe"></iframe>
+	</div>
+
 	<h3>Stylizing our navigation bar with CSS</h3>
 	<p>Open the style sheet (style.css) that you created in Lab 5.  We're going to add some CSS to it, to stylize our navigation bar.  Since the code we're adding is strictly for the navigation, it's good to separate it from the rest of our code within a block of comments.  This of course means, we need to introduce comments in CSS.</p>
 	<p>If you recall in html, you're able to enter in a comment with the &lt;!-- --&gt; tags.  In CSS, comments begin with /* and close with */.  They can also span multiple lines, or be confined to a single line.  Either way, the syntax is the same.  An example follows for clarity.</p>
@@ -48,7 +53,7 @@
 		spans 
 		multiple lines
 		*/
-		
+
 		/* This comment spans one line */
 	</pre>
 	<h3>To do:</h3>
@@ -83,15 +88,15 @@
 		text-decoration: none;
 	}
 	</pre>
-	<h2>CSS classes and events</h2>
-	<p>Everything we've applied using CSS thus far has been applied to specific tags (reffered to as selectors in CSS).  Sometimes it's necessary to apply changes uniquely by using a class or ID (we'll look more at IDs in a future lab).  Additionally CSS can be applied when an specific event occurs (like hovering over the tag).  Here's a small list of events you can use to apply CSS.</p>
+	<h2>CSS Pseudo-classes</h2>
+	<p>Everything we've applied using CSS thus far has been applied to specific tags (reffered to as selectors in CSS).  Sometimes it's necessary to apply changes uniquely by using a class or ID (we'll look more at IDs in a future lab).  Additionally CSS can be applied when an specific event occurs (like hovering over the tag).  Here's a small list of pseudo-classes you can use to apply CSS.</p>
 	<ul>
 		<li>hover - when the user mouses over the selector</li>
 		<li>focus - when the element has focus - used more in forms, we'll look at this in a later lab</li>
 		<li>visited - Applies to all visted links</li>
 		<li>link - Applies to all unvisted links</li>
 	</ul>
-	<p>For more refference, see <a href="https://www.w3schools.com/cssref/css_selectors.asp">w3schools</a>.</p>
+	<p>For more reference, see <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">w3schools</a>.</p>
 	<h2>Applying what you just learned</h2>
 	<p>You're going to use a very complex selector that will change the background colour when you hover over a link, as long as it's not the active link.  Apply a background colour of your choice using the following selector.</p>
 	<pre>
