@@ -33,7 +33,7 @@
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Creating a new page, called lab5.html</li>
+		<li>Creating a new page, called about.html</li>
 		<li>Learning how to insert images into a web page</li>
 		<li>Learning how to use tables to format and display content</li>
 		<li>Learning how to implement CSS to float images</li>
@@ -42,33 +42,33 @@
 	</ul>
 	
 	<h2>Creating a new page</h2>
-	<p>Create a new page called lab5.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+	<p>Create a new page called about.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
 	<ol>
 		<li>Use the HTML5 doctype declaration</li>
-		<li>Set the Title to "Lab 5", without the quotes</li>
+		<li>Set the Title to "About Me", without the quotes</li>
 		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
 		<li>Insert a comment indicating your name and student number</li>
 		<li>Link your style sheet to the page</li>
-		<li>Make use of the main tag, as we did in Lab 3</li>
+		<li>Make use of the main tag, as we did in Lab 6</li>
 	</ol>
 	
 	<h2>Modifying your navigation bar</h2>
 	<p>Copy your navigation bar from your index page and paste it at the top of the body, above the &lt;main&gt; section.  We're going to modify it to properly indicate your current page.</p>
 	<ol>
-		<li>Move the class attribute from it's current position (Lab 1) to the link for Lab 5</li>
-		<li>Modify the hyperlink for Lab 1 to direct you to "index.html"</li>
-		<li>Modify the hyperlink for Lab 5 to point to an empty ID ("#")</li>
+		<li>Move the class attribute from it's current position (Home) to the link for About</li>
+		<li>Modify the hyperlink for Home to direct you to "index.html"</li>
+		<li>Modify the hyperlink for About to point to an empty ID ("#")</li>
 	</ol>
 	
 	<h2>Inserting a heading</h2>
 	<p>Use the H1 tag to insert a heading with the text "About Me"</p>
 	
 	<h2>Inserting an image</h2>
-	<p>You're going to insert an image of yourself, with a few paragraphs about yourself beside it.  In order to insert an image of yourself, you'll first have to <a href="filezilla.html">connect to the server using filezilla</a> and upload it.</p>
+	<p>You're going to insert an image of yourself, with a few paragraphs about yourself beside it.</p>
 	
 	<!-- Upload your image -->
 	<h3>To do:</h3>
-	<p>Create a new folder on the server called images, and upload the picture there.</p>
+	<p>Create a new folder in your local git folder called images, and copy the picture there. This will be pushed to GitHub when you make a commit through VS Code.</p>
 	
 	<!-- Insert an image of yourself -->
 	<h3>Insert the image</h3>
@@ -77,7 +77,7 @@
 		<li>src - means source, a relative path to the image in this case</li>
 		<li>alt - alternate text, this will show up if the image can't be loaded</li>
 	</ul>
-	<p>Using the following code example, insert the image you uploaded to the server with FileZilla.</p>
+	<p>Using the following code example, insert the image.</p>
 	<pre>
 	&lt;img src="images/file.jpg" /&gt;
 	</pre>
@@ -90,11 +90,14 @@
 	<h2>Introducing Tables</h2>
 	<p>Tables consist of several structural tags.  They're opened and closed with the &lt;table&gt; and &lt;/table&gt; tags respectively.  Tables contain 3 main tags for structure.</p>
 
-	<ul>
-		<li>&lt;tr&gt; and &lt;/tr&gt; - Specifies a table row</li>
-		<li>&lt;th&gt; and &lt;/th&gt; - Specifies a heading</li>
-		<li>&lt;td&gt; and &lt;/td&gt; - Specifies a cell within the row, or table data</li>
-	</ul>
+	<dl>
+		<dt>&lt;tr&gt; and &lt;/tr&gt;</dt>
+			<dd>Specifies a table row</dd>
+		<dt>&lt;th&gt; and &lt;/th&gt;</dt>
+			<dd>Specifies a heading</dd>
+		<dt>&lt;td&gt; and &lt;/td&gt;</dt>
+			<dd>Specifies a cell within the row, or table data</dd>
+	</dl>
 	<p>We're going to insert a table containing your course schedule.  This is useful, as you'll be able to access your schedule from your phone as a web page after completion of this lab!</p>
 	<p>Add an opening table tag, an example follows.</p>
 	<pre>
@@ -203,7 +206,8 @@
 		margin-left: 5em;
 	}
 	</pre>
-	<p>Increase this number as much as needed, until the paragraph background color appears similar to the provided sample (located at the end of the lab instructions).</p>
+	<p>Increase or decrease this number as much as needed, until the paragraph background color appears similar to the provided sample (located at the end of the lab instructions).</p>
+	
 	<h3>Centering your table</h3>
 	<p>The easiest way to center a table, is to set the left and right margin to auto.  Use the following example to center your table.</p>
 	<pre>
@@ -225,8 +229,11 @@
 	</pre>
 	
 	<h2>Completing the Lab</h2>
-	<p>Upon completion of this lab you should have a web page with a picture of yourself, a paragraph or two about yourself and your course schedule as a table.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
-	<img src="images/lab5.png" alt="Lab 5 sample" />
+	<p>Using the steps outlined at the end of Lab 4, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
+	
+  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+	<img src="images/lab8.png" alt="Lab 8 sample" />
+
 	<h2>Exploration Questions</h2>
 	<ol>
 		<li>What two tags can table rows contain?</li>

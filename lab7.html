@@ -35,30 +35,36 @@
 	<ul>
 		<li>Learning how to implement CSS comments</li>
 		<li>Learning how to create and use CSS classes &amp; IDs</li>
-		<li>Learning how to create a mobile friendly navigation bar</li>
+		<li>Learning how to create a responsive navigation bar</li>
 	</ul>
 	
+	<h2>Lecture Slides</h2>
+	<div class="container">
+		<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ2iYAbnEOD0gmcrnl-my-JfxW1WV4J-7ufAzkWKev6HNQz7oLnZauz4nIzzc_rS_AbY-UFKyr0KVD5/embed?start=false&loop=false&delayms=5000" class="responsive-iframe"></iframe>
+	</div>
+
 	<h3>Stylizing our navigation bar with CSS</h3>
-	<p>Open the style sheet (style.css) that you created back in Lab 2.  We're going to add some CSS to it, to stylize our navigation bar.  Since the code we're adding is strictly for the navigation, it's good to separate it from the rest of our code within a block of comments.  This of course means, we need to introduce comments in CSS.</p>
+	<p>Open the style sheet (style.css) that you created in Lab 5.  We're going to add some CSS to it, to stylize our navigation bar.  Since the code we're adding is strictly for the navigation, it's good to separate it from the rest of our code within a block of comments.  This of course means, we need to introduce comments in CSS.</p>
 	<p>If you recall in html, you're able to enter in a comment with the &lt;!-- --&gt; tags.  In CSS, comments begin with /* and close with */.  They can also span multiple lines, or be confined to a single line.  Either way, the syntax is the same.  An example follows for clarity.</p>
-	<h4>CSS Comment</h4>
+	<h4>CSS Comments</h4>
 	<pre>
 		/* 
 		This comment 
 		spans 
 		multiple lines
 		*/
+
 		/* This comment spans one line */
 	</pre>
 	<h3>To do:</h3>
 	<p>Now that we know how comments work, create comments at the bottom of your CSS file.  One that says "start navigation" and the other "end navigation".  Everything in between these comments will be the CSS for our navigation.  This isn't technically required for the code to work, but it does make our code easier to read.</p>
-	<p>The majority of the magic that makes a navigation bar appear as such is done via CSS.  Structurally it's simply a list of links within a special tag designating it as a navigation bar.  To do this we use some a slightly more complex CSS selector than we've seen up to this point.  It is recommended you apply these attributes individually and refresh the page each time, to understand what each of them are doing.</p>
+	<p>The majority of the magic that makes a navigation bar appear as such is done via CSS.  Structurally it's simply a list of links within a special tag designating it as a navigation bar.  To do this we use some a slightly more complex CSS selectors than we've seen up to this point.  You may want to apply these attributes individually and refresh the page each time, to understand what each of them are doing.</p>
     
 	<pre>
 	nav ul {
 	}
 	</pre>
-    <p>To best describe what the above selector is doing, it is simplest to think of it in a series of spoken or written instructions.  Find the navigation tag (nav), within the nav find the unordered list (ul).</p>
+    <p>The above selector applies to unordered lists, but only if they are contained within (child items) of the nav tag.</p>
 	<p>The first few attributes you'll want to change are:</p>
     <ol>
 		<li>remove the bullets, by setting the attribute list-style-type to none</li>
@@ -82,15 +88,15 @@
 		text-decoration: none;
 	}
 	</pre>
-	<h2>CSS classes and events</h2>
-	<p>Everything we've applied using CSS thus far has been applied to specific tags (reffered to as selectors in CSS).  Sometimes it's necessary to apply changes uniquely by using a class or ID (we'll look more at IDs in a future lab).  Additionally CSS can be applied when an specific event occurs (like hovering over the tag).  Here's a small list of events you can use to apply CSS.</p>
+	<h2>CSS Pseudo-classes</h2>
+	<p>Everything we've applied using CSS thus far has been applied to specific tags (reffered to as selectors in CSS).  Sometimes it's necessary to apply changes uniquely by using a class or ID (we'll look more at IDs in a future lab).  Additionally CSS can be applied when an specific event occurs (like hovering over the tag).  Here's a small list of pseudo-classes you can use to apply CSS.</p>
 	<ul>
 		<li>hover - when the user mouses over the selector</li>
 		<li>focus - when the element has focus - used more in forms, we'll look at this in a later lab</li>
 		<li>visited - Applies to all visted links</li>
 		<li>link - Applies to all unvisted links</li>
 	</ul>
-	<p>For more refference, see <a href="https://www.w3schools.com/cssref/css_selectors.asp">w3schools</a>.</p>
+	<p>For more reference, see <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">w3schools</a>.</p>
 	<h2>Applying what you just learned</h2>
 	<p>You're going to use a very complex selector that will change the background colour when you hover over a link, as long as it's not the active link.  Apply a background colour of your choice using the following selector.</p>
 	<pre>
@@ -106,8 +112,8 @@
 	}
 	</pre>
 	
-	<h2>Creating a mobile friendly navigation bar</h2>
-	<p>This last bit will make our navigation mobile friendly, as it'll display differently based on the size of the screen.  First we're going stylize a class to float right.</p>
+	<h2>Creating a responsive navigation bar</h2>
+	<p>This last bit will make our navigation respnsive, meaning as it will display differently based on the size of the screen.  First we're going stylize a class to float right.</p>
 	<pre>
 	nav ul li.right {
 		float: right;
@@ -124,11 +130,10 @@
 	<!-- end navigation -->
 	
 	<h2>Completing the Lab</h2>
-	<span class="tip">Tip: Validation!
-	Your page should pass the <a href="https://validator.w3.org/">w3schools validation</a> tool.</span>
-	<p>Upon completion of the lab you should have added a menu that links to the other pages that we're going to create this semester.  Your page should look similar to the following output (your choice of colours will likely be different).  If it does not, go back and complete whatever you've missed.</p>
+	<p>Using the steps outlined at the end of Lab 4, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 	
-	<img src="images/lab4.png" alt="Lab 4 sample" />
+  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+	<img src="images/lab7.png" alt="Lab 7 sample" />
 
 	<h2>Exploration Questions</h2>
 	<ol>

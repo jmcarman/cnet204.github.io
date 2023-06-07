@@ -38,6 +38,11 @@
 		<li>Learning how to apply classes &amp; ids and describe when to use them</li>
 	</ul>
 	
+	<h2>Lecture Slides</h2>
+	<div class="container">
+		<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTZVOXytgb1sRU2_24jnYuFOfpzblx19asvUATBsVfyazjkFopnhs1aVblDi1Ol06RmbT7f8eH8eql5/embed?start=false&loop=false&delayms=5000" class="responsive-iframe"></iframe>
+	</div>
+
 	<h2>Creating your Github Repo for your Labs</h2>
 	<p>Use the following <a href="https://classroom.github.com/a/X6fjWtAK" target="_blank">link</a> to set up your labs 6-10 repository.  You will be using this for labs the rest of the labs in the course (including this one), and for Assignment 1.</p>
 
@@ -66,15 +71,32 @@
 	<!-- End Ordered & Unordered lists -->
 	<!-- Hyperlinks -->
 	<h2>Hyperlinks</h2>
-	<p>Hyperlinks are an important building block of the Internet.  They're one of those key technologies that without which, the Internet wouldn't work.  Hyperlinks allow us to link pages to other pages on the internet.  They can take a couple different formats:</p>
-	<ul>
-		<li>Internal - Linking to an anchor point identified with a unique ID (more on this later), placed on the same page</li>
-		<li>External - Linking to another page</li>
-	</ul>
-	<p>Hyperlinks can also be referred to as either relative or absolute.  An absolute hyperlink means it provides a full path to the resource, starting with an http://.  A relative hyperlink is provides a link to the path that is relative to the page you're linking from.  Relative hyperlinks are preferable when linking to other pages on your own site, as if we decide to change the directory structure or migrate to another server they'll still work; whereas an absolute hyperlink will not.  See below for examples.</p>
-	<a href="https://jmcarman.github.io/cnet204.github.io/index.html">Absolute link to Lab 1 - https://jmcarman.github.io/cnet204.github.io/index.html</a><br />
-	<a href="index.html">Relative link to Lab 1 - index.html</a><br />
-	<p>Notice both of the above links take you to the instructions for Lab 1.  If you view the page source, you'll notice they're different links.  If I were to move this page and the Lab 1 instructions to a new location, as long as they stay in the same folder, the relative link would still work; the absolute one would not.</p>
+	<p>Hyperlinks are an important building block of the Internet.  They're one of those key technologies that without which, the Internet wouldn't work.  Hyperlinks allow us to link pages to other pages on the internet.  They can take a couple different formats: relative or absolute.</p>
+
+	<dl>
+		<dt>Absolute hyperlinks</dt>
+			<dd>Provide a full path to the resource, starting with http://  or https://.</dd>
+		<dt>Relative hyperlinks</dt>
+			<dd>Are relative to where your page exists on the server.  These do not begin with http:// or https://.</dd>
+	</dl>
+
+	<p>Relative hyperlinks are preferable when linking to other pages on your own site, as if we decide to change the directory structure or migrate to another server they'll still work; whereas an absolute hyperlink will not.  See below for examples.</p>
+
+	<a href="https://jmcarman.github.io/cnet204.github.io/index.html">Absolute link to Lab 4 - https://jmcarman.github.io/cnet204.github.io/index.html</a><br />
+
+	<a href="index.html">Relative link to Lab 4 - index.html</a><br />
+
+	<p>Notice both of the above links take you to the instructions for Lab 4.  If you view the page source, you'll notice they're different links.  If I were to move this page and the Lab 4 instructions to a new location, as long as they stay in the same folder, the relative link would still work; the absolute one would not.</p>
+
+	<p>Hyperlinks can also be either internal or external links.</p>
+
+	<dl>
+		<dt>Internal</dt>
+			<dd>Linking to another page within your website.</dd>
+		<dt>External</dt>
+			<dd>Linking to another website.</dd>
+	</dl>	
+
 	<p>Hyper links can also (for the purposes of creating a naviation menu) link to null or nothing.  This is always done in a navigation bar for the entry pertaining to the current page.  There are a couple ways of doing this, the simplest of which is to create the link with the reference of "#" (without the quotes).  Add the following code inside the list item <strong>home</strong> you created earlier, surrounding the text so it appears as follows.</p>
 	<pre>
 		&lt;a href="#"&gt;Home&lt;/a&gt;
@@ -84,8 +106,8 @@
 	<p>Add relative hyperlinks for the following pages.  They won't exist yet, but we'll create them in the remaining labs.</p>
 	<ul>
 		<li>About as about.html</li>
-		<li>Form as form.html</li>
 		<li>Media as media.html</li>
+		<li>Form as form.html</li>
 	</ul>
 	<!-- end hyperlinks -->
 	
@@ -126,11 +148,10 @@
 	</pre>
 	
 	<h2>Completing the Lab</h2>
-	<span class="tip">Tip: Validation!
-	Your page should pass the <a href="https://validator.w3.org/">w3schools validation</a> tool.</span>
-	<p>Upon completion of the lab you should have added a menu that links to the other pages that we're going to create this semester.  Your page should look similar to the following output (your choice of colours will likely be different).  If it does not, go back and complete whatever you've missed.</p>
+	<p>Using the steps outlined at the end of Lab 4, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 	
-	<img src="images/lab3.png" alt="Lab 3 sample" />
+  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+	<img src="images/lab6.png" alt="Lab 6 sample" />
 
 	<h2>Exploration Questions</h2>
 	<ol>
