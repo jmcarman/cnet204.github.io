@@ -314,18 +314,22 @@
         $lName = trim(ucfirst(str_replace(" ","",$lName)));
         $email = trim(str_replace(" ","",$email));
         $phone = trim(str_replace(" ","",$phone));
+	
 	</pre>
 
 	<p>Finally, build a meaningful message telling the user their form has been processed. Normally you would then connect to a database and insert the data, but that is beyond the scope of this lab (and course).</p>
 
 	<pre>
-	# Join first and last name together, storing the result in $fullName
-	$fullName = $fName . " " . $lName;
+			# Join first and last name together, storing the result in $fullName
+			$fullName = $fName . " " . $lName;
 
-	# Create a message using the $fullName variable
-	$msg = "Hello " . $fullName . "&lt;br&gt; Your email is: $email &lt;br&gt;" . "You were born on: $dob &lt;br&gt;" . "Your phone is: $phone &lt;br&gt;" . "You live in $province &lt;br&gt;" . "This form has been processed using php.";
+			# Create a message using the $fullName variable
+			$msg = "Hello " . $fullName . "&lt;br&gt; Your email is: $email &lt;br&gt;" . "You were born on: $dob &lt;br&gt;" . "Your phone is: $phone &lt;br&gt;" . "You live in $province &lt;br&gt;" . "This form has been processed using php.";
 
-	# Normally at this point you would connect to a database and insert the data, but that is beyond the scope of this course	
+			# Normally at this point you would connect to a database and insert the data, but that is beyond the scope of this course
+			}
+		}
+	?>	
 	</pre>
 
 	<h2>Modifying the HTML form to display the message</h2>
