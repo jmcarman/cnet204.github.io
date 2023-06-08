@@ -48,7 +48,7 @@
 	<p>PHP originally stood for Personal Home Page, but is now a recursive acryonym for PHP: Hypertext Preprocessor. It is a widely-used open source scripting language. PHP is a server-side scripting language, meaning scripts are executed on a server. It is free to download and use.</p>
 
 	<h3>What is a PHP file?</h3>
-	<p>A php file can contain text, HTML, CSS, JavaScript and php code. PHP supports two modes of use, any code written between the opening and closing PHP tags &lt;?php ?&gt; will be interpreted as php. Anything outside of these tags is interpreted as HTML. While you can use built in functions such as print or echo to print out HTML within the PHP tags, it's generally considered bad form. Additionally	you lose the advantage of any color coding/tag matching your text editor does for the HTML as anything between single or double quotes in PHP comes out as all the same colour. PHP statements terminate with a semi-colon(;).</p>
+	<p>A php file can contain text, HTML, CSS, JavaScript and php code. PHP supports two modes of use, any code written between the opening and closing PHP tags <strong>&lt;?php</strong> &amp; <strong>?&gt;</strong> will be interpreted as php. Anything outside of these tags is interpreted as HTML. While you can use built in functions such as print or echo to print out HTML within the PHP tags, it's generally considered bad form. Additionally, you lose the advantage of any color coding/tag matching your text editor does for the HTML as anything between single or double quotes in PHP comes out as all the same colour. PHP statements terminate with a semi-colon(;).</p>
 
 	<p>PHP code is executed on the server, and the result is returned to the browser as plain HTML.	Unlike HTML or CSS, PHP code is not viewable in the browser by viewing page source. In order for PHP files to be interpreted properly by the server, the must have extension ".php".</p>
 
@@ -93,13 +93,13 @@
 	</ol>
 		
 	<h2>Introducing html forms</h2>
-	<p>Forms are used as a tool to take user input data and pass it to a program running on a server for server side processing. First you will create a form that will not interact with a server, as that requires a server side scripting language (such as PHP) for this. You will then add the PHP code to process the form.</p>
+	<p>Forms are used as a tool to take user input data and pass it to a program running on a server for server side processing. First you will create a form that will not interact with a server. You will then add the PHP code to process the form.</p>
 
 	<h2>Beginning your form</h2>
 	<p>Forms begin and end with the &lt;form&gt; tag.  They can contain several different tags, such as buttons and various types of input fields.  The types of input fields have been expanded on substantially in HTML5.</p>
 	
 	<h2>Adding some attributes</h2>
-	<p>The form tag has two commonly used attributes.  These are action and method.  Action defines the action to be performed when the form is submitted.  This is always the name of the script on the server that will be processing your form.  You won't be using this attribute in your form, as server side scripting is the content of another course.</p>
+	<p>The form tag has two commonly used attributes.  These are action and method.  Action defines the action to be performed when the form is submitted.  This is always the name of the script on the server that will be processing your form.</p>
 	<p>The method attribute specifies the HTTP method to be used when submitting the form data.  Thse can be either GET or POST.  When you submit a form using GET, the form data is sent in the packet header and is visible in the page address field.  This should not be used if your data is sensitive.  When you submit a form using POST, the form data is sent in the packet body and isn't visible in the page address field.</p>
 	<h3>To do:</h3>
 	<p>Add the method attribute to your form tag, and set it to "post".  A sample of what you should have follows.</p>
@@ -212,7 +212,7 @@
 		<li>Declare all variables at the top of your file</li>
 		<li>Do not use numbers: what is date1 vs. date2?</li>
 		<li>Use descriptive terms like counter, name, price</li>
-		<li>camelCase is a common practice where you combine multiple words to form a variable, capitalizing the first letter of each word. IE: errorCounter, familyName, unitPriceDiscount</li>
+		<li>Camel Case is a common practice where you combine multiple words to form a variable, capitalizing the first letter of each word. IE: errorCounter, familyName, unitPriceDiscount</li>
 	</ol>
 
 	<p>To declare a variable, use the following syntax.</p>
