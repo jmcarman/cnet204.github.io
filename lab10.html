@@ -35,11 +35,23 @@
 	<ul>
 		<li>Installing PHP on your web server</li>
 		<li>Creating a new page, called form.php</li>
+		<li>Describing PHP syntax</li>
+		<li>Using PHP variables to store information</li>
 		<li>Learning how to build forms to collect user information</li>
 		<li>Learning how to use different types of input fields</li>
-		<li>Learning how to submit user information to the server using PHP</li>
+		<li>Using PHP to submit user information to a server</li>
 		<li>Learning how to write a PHP script to parse and validate form data</li>
 	</ul>
+
+	<h2>Introduction to PHP</h2>
+	<h3>What is PHP?</h3>
+	<p>PHP originally stood for Personal Home Page, but is now a recursive acryonym for PHP: Hypertext Preprocessor. It is a widely-used open source scripting language. PHP is a server-side scripting language, meaning scripts are executed on a server. It is free to download and use.</p>
+
+	<h3>What is a PHP file?</h3>
+	<p>A php file can contain text, HTML, CSS, JavaScript and php code. PHP supports two modes of use, any code written between the opening and closing PHP tags &lt;?php ?&gt; will be interpreted as php. Anything outside of these tags is interpreted as HTML. While you can use built in functions such as print or echo to print out HTML within the PHP tags, it's generally considered bad form. Additionally	you lose the advantage of any color coding/tag matching your text editor does for the HTML as anything between single or double quotes in PHP comes out as all the same colour. PHP statements terminate with a semi-colon(;).</p>
+
+	<p>PHP code is executed on the server, and the result is returned to the browser as plain HTML.	Unlike HTML or CSS, PHP code is not viewable in the browser by viewing page source. In order for PHP files to be interpreted properly by the server, the must have extension ".php".</p>
+
 	<h2>Installing PHP</h2>
 	<h3>Perform the following steps:</h3>
 	
@@ -55,21 +67,37 @@
 	<pre>which php</pre>
 
 	<h2>Creating your first PHP script</h2>
-	<p>Create a new page called form.php, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+	<p>Using vi on your www instance, create a new file</p>
+	<pre>sudo vi /var/www/html/hello.php</pre>
+	
+	<p>Insert the following code:</p>
+	<pre>
+	&lt;?php
+		echo "Hello World!"
+	?&gt;
+	</pre>
+
+	<h3>To do:</h3>
+	<p>Open a web browser and access hello.php from your web server. What do you see? View the page source. What do you notice about the output?</p>
+
+	<h2>Modifying a PHP script from a provided template</h2>
+	<p>Open the file called form.php in your Labs6-10 repository. Notice some of the code has been provided for you (along with this file). Create the html portion of the page first to meet the following criteria. Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
 	<ol>
 		<li>Use the HTML5 doctype declaration</li>
 		<li>Set the Title to "Form", without the quotes</li>
 		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
 		<li>Insert a comment indicating your name and student number</li>
 		<li>Link your style sheet to the page</li>
-		<li>Make use of the main tag, as we did in Lab 3</li>
+		<li>Make use of the main tag</li>
 		<li>Copy your navigation bar from your index page and modify it to properly indicate your current page</li>
 	</ol>
-	
+		
 	<h2>Introducing html forms</h2>
-	<p>Forms are used as a tool to take user input data and pass it to a program running on a server for server side processing.  Our form will not interact with a server, as you require a server side scripting language (such as PHP) for this.  HTML forms are however, pretty complicated and necessary to understand if you're going to learn any server side development.  Forms will be the focus of this assignment.</p>
+	<p>Forms are used as a tool to take user input data and pass it to a program running on a server for server side processing. First you will create a form that will not interact with a server, as that requires a server side scripting language (such as PHP) for this. You will then add the PHP code to process the form.</p>
+
 	<h2>Beginning your form</h2>
 	<p>Forms begin and end with the &lt;form&gt; tag.  They can contain several different tags, such as buttons and various types of input fields.  The types of input fields have been expanded on substantially in HTML5.</p>
+	
 	<h2>Adding some attributes</h2>
 	<p>The form tag has two commonly used attributes.  These are action and method.  Action defines the action to be performed when the form is submitted.  This is always the name of the script on the server that will be processing your form.  You won't be using this attribute in your form, as server side scripting is the content of another course.</p>
 	<p>The method attribute specifies the HTTP method to be used when submitting the form data.  Thse can be either GET or POST.  When you submit a form using GET, the form data is sent in the packet header and is visible in the page address field.  This should not be used if your data is sensitive.  When you submit a form using POST, the form data is sent in the packet body and isn't visible in the page address field.</p>
@@ -110,6 +138,7 @@
 		<li>Date of Birth with a type of date</li>
 		<li>Phone Number with a type of tel</li>
 	</ul>
+	
 	<h2>Adding a dropdown list for province</h2>
 	<p>Below your city input field, we're going to add a drop down list where the user can select their province.  This requires a couple different tags.  To create a dropdown list, use the &lt;select&gt; tag, as demonstrated below.</p>
 	<pre>
@@ -139,18 +168,62 @@
 		<li>Saskatchewan</li>
 		<li>Yukon</li>
 	</ol>
-	<h2>Finishing Touches</h2>
+	
+	<h2>Form Finishing Touches</h2>
 	<p>All our form needs now, are a submit and clear button, as well as the closing tag.  Add the buttons using the following sample.  Note whatever text you add to the value parameter, is what appears on the button.</p>
 	<pre>
 		&lt;input type="submit" name="submit" value="Submit"&gt;&lt;input type="reset" name="clear" value="Clear"&gt;
 	</pre>
 	<p>And finally, close your form with the &lt;/form&gt; tag.</p>
 	<p>Save and view your page in the browser.  Notice all the input boxes appear on one line, as they're in-line tags.  We can clean this up a bit by adding some break tags at the end of each.</p>
+	
 	<h3>To do:</h3>
 	<p>Make use of the &lt;br /&gt; tag to clean up your form so it looks similar to the sample provided.</p>
 	<h2>Stylizing our form with CSS</h2>
 	<p>Forms have a lot of styling options that can be applied using CSS.  Use the resources provided by <a href="https://www.w3schools.com/css/css_form.asp">w3schools</a> to apply some CSS to your form.</p>
 	
+	<h2>Parsing the form with PHP</h2>
+	<p>Look at the PHP section of the form.php template you have been working in. Some code was provided, but most of it was left out and you were provided comments instead. Fill in the <strong>Author</strong> and <strong>Date</strong> information.</p>
+
+	<h3>What is a variable?</h3>
+	<p>A variable is a named location in memory used to store a value. The value can change over the course	of a script or program. Think similarly to algebra, where you assign x or y as an unknown value in an equation and solve for it. Unlike algebra, variables in programming are declared knowing how they're going to be used and what type of information will be stored in them. PHP supports dynamic or static typed variables.</p>
+
+	<dl>
+		<dt>Dynamic variables</dt>
+		<dd>With dynamic typed variables, the program determines what type of data a variable contains based on the context it is used in.</dd>
+		<dt>Static variables</dt>
+		<dd>With static typed variables, you must declare a type when defining the variable. That variable can then only store that type of data. These are more secure in many ways, but a bit more difficult to deal with.</dd>
+	</dl>
+
+	<p>You will be using dynamic variables in this lab. It is recommended when using variables that you give them meaningful names that reflect the intended purpose. PHP has no command for declaring a variable, the variable is created when you assign a value to it.</p>
+
+	<h3>PHP Variable Naming Rules</h3>
+	<p>Variable names:</p>
+	<ol>
+		<li>Begin with the dollar sign($) followed by the name of the variable</li>
+		<li>Can only begin with a letter or underscore</li>
+		<li>Can be made up of letters, numbers or underscores</li>
+		<li>Cannot be a reserved PHP command word</li>
+		<li>Are case sensitive</li>
+	</ol>
+
+	<h3>Recommendations for naming variables</h3>
+	<ol>
+		<li>Declare all variables at the top of your file</li>
+		<li>Do not use numbers: what is date1 vs. date2?</li>
+		<li>Use descriptive terms like counter, name, price</li>
+		<li>camelCase is a common practice where you combine multiple words to form a variable, capitalizing the first letter of each word. IE: errorCounter, familyName, unitPriceDiscount</li>
+	</ol>
+
+	<p>To declare a variable, use the following syntax.</p>
+	<pre>
+		$varName = value;
+	</pre>
+	<p>If your value is a string, double quotes around it's entirety will tell the script to treat the whole thing together. Otherwise you may get syntax errors.</p>
+
+	<h2>Initalizing the variables</h2>
+	<p></p>
+
 	<h2>Completing the Lab</h2>
 	<p>Upon completion of this lab you should have a somewhat functional form.  To it to be completely functional would require server side scripting, which is the content of another course entirely.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
 	<img src="images/lab10.png" alt="Lab 10 sample" />
