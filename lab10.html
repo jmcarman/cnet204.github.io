@@ -33,15 +33,29 @@
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Creating a new page, called lab7.html</li>
+		<li>Installing PHP on your web server</li>
+		<li>Creating a new page, called form.php</li>
 		<li>Learning how to build forms to collect user information</li>
 		<li>Learning how to use different types of input fields</li>
 		<li>Learning how to submit user information to the server using PHP</li>
 		<li>Learning how to write a PHP script to parse and validate form data</li>
 	</ul>
-		
-	<h2>Creating a new page</h2>
-	<p>Create a new page called lab7.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+	<h2>Installing PHP</h2>
+	<h3>Perform the following steps:</h3>
+	
+	<ul>
+		<li>Start the AWS learner lab.</li>
+		<li>Login to your www instance using SSH.</li>
+	</ul>
+
+	<p>Issue the following commands to update your system and install php.</p>
+	<pre>sudo apt -y update; sudo apt -y install php</pre>
+
+	<p>Issue the following command to confirm PHP has been installed.  You should see the output <strong>/usr/bin/php</strong></p>
+	<pre>which php</pre>
+
+	<h2>Creating your first PHP script</h2>
+	<p>Create a new page called form.php, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
 	<ol>
 		<li>Use the HTML5 doctype declaration</li>
 		<li>Set the Title to "Lab 7", without the quotes</li>
@@ -51,6 +65,7 @@
 		<li>Make use of the main tag, as we did in Lab 3</li>
 		<li>Copy your navigation bar from your index page and modify it to properly indicate your current page</li>
 	</ol>
+	
 	<h2>Introducing html forms</h2>
 	<p>Forms are used as a tool to take user input data and pass it to a program running on a server for server side processing.  Our form will not interact with a server, as you require a server side scripting language (such as PHP) for this.  HTML forms are however, pretty complicated and necessary to understand if you're going to learn any server side development.  Forms will be the focus of this assignment.</p>
 	<h2>Beginning your form</h2>
