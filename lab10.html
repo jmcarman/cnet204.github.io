@@ -30,6 +30,7 @@
 </nav>
 <main>
     <h1>Lab 10 - Introduction to PHP &amp Forms</h1>
+	<h2>Under Development</h2>
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
@@ -126,17 +127,17 @@
 	
 	<h2>Adding input fields</h2>
 	<p>Add a field for First Name, with a type of text and a name of firstName</p>
-	<pre>First Name: &lt;input type="text" name="firstName"&gt;</pre>
-	<p>Each input field must have a name attribute to be submitted.  If you leave this out, the data from that field won't be sent to the server for processing.  In our case, we're not sending the form for processing at all; however when you learn a server side scripting langauge such as PHP you'll require forms.</p>
+	<pre>First Name: &lt;input type="text" name="firstName" value=&lt;?php echo $fName;?&gt;"&gt;&lt;span class="error"&gt;&lt;?php echo $fNameErr;?&gt;&lt;/span&gt;</pre>
+	<p>Each input field must have a name attribute to be submitted. If you leave this out, the data from that field won't be sent to the server for processing. The embedded PHP code are the variables your PHP script will use. These will be explained later in the lab.</p>
 	
 	<h3>To do:</h3>
 	<p>Using the above First Name input field syntax, and the input types described above that add the following fields to your form:</p>
 	<ul>
-		<li>Last Name with a type of text</li>
-		<li>Email with a type of email</li>
-		<li>Password with a type of password</li>
-		<li>Date of Birth with a type of date</li>
-		<li>Phone Number with a type of tel</li>
+		<li>Last Name with a type of text, a value of $lName, and error $fNameErr</li>
+		<li>Email with a type of email, a value of $email, and error $emailErr</li>
+		<li>Password with a type of password, a value of $password, and error $passwordErr</li>
+		<li>Date of Birth with a type of date, a value of $dob, and error $dobErr</li>
+		<li>Phone Number with a type of tel, a value of $phone, and error $phoneErr</li>
 	</ul>
 	
 	<h2>Adding a dropdown list for province</h2>
@@ -222,7 +223,20 @@
 	<p>If your value is a string, double quotes around it's entirety will tell the script to treat the whole thing together. Otherwise you may get syntax errors.</p>
 
 	<h2>Initalizing the variables</h2>
-	<p></p>
+	<p>You need to initilize all the variables you are going to use within the PHP script. Usually a programmer will do this as they go. However, since you are working from a planned example we can do that now. Find the comment in your code that matches the top line (below) and type the following (you will learn more than if you copy and paste).</p>
+	<pre>
+	# Initialize variables, without this you will get an error
+	$fName = $fNameErr = 
+	$lName = $lNameErr = 
+	$email = $emailErr =
+	$phone = $phoneErr =
+	$dob = $dobErr =
+	$province =
+	$msg = "";
+	$valid = FALSE;
+	</pre>
+	
+	<h2>Conditional Logic (IF statements)</h2>
 
 	<h2>Completing the Lab</h2>
 	<p>Upon completion of this lab you should have a somewhat functional form.  To it to be completely functional would require server side scripting, which is the content of another course entirely.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
