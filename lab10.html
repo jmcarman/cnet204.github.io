@@ -237,9 +237,114 @@
 	</pre>
 	
 	<h2>Conditional Logic (IF statements)</h2>
+	<p>The <strong>if</strong> control structure is essential to programming and scripting. Regardless of what language you're learning to write your code in, the syntax means IF this condition is met DO this action. Whatever code that follows will only execute if the condition is met. You can include multiple IF statements within a code block using elseif, with a default instruction defined with else. Else conditions are executed if none of the previous conditions have been met.</p>
+
+	<p>You're going to use an if statement to check if the form was submitted using the POST method (via the $_SERVER global variable, which is actually an array). If it was, you can start processing your form. Again, find the comment in your code that matches the top line (below).</p>
+	<pre>
+	# If the form was sent using the POST method
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {	
+	</pre>
+
+	<h2>Validating User Data</h2>
+	<h3>When and Why to validate?</h3>
+	<p>Any data that comes from an external source (usually via a form from a user) should be validated. Validation is the process of checking the data to ensure it's in the proper information and in	the right format. This is done to ensure anything entered into a database is consistent, and helps prevent malicious code like an SQL injection.</p>
+
+	<h3>How to validate form data</h3>
+	<p>Validating form data is a complicated task, and one suited for a lab unto itself. The process usesa combination of tools in conjunction with if statements to test data to ensure it meets specified requirements. You will do some very simple validation: if the field is not empty, the user has submitted something; so we can process the form.</p>
+
+	<p>If the first name input is empty, set a meaningful error (to be displayed using the error variables you initilized above) and set the validation flag to FALSE.</p>
+	<pre>
+	# If first name is blank
+	if ( empty($_POST["fName"]) ) {
+		# Store the error message for first name in a variable
+		$fNameErr = "* First Name cannot be empty";
+		
+		# Set valid to FALSE
+		$valid = FALSE;
+	</pre>
+
+	<p>If (else if) the last name input is empty, repeat the above steps.</p>
+	<pre>
+	# Else if last name is blank
+	} elseif ( empty($_POST["lName"]) ) {
+		# Store the error message for last name in a variable
+		$lNameErr = "* Last Name cannot be empty";
+		
+		# Set valid to FALSE
+		$valid = FALSE;
+	</pre>
+
+	<p>If (else if) the email input is empty, repeat the above steps.</p>
+	<pre>
+	# Else if email is blank
+	} elseif ( empty($_POST["email"]) ) {
+		# Store the error message for email in a variable
+		$emailErr = "* Email cannot be empty";
+
+		# Set valid to FALSE
+		$valid = FALSE;	
+	</pre>
+
+	<p>If (else if) the phone input is empty, repeat the above steps.</p>
+	<pre>
+	# Else if phone is blank
+	} elseif ( empty($_POST["phone"]) ) {
+		# Store the error message for phone number in a variable
+		$phoneErr = "* Phone number cannot be empty";
+		
+		# Set valid to FALSE
+		$valid = FALSE;	
+	</pre>
+
+	<p>Back to the main if block, else the form is valid. You can process the form. The below code first retrieves the input fields from the $_POST global variable and stores it in the variables you initialized above. Then, uses some built in functions to remove embedded, leading and trailing blanks.</p>
+	<pre>
+		# Else, it is valid	
+	} else {
+
+        # Retrieve the input from the form and store it in appropriate variables
+        $fName = $_POST['fName'];
+        $lName = $_POST['lName'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $province = $_POST['province'];
+        $dob = $_POST['dob'];
+
+        # Remove any embedded, leading and trailing blanks
+        $fName = trim(ucfirst(str_replace(" ","",$fName)));
+        $lName = trim(ucfirst(str_replace(" ","",$lName)));
+        $email = trim(str_replace(" ","",$email));
+        $phone = trim(str_replace(" ","",$phone));
+	</pre>
+
+	<p>Finally, build a meaningful message telling the user their form has been processed. Normally you would then connect to a database and insert the data, but that is beyond the scope of this lab (and course).</p>
+
+	<pre>
+	# Join first and last name together, storing the result in $fullName
+	$fullName = $fName . " " . $lName;
+
+	# Create a message using the $fullName variable
+	$msg = "Hello " . $fullName . "&lt;br&gt; Your email is: $email &lt;br&gt;" . "You were born on: $dob &lt;br&gt;" . "Your phone is: $phone &lt;br&gt;" . "You live in $province &lt;br&gt;" . "This form has been processed using php.";
+
+	# Normally at this point you would connect to a database and insert the data, but that is beyond the scope of this course	
+	</pre>
+
+	<h2>Modifying the HTML form to display the message</h2>
+	<p>Insert the following code on a new line between the closing form tag and closing main tag.</p>
+	<pre>
+	&lt;?php echo $msg; ?&gt;
+	</pre>
+
+	<h2>Viewing your form on the server</h2>
+	<p>Open a web browser and access hello.php from your web server. If you recieve a 500 level error code, it means you have made a syntax error somewhere in your PHP. You could go through the lab line by line and compare, or you could look at Apache's error log. To do that, access the command line on your www instance and issue the following command:</p>
+
+	<pre>
+	sudo tail -f /var/log/apache2/error.log
+	</pre>
+
+	<p>Now refresh your webpage in the browser. You should see an error in your terminal indicating what line the syntax error is on. Look for missing semi-colons and misspelled variables, as they are common errors.</p>
 
 	<h2>Completing the Lab</h2>
-	<p>Upon completion of this lab you should have a somewhat functional form.  To it to be completely functional would require server side scripting, which is the content of another course entirely.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
+	<p>Upon completion of this lab you should have a functional form. Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  Your page should look similar to the following:</p>
 	<img src="images/lab10.png" alt="Lab 10 sample" />
 	<h2>Exploration Questions</h2>
 	<ol>
@@ -250,6 +355,7 @@
 		<li>What is the difference between a submit button and a reset button?</li>
 		<li>What does the float parameter do?</li>
 		<li>What does setting the margin attribute to auto accomplish?</li>
+		<!-- add more questions for PHP -->
 	</ol>
 </main>
 </html>
