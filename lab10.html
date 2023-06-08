@@ -58,7 +58,7 @@
 	<p>Create a new page called form.php, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
 	<ol>
 		<li>Use the HTML5 doctype declaration</li>
-		<li>Set the Title to "Lab 7", without the quotes</li>
+		<li>Set the Title to "Form", without the quotes</li>
 		<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
 		<li>Insert a comment indicating your name and student number</li>
 		<li>Link your style sheet to the page</li>
@@ -75,7 +75,7 @@
 	<p>The method attribute specifies the HTTP method to be used when submitting the form data.  Thse can be either GET or POST.  When you submit a form using GET, the form data is sent in the packet header and is visible in the page address field.  This should not be used if your data is sensitive.  When you submit a form using POST, the form data is sent in the packet body and isn't visible in the page address field.</p>
 	<h3>To do:</h3>
 	<p>Add the method attribute to your form tag, and set it to "post".  A sample of what you should have follows.</p>
-	<pre>&lt;form method="post"&gt;</pre>
+	<pre>&lt;form method="post"&gt; action="form.php"></pre>
 	<p>Add a heading level 1 tag, with the contents "User Registration"</p>
 	
 	<h2>About input fields</h2>
@@ -109,8 +109,6 @@
 		<li>Password with a type of password</li>
 		<li>Date of Birth with a type of date</li>
 		<li>Phone Number with a type of tel</li>
-		<li>Address with a type of text</li>
-		<li>City with a type of text</li>
 	</ul>
 	<h2>Adding a dropdown list for province</h2>
 	<p>Below your city input field, we're going to add a drop down list where the user can select their province.  This requires a couple different tags.  To create a dropdown list, use the &lt;select&gt; tag, as demonstrated below.</p>
@@ -118,8 +116,8 @@
 		&lt;select name="province"&gt;
 		&lt;/select&gt;
 	</pre>
-	<p>Notice the name parameter.  This won't do anything for our form, but in the event you were interacting with a server-side scripting language, this would define the name in the form data that would store the information - like a variable.  Ideally when learning server-side scripting, the variable in use on the server should match this for simplicity (but doesn't have to).</p>
-	<p>Now it's time to add some options to our list.  List options are encapsulated with an &lt;option&gt; tag, contain a value and text inbetween the opening and closing tag will appear as the option in the drop-down.  Add the following option to your select list.</p>
+	<p>Notice the name parameter. This declares the name in the form data that would store the information - like a variable. You will use this to process your form with PHP.  Ideally when learning server-side scripting, the variable in use on the server should match this for simplicity (but doesn't have to).</p>
+	<p>Now it's time to add some options to our list. List options are encapsulated with an &lt;option&gt; tag, contain a value and text inbetween the opening and closing tag will appear as the option in the drop-down. Add the following option to your select list.</p>
 	<pre>
 		&lt;option value="Alberta"&gt;Alberta&lt;/option&gt;
 	</pre>
