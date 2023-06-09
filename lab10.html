@@ -99,8 +99,8 @@
 	<p>Forms begin and end with the &lt;form&gt; tag.  They can contain several different tags, such as buttons and various types of input fields.  The types of input fields have been expanded on substantially in HTML5.</p>
 	
 	<h2>Adding some attributes</h2>
-	<p>The form tag has two commonly used attributes.  These are action and method.  Action defines the action to be performed when the form is submitted.  This is always the name of the script on the server that will be processing your form.  You won't be using this attribute in your form, as server side scripting is the content of another course.</p>
-	<p>The method attribute specifies the HTTP method to be used when submitting the form data.  Thse can be either GET or POST.  When you submit a form using GET, the form data is sent in the packet header and is visible in the page address field.  This should not be used if your data is sensitive.  When you submit a form using POST, the form data is sent in the packet body and isn't visible in the page address field.</p>
+	<p>The form tag has two commonly used attributes.  These are action and method.  Action defines the action to be performed when the form is submitted.  This is always the name of the script on the server that will be processing your form. </p>
+	<p>The method attribute specifies the HTTP method to be used when submitting the form data.  This can be either GET or POST.  When you submit a form using GET, the form data is sent in the packet header and is visible in the page address field.  This should not be used if your data is sensitive.  When you submit a form using POST, the form data is sent in the packet body and isn't visible in the page address field.</p>
 	<h3>To do:</h3>
 	<p>Add the method attribute to your form tag, and set it to "post".  A sample of what you should have follows.</p>
 	<pre>&lt;form method="post" action="form.php"&gt;</pre>
@@ -210,9 +210,9 @@
 	<h3>Recommendations for naming variables</h3>
 	<ol>
 		<li>Declare all variables at the top of your file</li>
-		<li>Do not use numbers: what is date1 vs. date2?</li>
+		<li>Do not use numbers. What is date1 vs. date2?</li>
 		<li>Use descriptive terms like counter, name, price</li>
-		<li>camelCase is a common practice where you combine multiple words to form a variable, capitalizing the first letter of each word. IE: errorCounter, familyName, unitPriceDiscount</li>
+		<li>Camelcase is a common practice where you combine multiple words to form a variable, capitalizing the first letter of each word. IE: errorCounter, familyName, unitPriceDiscount</li>
 	</ol>
 
 	<p>To declare a variable, use the following syntax.</p>
@@ -309,8 +309,8 @@
         $dob = $_POST['dob'];
 
         # Remove any embedded, leading and trailing blanks
-        $fName = trim(ucfirst(str_replace(" ","",$fName)));
-        $lName = trim(ucfirst(str_replace(" ","",$lName)));
+        $fName = trim(str_replace(" ","",$fName));
+        $lName = trim(str_replace(" ","",$lName));
         $email = trim(str_replace(" ","",$email));
         $phone = trim(str_replace(" ","",$phone));
 	
