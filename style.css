@@ -37,8 +37,8 @@ h1 {
 pre {
 	margin-left: 1em;
 	margin-right: 1em;
-	/*color: #bcce1e;*/
-	background-color: #000000;
+	color: #bcce1e;
+	background-color: #ffffff;
 	white-space: pre-line;
 	padding: 0.25em;
 }
