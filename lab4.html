@@ -37,8 +37,9 @@
         <li>Identifying the basic elements of a simple web page.</li>
 		<li>Describing HTML syntax, tags, attributes and values.</li>
 		<li>Creating a web page.</li>
-		<li>Previewing Site Content in a Browser.</li>
-		<li>Posting your code to GitHub.</li>
+		<li>Previewing a web page in a browser.</li>
+		<li>Using GIT for version control.</li>
+		<li>Adding your code to a GitHub repostiory (repo).</li>
 		<li>Posting a web page to your web server.</li>
 	</ul>
 
@@ -48,22 +49,24 @@
 	</div>
 
 	<h2>Creating a GitHub account</h2>
-	<p>Navigate to <a href="https://github.com/">github.com</a> and create an account (if you don't already have one) using your email address.  In the next steps you will be accessing GitHub classroom.  You will also be using git with Visual Studio Code to push your code (web pages) to github.com, where you will then pull them into your Apache web server.  These tools are all free, open source, and commonly used in web development.</p>
+	<p>Navigate to <a href="https://github.com/">github.com</a> and create an account (if you don't already have one) using your college email address. You may also wish to add your personal email address as a secondary one. You can change this to your primary email address at any time; which might be useful post graduation.</p>
+	
+	<p>In the next steps you will be accessing GitHub classroom. You will also be using git with Visual Studio Code to push your code (web pages) to github.com, where you will then pull them into your Apache web server. These tools are all free, open source, and commonly used in web development.</p>
 
 	<h2>Introduction to Git & GitHub</h2>
-	<p>Use the following <a href="https://classroom.github.com/a/h3HQxKIs" target="_blank">link</a> to set up your access to the Introduction to Git &amp; Github materials (provided by GitHub Classroom).  Read through and everything before you continue.  The purpose of this exercise is to familiarize yourself with Git &amp; Github.  To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner.  You may wish to complete any of the additional items under <strong>Optional next steps</strong>.</p>
+	<p>Use the following <a href="https://classroom.github.com/a/h3HQxKIs" target="_blank">link</a> to set up your access to the Introduction to Git &amp; Github materials (provided by GitHub Classroom).  Read through and everything before you continue. The purpose of this exercise is to familiarize yourself with Git &amp; Github. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under <strong>Optional next steps</strong>. You are <strong>required</strong> to add your <strong>name</strong> and a short <strong>bio</strong> to access the <a href="https://education.github.com/pack">Student Developer Pack</a> which comes with free access to a ton of useful industry tools and services. You will need access to this for assignment 1, so you can register a domain name (for free!).</p>
 
-	<p>You may want to install the GitHub mobile app.  It allows you access to everything you can do in GitHub from the comfort of your smart phone.  It also allowws you to secure your GitHub.com account with two-factor authentication if you wish to.  You can install it for <a href="https://github.com/mobile">Android or iOS</a>.</p>
+	<p>You may want to install the GitHub mobile app. It allows you access to your GitHub profile and repos from the comfort of your smart phone. It also allows you to secure your GitHub.com account with two-factor authentication if you wish to. You can install it for <a href="https://github.com/mobile">Android or iOS</a>.</p>
 
 	<h2>Configuring SSH keys in AWS &amp; GitHub</h2>
-	<p>You're going to want to configure secure remote access between your GitHub repository and your Ubuntu Server instance in AWS.  Fortunately, you have the perfect tool available at your fingertips.  You've already used this somewhat. SSH key pairs.</p>
+	<p>You're going to want to configure secure remote access between your GitHub repository and your Ubuntu Server instance in AWS. Fortunately, you have the perfect tool available at your fingertips.  You've already used this somewhat.SSH key pairs.</p>
 
-	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, issue the following command to generate a 4096 bit RSA keypair for your GitHub account's email address (replace username@email.com with your email address).</p>
+	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH. Once you have logged in, issue the following command to generate a 4096 bit RSA keypair for your GitHub account's email address (replace username@email.com with your email address).</p>
 	<pre>ssh-keygen -t rsa -b 4096 -C username@email.com</pre>
 
-	<p>Accept the defaults and provide a secure passphrase (twice).  Your keypair will be generated, with the public key saved as id_rsa.pub in .ssh (a hidden directory) in your home directory.</p>
+	<p>Accept the defaults and provide a secure passphrase (twice). Your keypair will be generated, with the public key saved as id_rsa.pub in .ssh (a hidden directory) in your home directory.</p>
 
-	<p>Before copying this into your GitHub account settings, you'll want to test it.  Issue the following command to test it:</p>
+	<p>Before copying this into your GitHub account settings, you'll want to test it. Issue the following command to test it:</p>
 	<pre>ssh -T git@github.com</pre>
 
 	<p>You should see the following output:</p>
@@ -81,21 +84,23 @@
 	<p>You will use this later in the lab.</p>
 
 	<h2>Creating your Github Repo for your Labs</h2>
-	<p>Use the following <a href="https://classroom.github.com/a/XDIadCyC" target="_blank">link</a> to set up your labs 4-5 repository.  You will be using this for labs 4 & 5</p>
+	<p>Use the following <a href="https://classroom.github.com/a/XDIadCyC" target="_blank">link</a> to set up your labs 4-5 repository. You will be using this for labs 4 & 5</p>
 
-	<p>Next, you will set up your development tools (Visual Studio Code or VS Code).  Follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer.</p>
+	<p>Next, you will set up your development tools (Visual Studio Code or VS Code and Git). Follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer.</p>
 
 	<h2>Shared Computer (ie College PC): Accessing GitHub Codespaces.</h2>
-	<p>Once you have set up your Lab 4-5 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, mobile device).  Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere.  It's perfect for a portable development environment.  Login to github (if you haven't already) and proceed.</p>
+	<p>Once you have set up your Lab 4-5 repository by following the link above (go back and do that if you missed it), you can access GitHub Codespaces from any browser on any device (PC, tablet, smart phone). Codespaces gives you access to Visual Studio Code, with direct access to your repository (without having to clone) from anywhere. It's perfect for a portable development environment. Login to GitHub (if you haven't already) and proceed.</p>
 	
-	<p>You may have noticed in the link above you can click <strong>Open in GitHub Codespaces</strong>.  Feel free to do so now.  If you have already clicked past that window the next few steps will show you how to access it again (which is useful for future access attempts anyway).  Click on <strong>&lt;&gt; Code</strong> and create a new codespace.  Once you have created it, you can access it by clicking on the named link.</p>
+	<p>You may have noticed in the link above you can click <strong>Open in GitHub Codespaces</strong>.  Feel free to do so now. If you have already clicked past that window the next few steps will show you how to access it again (which is useful for future access attempts anyway). Click on <strong>&lt;&gt; Code</strong> and create a new codespace. Once you have created it, you can access it by clicking on the named link.</p>
 
 	<img src="images/github-codespaces.png" alt="Accessing GitHub Codespaces">
 
-	<p>It may take a couple seconds to create your Codespace, but once it launches it is exactly like the interface in Visual Studio Code.  That is because it is Visual Studio Code, running in a container in the cloud through GitHub.  You get access to this completely free through GitHub Classroom.  If you are working from a Shared Computer (ie a College PC), you can skip the Personal Computer set up below for now and proceed to <strong>Creating Your First Webpage</strong>.  You will want to set up your Personal Computer with Visual Studio Code and Git later.</p>
+	<p>It may take a couple seconds to create your Codespace, but once it launches it is exactly like the interface in Visual Studio Code. That is because it is Visual Studio Code, running in an Ubuntu container in the cloud through GitHub. You get access to this completely free through GitHub Classroom. If you are working from a Shared Computer (ie a College PC), you can skip the Personal Computer set up below for now and proceed to <strong>Creating Your First Webpage</strong>. You will want to set up your Personal Computer with Visual Studio Code and Git later.</p>
 
 	<h2>Personal Computer: Downloading Visual Studio Code (VS Code)</h2>
-	<p>The College PCs should all have Visual Studio Code and Git installed on them.  You will be using both of these tools to develop your website.  If you are working from home or your laptop however, you will want to install and configure both of these.  If you are working on a PC at Centennial College, skip to the next section (configuring Visual Studio Code).  You can download and install Visual Studio Code in the following ways:</p>
+	<p>The College PCs should all have Visual Studio Code and Git installed on them. You can login to your GitHub account using a college PC to do your lab as well (instead of using Codespaces). Watch the lab demonstration video on eCentennial to see how.</p>
+	
+	<p>You will be using Visual Studio Code and Git to develop your website. If you are working from home or your laptop however, you will want to install and configure both of these. If you are working on a PC at Centennial College, skip to the next section (configuring Visual Studio Code). You can download and install Visual Studio Code in the following ways:</p>
 	<ul>
 		<li>From the <a href="https://code.visualstudio.com/">Visual Studio Code website</a>.</li>
 		<li>In Windows - From the Microsoft Store: search for vscode and click Install.</li>
@@ -104,36 +109,36 @@
 	<p>The <a href="https://code.visualstudio.com/">Visual Studio Code website</a> has installers for Windows, Linux (Debian and Red Hat based) and macOS.</p>
 
 	<h2>Configuring Visual Studio Code &amp; Git</h2>
-	<p>Visual Studio Code (VS Code) is a powerful editor designed for programming and scripting.  It is open source and available for free.  It also works cross-platform, meaning you can install it in Windows, macOS or Linux.  Additionally, it has source control tools for git and github built-in.  Launch Visual Studio Code, click on Source Control on the left and click the Download Git link unique to your operating system (see the following screenshot).</p>
+	<p>Visual Studio Code (VS Code) is a powerful editor designed for programming and scripting. It is open source and available for free. It also works cross-platform, meaning you can install it in Windows, macOS or Linux. Additionally, it has source control tools for git and GitHub built-in. Launch Visual Studio Code, click on Source Control on the left and click the Download Git link unique to your operating system (see the following screenshot).</p>
 	<img src="images/installgit.png" alt="Installing Git in Visual Studio Code">
 
-	<p>When you're installing Git, accept the defaults except for <strong>Choosing the default text edtior used by Git</strong>.  Select <strong>Use Visual Studio Code as Git's default editor</strong> from the dropdown (screenshot below).</p>
+	<p>When you're installing Git, accept the defaults except for <strong>Choosing the default text edtior used by Git</strong>. Select <strong>Use Visual Studio Code as Git's default editor</strong> from the dropdown (screenshot below).</p>
 	<img src="images/giteditor.png" alt="Choosing the default editor used by Git">
 
 	<p>Once the installation is finished you will have to close and re-open VS Code to access Git.</p>
 
 	<h2>Cloning Your Repository in VS Code</h2>
 	<ol>
-		<li>In order to clone your repository in VS Code, you need to first sign in with github.  Open VS Code and click the profile icon in the bottom left.  It is located directly above the settings (gear) icon.  Sign in with GitHub.</li>
-		<li>Next, click on Source Control and click <strong>Clone Repository</strong>.  Select <strong>Clone from GitHub</strong> in the url bar, and select the CNET204/labs-assignment-1-youruser repository.</li>
-		<li>You will now select the local folder to be used as your Repository Destination.  If you are working on a PC at the college, set this to your H drive.  If you are working from your own PC, set this to a folder of your choosing (but remember where it is).  The advantage to using your H drive on a college PC, is it is automatically mounted on any PC you log into.  Additionally, you can access your H drive through <a href="https://my.centennialcollege.ca/">myCentennial</a>.</li>
+		<li>In order to clone your repository in VS Code, you need to first sign in with GitHub. Open VS Code and click the profile icon in the bottom left. It is located directly above the settings (gear) icon. Sign in with GitHub.</li>
+		<li>Next, click on Source Control and click <strong>Clone Repository</strong>. Select <strong>Clone from GitHub</strong> in the url bar, and select the CNET204/labs-assignment-1-youruser repository.</li>
+		<li>You will now select the local folder to be used as your Repository Destination. If you are working on a PC at the college, set this to your H drive. If you are working from your own PC, set this to a folder of your choosing (but remember where it is). The advantage to using your H drive on a college PC, is it is automatically mounted on any PC you log into. Additionally, you can access your H drive through <a href="https://my.centennialcollege.ca/">myCentennial</a>.</li>
 	</ol>
 
-	<p>You may be prompted to sign in.  Accept any other prompts, including opening the repository locally and select:<strong>Yes, I trust the authors</strong>.</p>
+	<p>You may be prompted to sign in. Accept any other prompts, including opening the repository locally and select:<strong>Yes, I trust the authors</strong>.</p>
 
 	<h2>Creating your first web page</h2>
-	<p>Before creating your first web page, it's best to lay out the required structural tags (an example follows).  You can then fill in the rest of the data using this simple template.  Remember, a web page is everything that exists between the opening and closing html tags (&lt;html&gt; and &lt;/html&gt; respectively).  It consists of three main parts:</p>
+	<p>Before creating your first web page, it's best to lay out the required structural tags (an example follows). You can then fill in the rest of the data using this simple template. Remember, a web page is everything that exists between the opening and closing html tags (&lt;html&gt; and &lt;/html&gt; respectively). It consists of three main parts:</p>
 
 	<dl>
 		<dt>The Doctype Declaration</dt>
-			<dd>The document type declaration tells the browser what type of document to expect.  There are many different doctypes, however for this course we will be using the one for HTML5.</dd>
+			<dd>The document type declaration tells the browser what type of document to expect. There are many different doctypes, however for this course we will be using the one for HTML5.</dd>
 		<dt>The Head</dt>
-			<dd>consisting of everything between the head tags (&lt;head&gt; and &lt;/head&gt; respectively).  This section contains information about the document, and won't appear on the page itself.</dd>
+			<dd>Consists of everything between the head tags (&lt;head&gt; and &lt;/head&gt; respectively). This section contains information about the document, and won't appear on the page itself.</dd>
 		<dt>The Body</dt>
-			<dd>consisting of everything between the body tags (&lt;body&gt; and &lt;/body&gt;).  This section contains the document itself, everything in here will appear as your web page.</dd>
+			<dd>Consists of everything between the body tags (&lt;body&gt; and &lt;/body&gt;). This section contains the document itself. Everything in here will appear as your web page.</dd>
 	</dl>
 
-    <p>Click on new file (in the welcome screen) and create a new file named <em>index.html</em>.  Save it in your local repository folder and fill in the structure using the below sample.  This is the file you'll be editing for the rest of the lab.</p>
+    <p>Click on new file (in the welcome screen) and create a new file named <em>index.html</em>. Save it in your local repository folder and fill in the structure using the below sample. This is the file you'll be editing for the rest of the lab.</p>
 
 	<pre>
 		&lt;html&gt;
@@ -158,8 +163,8 @@
     <pre>&lt;title&gt;First Page&lt;/title&gt;</pre>
 
 	<h3>Add some meta tags</h3>
-	<p>Meta tags provide additional information about our page.  These include what character encoding you're using, and data used by search engines to index your page.</p>
-	<p>Using the meta tag, define the character set as "UTF-8" (Unicode).  This tag defines metadata about the document, and can contain many attributes.  We will use several of them over the duration of this course.</p>
+	<p>Meta tags provide additional information about our page. These include what character encoding you're using, and data used by search engines to index your page. Part of Seach Engine Optimization (SOE) is using these appropriately to gain higher rankings with search engines' (such as Google) algorithms. Another large part is properly structuring and formatting your code, which you will learn as you create html documents.</p>
+	<p>Using the meta tag, define the character set as "UTF-8" (Unicode). This tag defines metadata about the document, and can contain many attributes. We will use several of them over the duration of this course.</p>
 
 	<pre>&lt;meta charset="utf-8"&gt;</pre>
 
@@ -171,21 +176,21 @@
 
 	<h2>Filling in the body</h2>
 	<h3>Add a heading</h3>
-	<p>Headings when done properly should be used in number of importance, with 1 being most important and 2-6 used for sub-headings in order of descending importance.</p>
+	<p>Headings are used in of importance, with 1 being most important and 2-6 used for sub-headings in order of descending importance.</p>
 	<p>Insert the follwing using an H1 tag:<p>
 
 	<pre>&lt;h1&gt;Your Name's Home Page&lt;/h1&gt;</pre>
 
 	<h3>Add a paragraph</h3>
-	<p>Using the paragraph tag (&lt;p&gt; to open and &lt;/p&gt; to close), add a paragraph below your heading about what you hope to learn from this course.</p>
+	<p>Using the paragraph tag (<strong>&lt;p&gt;</strong> to open and <strong>&lt;/p&gt;</strong> to close), add a paragraph below your heading about what you hope to learn from this course.</p>
 
 	<h3>Comments</h3>
-	<p>The comment tag can be extremely useful when you're first learning HTML, or when you have a large block of code and want to clearly define where it begins and ends.  Comments can make your code easier to read and understand, either by someone else or yourself after quite a bit of time has passed.  Comments are not used as frequently in HTML as they are in other languages.  To add a comment you require an opening (&lt;!--) and closing (--&gt;) tag.  A sample follows below, please feel free to include comments in your labs whenever you encounter something that may be useful to remembering what you've learned later.</p>
+	<p>The comment tag can be extremely useful when you're first learning HTML, or when you have a large block of code and want to clearly define where it begins and ends. Comments can make your code easier to read and understand, either by someone else or yourself after quite a bit of time has passed. Comments are not used as frequently in HTML as they are in other languages. To add a comment you require an opening (&lt;!--) and closing (--&gt;) tag. A sample follows below, please feel free to include comments in your labs whenever you encounter something that may be useful to remembering what you've learned later.</p>
 
 	<pre>&lt;!-- This is a comment, it's contents will only appear when you view the page source through the browser. Comments in HTML can span multiple lines. This is not always true of comments in a other languages, and some can even have a variety of methods for designating a comment --&gt;</pre>
 
 	<h3>To do:</h3>
-	<p>Using what you learned about comments above, add a comment indicating your name and student number as the first line of the body.</p>
+	<p>Using what you learned about comments above, add a comment indicating your name and student number as the first line of the body. You are required to do this for every web page you create for this course.</p>
 
 	<h2>Setting your git username and email</h2>
 	<span class="tip">Skip this step if you are using GitHub Codespaces, and proceed to Making your first commit.</span>
@@ -204,7 +209,7 @@
 	<span class=".tip">If you are using your personal computer, you may include the --global option to set these semi-permanently.</span>
 
 	<h2>Making your first commit</h2>
-	<p>Your page is done!  You can now commit it to your github repository.  To do this:</p>
+	<p>Congratulations! Your have created your first web page. You can now commit it to your github repository.  To do this:</p>
 	<ol>
 		<li>Click on source control (on the left side of the screen).</li>
 		<li>Click the three dots at the top of the pane.</li>
@@ -214,7 +219,7 @@
 		<li>Click <strong>save</strong> when prompted.</li>
 		<li>Click <strong>Sync Changes</strong> at the top of your Source Control pane, and agree to any prompts.</li>
 	</ol>
-	<p>You've made your first commit!  You will be doing this many times over the course of the semester.  It will get easier with repetition.</p>
+	<p>You've made your first commit! You will be doing this many times over the course of the semester. It will get easier with repetition.</p>
 	
 	<h2>Cloning your repository in your Apache server</h2>
 	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, issue the following command to clone your github repository into your home directory.</p>
@@ -228,7 +233,7 @@
 	<p>Issue the following command to recursively copy the contents of your labs-assignment-1-username directory into /var/www/html</p>
 	<pre>sudo cp -R labs-assignment-1-username/* /var/www/html</pre>
 
-	<p>Confirm the contents have been written to document root.  You should see the following files:</p>
+	<p>Confirm the contents have been written to document root. You should see the following files:</p>
 	<ul>
 		<li>LICENSE</li>
 		<li>README.md</li>
@@ -236,24 +241,24 @@
 	</ul>
 
 	<h2>Accessing your index page through a web browser</h2>
-	<p>In your AWS Learner Lab, navigate to <strong>Instances</strong>, highlight the Elastic IP for www (see the following screenshot).  Paste this into your web browser.  You should see your <strong>index.html</strong> page!</p>
+	<p>In your AWS Learner Lab, navigate to <strong>Instances</strong>, highlight the Elastic IP for www (see the following screenshot). Paste this into your web browser. You should see your <strong>index.html</strong> page!</p>
 	<img src="images/ec2-elastic-ip-for-index.png" alt="Copying Elastic IP to access index.html">
 
 	<h2>Completing the Lab</h2>
-	<p>Your page should look similar to the following output.  If it does not, go back and complete whatever you've missed.</p>
+	<p>Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 	
     <img src="images/lab4.png" alt="Lab 4 sample">
 
-	<p>Upon completion of this lab you should have set up your development environment (VS Code &amp; GitHub) and written a simple web page using some introductory HTML.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+	<p>Upon completion of this lab you should have set up your development environment (VS Code &amp; GitHub) and written a simple web page using some introductory HTML. Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
 
 	<h2>Exploration Questions</h2>
 	<p>The following questions are for furthering your knowledge only, and may appear on quizzes or tests at any time later in this course.</p>
 	<ol>
 		<li>What does HTML stand for?</li>
 		<li>What are the two main parts of a web page?</li>
-		<li>What sort of things appear in the header?  Which two did we use in this assignment?</li>
-		<li>What sort of things appear in the body?  Which two did we use in this assignment?</li>
-		<li>What is the range of heading tags?  Which is the biggest?  The smallest?</li>
+		<li>What sort of things appear in the header? Which two did we use in this assignment?</li>
+		<li>What sort of things appear in the body? Which two did we use in this assignment?</li>
+		<li>What is the range of heading tags? Which is the biggest? The smallest?</li>
 		<li>How do you access your index.html in the browser?</li>
 		<li>In git, what does cloning your repository do?</li>
 	</ol>
