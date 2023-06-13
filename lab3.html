@@ -36,7 +36,7 @@
         <li>Accessing elevated privileges in Linux.</li>
 		<li>Managing Linux packages and updating the system.</li>
 		<li>Managing Linux services.</li>
-		<li>Modifying VPC Security Groups.</li>
+		<li>Modifying Virtual Private Cloud (VPC) Security Groups.</li>
 		<li>Implementing an elastic IP in AWS.</li>
         <li>Accessing your Web Server using a browser.</li>
 	</ul>
@@ -53,27 +53,27 @@
 		<li><strong>OS:</strong> Ubuntu</li>
 		<li><strong>Amazon Machine Image (AMI):</strong> Make sure Ubuntu Sever 22.04 is selected</li>
 		<li>Add it to your existing security group.</li>
-		<li>Use your existing key pair (from Lab 1).  If you lost your key, then generate a new one.  Don't lose this one.</li>
+		<li>Use your existing key pair (from Lab 1). If you lost your key, then generate a new one.  Don't lose this one.</li>
 	</ol>
 
-	<p>Connect to your server using SSH and your key pair.  You will be performing the remainder of this lab on your new instance.  By the end of this lab you will have configured an Apache web server.  You will be using this web server to deploy your website to for the rest of the labs, as well as assignment 1.</p>
+	<p>Connect to your server using SSH and your key pair. You will be performing the remainder of this lab on your new instance. By the end of this lab you will have configured an Apache web server. You will be using this web server to deploy your website to for the rest of the labs, as well as assignment 1.</p>
 
 	<h2>Accessing elevated privileges in Linux</h2>
-	<p>Your regular user in Linux can create files and directories, as well as remove them; but only in your home directory.  To do anything that changes the configuration of the system you need root access.  You can accomplish this in two ways:</p>
+	<p>Your regular user in Linux can create files and directories, as well as remove them; but only in your home directory. To do anything that changes the configuration of the system you need root access. You can accomplish this in two ways:</p>
 	
 	<ol>
 		<li>Switch to the root user</li>
 		<li>Use sudo</li>
 	</ol>
 
-	<p>Switching to root to install software, updates and configure the system is not a good practice.  Sudo can be configured to allow multiple users administrative access without giving anyone else the root password.  Additionally you can configure sudo to only allow users to execute specific commands with elevated (root) privileges.  Sudo works much the same as Run As Administrator in Windows.  To use sudo, all you need to do is add <strong>sudo</strong> in front of any command you wish to execute with elevated (root) privileges.  Lets see this in action.  In your www instance, issue the command:</p>
+	<p>Switching to root to install software, updates and configure the system is not a good practice. Sudo can be configured to allow multiple users administrative access without giving anyone else the root password. Additionally you can configure sudo to only allow users to execute specific commands with elevated (root) privileges. Sudo works much the same as Run As Administrator in Windows. To use sudo, all you need to do is add <strong>sudo</strong> in front of any command you wish to execute with elevated (root) privileges. Lets see this in action. In your www instance, issue the command:</p>
 
 	<pre>whoami</pre>
 
 	<p>Now issue:</p>
 	<pre>sudo whoami</pre>
 
-	<p>Note the different output.</p>
+	<p>Note the difference in output.</p>
 
 	<h2>Managing Linux packages and updating the system</h2>
 	<p>Installing software in Linux requires both an active Internet connection and knowledge of which package management tool to use for your distribution (or distro). Linux software and updates come from special sources hosted on other servers, known as repositories (or repos). All the major Linux distros host their own repos, though anyone can host a repository for a distribution - and many organizations do. Due to the Open Source nature of Linux, certain repos may contain specialized software that is not available in the main repository (such as EPEL - Extra Packages for Enterprise Linux); or they may contain a mirror of the main repo.</p>
@@ -81,24 +81,24 @@
 	<p>Accessing these and installing software requires using your Linux distro's command line package management tool. The major ones you will encounter when you use Linux are:</p>
 	
 	<dl>
-		<dt><a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">DNF (Dandified Yum)</a></dt>
-			<dd>Which is an update of YUM (Yellowdog Updater, Modified). Both of these operate as a front end for <a href="https://man7.org/linux/man-pages/man8/rpm.8.html">RPM (Red Hat Package Manager)</a>. These are used in Red Hat based Linux distros.</dd>
 		<dt><a href="https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html">APT (Aptitude Package Manager)</a></dt>
 			<dd>This is used in Debian based Linux distributions such as Ubuntu, Linux Mint, and Kali Linux.</dd>
+		<dt><a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">DNF (Dandified Yum)</a></dt>
+			<dd>Which is an update of YUM (Yellowdog Updater, Modified). Both of these operate as a front end for <a href="https://man7.org/linux/man-pages/man8/rpm.8.html">RPM (Red Hat Package Manager)</a>. These are used in Red Hat based Linux distros.</dd>
 		<dt><a href="https://archlinux.org/pacman/pacman.8.html">Pacman (Pacman Package Manager)</a></dt>
 			<dd>This is used in Arch Linux, as well as a few others.</dd>
 		<dt><a href="https://www.unix.com/man-page/suse/8/zypper/">Zypper Package Manager</a></dt>
 			<dd>This is used in OpenSUSE, which is popular for use on servers in Europe.</dd>
 	</dl>
 	
-	<p>Since you are using Ubuntu, you will be using <strong>APT</strong> to install software and update the system.  To install updates, issue the following command:</p>
+	<p>Since you are using Ubuntu, you will be using <strong>APT</strong> to install software and update the system. To install updates, issue the following command:</p>
 	<pre>sudo apt update</pre>
 	
-	<p>Now that your system is up to date it's time to install Apache, which is the software that will be powering your web server.  In Ubuntu, the Apache package is called <strong>apache2</strong>.  Also, you can use <strong>apt</strong> with the <strong>-y</strong> option to auto assume yes.  This can save a little time when you know you want to install the software or updates.</p>
+	<p>Now that your system is up to date it's time to install Apache, which is the software that will be powering your web server. In Ubuntu, the Apache package is called <strong>apache2</strong>.  Additionally, you can use <strong>apt</strong> with the <strong>-y</strong> option to auto assume yes. This can save a little time when you know you want to install the software or updates.</p>
 	<pre>sudo apt -y install apache2</pre>
 
 	<h2>Managing Linux services</h2>
-	<p>Normally the next thing you would want to do is start the service using the <strong>systemctl</strong> command, then confirm it is running.  However, when you installed Apache2 this was automatically done.  It's still a good idea to confirm the service is running. The <strong>systemctl</strong> command always requires elevated privileges, and follows the same format:</p>
+	<p>Normally the next thing you would want to do is start the service using the <strong>systemctl</strong> command, then confirm it is running. However, when you installed Apache2 this was automatically done. It's still a good idea to confirm the service is running. The <strong>systemctl</strong> command always requires elevated privileges, and follows the same format:</p>
 	<strong>sudo systemctl <em>action service</em></strong>
 
 	<p>The action can be any of the following:</p>
@@ -117,7 +117,7 @@
 			<dd>Prevents the service from starting automatically on boot.</dd>
 	</dl>
 
-	<p>This isn't a complete list, but it covers all of the things you will require for most system administration tasks.  Using what you have just learned, check to see if the apache2 service is running.</p>
+	<p>This isn't a complete list, but it covers all of the things you will require for most system administration tasks. Using what you have just learned, check to see if the apache2 service is running.</p>
 
 	<pre>sudo systemctl status apache2</pre>
 
@@ -125,43 +125,43 @@
 	<img src="images/apache-running.png" alt="Confirming Apache is running">
 
 	<h2>Accessing your Apache server through a browser</h2>
-	<p>In EC2, Navigate to Instances and click on the Instance ID for your www instance.  In the right side, under <strong>Public IPv4 DNS</strong> click on the open address link.  This will send an HTTP request to your Apache server.  This will fail, because we haven't allowed inbound HTTP (port 80) traffic in the Security Group settings.</p>
+	<p>In EC2, Navigate to Instances and click on the Instance ID for your www instance. In the right side, under <strong>Public IPv4 DNS</strong> click on the open address link. This will send an HTTP request to your Apache server. This will fail, because we haven't allowed inbound HTTP (port 80) traffic in the Security Group settings. Seecurity Groups will deny all traffic that isn't implicitly allowed.</p>
 
 	<h2>Modifying VPC Security Groups</h2>
-	<p>Browse to Security Groups (in EC2 under Network & Security), and click on the Security Group ID for the default security group.  Under InBound rules, click on <strong>Edit inbound rules</strong>, and select HTTP from the drop down with a source of 0.0.0.0/0, and click <strong>Save rules</strong>.  Your screen should look like the following:</p>
+	<p>Browse to Security Groups (in EC2 under Network & Security), and click on the Security Group ID for the default security group. Under InBound rules, click on <strong>Edit inbound rules</strong>, and select HTTP from the drop down with a source of 0.0.0.0/0, and click <strong>Save rules</strong>. Your screen should look like the following:</p>
 	<img src="images/sg-inbound-http.png" alt="Adding inbound HTTP to the security group">
 
 	<h2>Accessing your Apache server from a web browser</h2>
-	<p>It's time to test to see if everything's working properly.  Browse to your instance details in EC2 by clicking on Instances, then the Instance ID next to your www instance (screenshot below).</p>
+	<p>It's time to test to see if everything's working properly. Browse to your instance details in EC2 by clicking on Instances, then the Instance ID next to your www instance (screenshot below).</p>
 	<img src="images/aws-instance-id.png" alt="AWS Instance ID">
 
-	<p>Click open address beside your Public IPv4 address.  You should see the default Apache test page (screenshot below).  If you do not, edit your url and change <strong>https://</strong> to <strong>http://</strong>.</p>
+	<p>Click open address beside your Public IPv4 address. You should see the default Apache test page (screenshot below). If you do not, edit your url and change <strong>https://</strong> to <strong>http://</strong>. You will learn how to configure <strong>https</strong> in assignment 1. Accessing your server through <strong>HTTP</strong> will be fine until then.</p>
 	<img src="images/apache-default.png" alt="Apache Test Page">
 
 	<h2>Implementing an elastic IP in AWS</h2>
-	<p>When you are configuring network resources you want them to have a static IP, which doesn't change.  Currently our AWS instance pulls a new IP from Amazon's DHCP server every time it boots up.  Fortunately, you can configure a static IP through what AWS calls an <strong>Elastic IP</strong>.  These cost money when they're not in use, and will be the biggest expense item from our free $100 credits this semester (since your instance will be offline unless you are working on things for this course).  To obtain an Elastic IP in EC2, click on <strong>Elastic IPs</strong> under <strong>Network &amp; Security</strong>:</p>
+	<p>When you are configuring network resources such as (routers, network printers or servers) you want them to have a static IP, which doesn't change. Currently our AWS instance pulls a new IP from Amazon's DHCP server every time it boots up. Fortunately, you can configure a static IP through what AWS calls an <strong>Elastic IP</strong>. These cost money when they're not in use, and will be the biggest expense item from our free $100 credits this semester (since your instance will be offline unless you are working on things for this course). To obtain an Elastic IP in EC2, click on <strong>Elastic IPs</strong> under <strong>Network &amp; Security</strong>:</p>
 
 	<img src="images/elastic-ip.png" alt="Accessing the Elastic IP settings">
 
-	<p>Then click <strong>Allocate Elastic IP address</strong> in the top right corner.  On the bottom of the new screen, leave the rest of the defaults and click <strong>Allocate</strong> (screenshot below).</p>
+	<p>Then click <strong>Allocate Elastic IP address</strong> in the top right corner. On the bottom of the new screen, leave the rest of the defaults and click <strong>Allocate</strong> (screenshot below).</p>
 	<img src="images/elastic-ip2.png" alt="Allocating an elastic IP">
 
-	<p>Now you've reserved your Elastic IP.  It is yours for as long as you want (which will be the entire semester).  However, you need to associate it with the instance you want to access it through (in this case, www).  To do that check the box beside your Elastic IP, then click the <strong>Actions</strong> drop down and click <strong>Associate Elastic IP address</strong>.</p>
+	<p>Now you've reserved your Elastic IP. It is yours for as long as you want (which will be the entire semester). However, you need to associate it with the instance you want to access it through (in this case, www). To do that check the box beside your Elastic IP, then click the <strong>Actions</strong> drop down and click <strong>Associate Elastic IP address</strong>.</p>
 
 	<p>Next, click on the <strong>Instance</strong> box and select the instance with <strong>(www)</strong> in the name (screenshot below), and click <strong>Associate</strong> in the bottom right corner.</p>
 	<img src="images/associate-elastic-ip.png" alt="Associating an Elastic IP">
 
-	<p>Now you can access your www instance from anywhere by using the same IP address.  You should write this IP down somewhere for future use.</p>
+	<p>Now you can access your www instance from anywhere by using the same IP address. You should write this IP down somewhere for future use.</p>
 
 	<h2>Accessing your Apache server from a web browser</h2>
-	<p>Open a web browser and either copy/paste, or type out your elastic IP in the address bar (make sure the url is being requested using <strong>http</strong> and not <strong>https</strong> to confirm you can still access your Apache test page.  In next week's lab you will configure your development environment and create your first web page using HTML.</p>
+	<p>Open a web browser and either copy/paste, or type out your elastic IP in the address bar (make sure the url is being requested using <strong>http</strong> and not <strong>https</strong>) to confirm you can still access your Apache test page. In next week's lab you will configure your development environment and create your first web page using HTML.</p>
 
 	<h2>Completing the lab</h2>
-	<p>Take screenshots of your elastic IP (in EC2) and accessing your Apache2 Ubuntu Default Page through a web browser using http.  Submit them to the dropbox on eCentennial for proof of completion.  The following Exploration Questions are for furthering your knowledge only, and may appear on quizzes or tests at any time later in this course.</p>
+	<p>Take screenshots of your elastic IP (in EC2) and accessing your Apache2 Ubuntu Default Page through a web browser using http. Submit them to the dropbox on eCentennial for proof of completion. The following Exploration Questions are for furthering your knowledge only, and may appear on quizzes or tests at any time later in this course.</p>
 
 	<h2>Exploration Questions</h2>
 	<ol>
-		<li>What is sudo?  How do you use it?</li>
+		<li>What is sudo? How do you use it?</li>
 		<li>What package manager does Ubuntu use?</li>
 		<li>What command do you use to install software?</li>
 		<li>What command do you use to update your system?</li>
