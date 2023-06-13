@@ -33,11 +33,11 @@
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Implementing CSS comments</li>
-		<li>Creating and use CSS classes &amp; IDs</li>
-		<li>Using CSS Pseudo-classes</li>
-		<li>Implementing responsive design through CSS</li>
-		<li>Creating a responsive navigation bar</li>
+		<li>Implementing CSS comments.</li>
+		<li>Creating and using CSS classes &amp; IDs.</li>
+		<li>Using CSS Pseudo-classes.</li>
+		<li>Implementing responsive design through CSS.</li>
+		<li>Creating a responsive navigation bar.</li>
 	</ul>
 	
 	<h2>Lecture Slides</h2>
@@ -46,8 +46,8 @@
 	</div>
 
 	<h3>Stylizing our navigation bar with CSS</h3>
-	<p>Open the style sheet (style.css) that you created in Lab 5.  We're going to add some CSS to it, to stylize our navigation bar.  Since the code we're adding is strictly for the navigation, it's good to separate it from the rest of our code within a block of comments.  This of course means, we need to introduce comments in CSS.</p>
-	<p>If you recall in html, you're able to enter in a comment with the &lt;!-- --&gt; tags.  In CSS, comments begin with /* and close with */.  They can also span multiple lines, or be confined to a single line.  Either way, the syntax is the same.  An example follows for clarity.</p>
+	<p>Open the style sheet (style.css) that you created in Lab 5. You are going to add some CSS to it to stylize our navigation bar. Since the code you are adding is strictly for the navigation, it's good to separate it from the rest of our code within a block of comments.</p>
+	<p>In lab 5 you learned how to insert comments in CSS. However, they can also span multiple lines (lab 5 had you create a comment on a single line). Either way, the syntax is the same. Here is an example.</p>
 	<h4>CSS Comments</h4>
 	<pre>
 		/* 
@@ -58,55 +58,63 @@
 
 		/* This comment spans one line */
 	</pre>
+
 	<h3>To do:</h3>
-	<p>Now that we know how comments work, create comments at the bottom of your CSS file.  One that says "start navigation" and the other "end navigation".  Everything in between these comments will be the CSS for our navigation.  This isn't technically required for the code to work, but it does make our code easier to read.</p>
-	<p>The majority of the magic that makes a navigation bar appear as such is done via CSS.  Structurally it's simply a list of links within a special tag designating it as a navigation bar.  To do this we use some a slightly more complex CSS selectors than we've seen up to this point.  You may want to apply these attributes individually and refresh the page each time, to understand what each of them are doing.</p>
+	<p>Create two sepearate comments at the bottom of your CSS file. One that says "start navigation" and the other "end navigation". Everything in between these comments will be the CSS for our navigation.  This isn't technically required for the code to work, but it does make your code easier to read; which is a good practice.</p>
+	<p>The majority of the magic that makes a navigation bar appear as such is done via CSS. Structurally it's simply a list of links within a special tag designating it as a navigation bar. To do this you use some a slightly more complex CSS selectors than you have seen up to this point. You may want to apply these attributes individually and refresh the page each time, to see what each of them are doing.</p>
     
 	<pre>
 	nav ul {
 	}
 	</pre>
-    <p>The above selector applies to unordered lists, but only if they are contained within (child items) of the nav tag.</p>
+    <p>The above selector applies to unordered lists, but only if they are contained within the nav tag. Tags that are contained within or descend from other tags are called child items.</p>
 	<p>The first few attributes you'll want to change are:</p>
     <ol>
-		<li>remove the bullets, by setting the attribute list-style-type to none</li>
-		<li>set margin and padding to 0 - this will cause the nav to fill the top of the screen</li>
-		<li>set the overflow attribute to hidden - this will cause any content that fills more of the elements box than is available (hence overflow) to remain hidden</li>
-		<li>apply a background color of your choice</li>
+		<li>Remove the bullets, by setting the attribute list-style-type to none</li>
+		<li>Set margin and padding to 0 - this will cause the nav to fill the top of the screen</li>
+		<li>Set the overflow attribute to hidden - this will cause any content that fills more of the elements box than is available (hence overflow) to remain hidden</li>
+		<li>Apply a background color of your choice</li>
 		<li>Optional: apply a border-radius to give the appearance of rounded corners</li>
 	</ol>
-	<p>Note the list still appears as stacked, even with the bullet points removed.  We want to display a horizontal navigation bar.  To accomplish this we must modify another attribute, and use another selector.  This can be done a few different ways, one of the simplest of which is to change the display attribute.</p>
+	<p>Note the list still appears as stacked, even with the bullet points removed. You want to display a horizontal navigation bar. To accomplish this you must modify another attribute, and use another selector. This can be done a few different ways, one of the simplest of which is to change the display attribute.</p>
 	<h3>To do:</h3>
-	<p>Using the selector nav ul li, set the float parameter to left.</p>
+	<p>Using the selector <strong>nav ul li</strong>, set the <strong>float</strong> parameter to <strong>left</strong>.</p>
 	
 	<h2>Setting the anchor tags to display as block</h2>
 	<p>Enter the following code into your CSS following the nav ul li selector, and see what it does.</p>
 	<pre>
     nav ul li a {
 		display: block;
-		color: white;
+		color: #ffffff;
 		text-align: center;
 		padding: 14px 16px;
 		text-decoration: none;
 	}
 	</pre>
+	<p>Modify the colour to anything you would like, as long as the text is still readable.</p>
+
 	<h2>CSS Pseudo-classes</h2>
-	<p>Everything we've applied using CSS thus far has been applied to specific tags (reffered to as selectors in CSS).  Sometimes it's necessary to apply changes uniquely by using a class or ID (we'll look more at IDs in a future lab).  Additionally CSS can be applied when an specific event occurs (like hovering over the tag).  Here's a small list of pseudo-classes you can use to apply CSS.</p>
-	<ul>
-		<li>hover - when the user mouses over the selector</li>
-		<li>focus - when the element has focus - used more in forms, we'll look at this in a later lab</li>
-		<li>visited - Applies to all visted links</li>
-		<li>link - Applies to all unvisted links</li>
-	</ul>
-	<p>For more reference, see <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">w3schools</a>.</p>
-	<h2>Applying what you just learned</h2>
-	<p>You're going to use a very complex selector that will change the background colour when you hover over a link, as long as it's not the active link.  Apply a background colour of your choice using the following selector.</p>
+	<p>Everything you have applied using CSS thus far has been applied to specific tags (referred to as selectors in CSS). Sometimes it's necessary to apply changes uniquely by using a class or ID. You will learn more about IDs in a future lab). Additionally CSS can be applied when an specific event occurs, like hovering over the tag. Here's a small list of pseudo-classes you can use to apply CSS.</p>
+	<dl>
+		<dt>hover</dt>
+		<dd>When the user mouses over the selector.</dd>
+		<dt>focus</dt>
+		<dd>When the element has focus. This used more in forms, which you will learn in a later lab.</dd>
+		<dt>Visited</dt>
+		<dd>Applies to all visted links.</dd>
+		<dt>Link</dt>
+		<dd>Applies to all unvisted links.</dd>
+	</dl>
+	<p>For a complete reference, see <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">w3schools</a>.</p>
+	
+	<h2>Applying what you have just learned</h2>
+	<p>You're going to use a very complex selector that will change the background colour when you hover over a link, as long as it's not the active link. Apply a background colour using the following selector. Change this to a colour of your choice.</p>
 	<pre>
 	nav ul  li a:hover:not(.active) {
 		background-color: #111111;
 	}
 	</pre>
-	<p>Now we're going to apply some CSS to active links.  Apply the following, modifying the colours to something you of your choice.</p>
+	<p>Now you are going to apply some CSS to active links. Apply the following, modifying the colours to something of your choice.</p>
 	<pre>
 	nav ul li a.active {
 		background-color: #bcce1e;
@@ -115,26 +123,26 @@
 	</pre>
 	
 	<h2>Creating a responsive navigation bar</h2>
-	<p>This last bit will make our navigation respnsive, meaning as it will display differently based on the size of the screen.  First we're going stylize a class to float right.</p>
+	<p>This last bit will make your navigation bar respnsive, meaning as it will display differently based on the size of the screen. First you are going stylize a class to float right.</p>
 	<pre>
 	nav ul li.right {
 		float: right;
 	}
 	</pre>
-	<p>Notice you're using a class we didn't create anywhere in the html.  We're going to apply this class in a slightly different way.  The following code will apply the above class only when the screen's maximum width is 600px.</p>
+	<p>Notice you're using a class that doesn't exist in the html. You are going to apply this class in a slightly different way. The following code will apply the above class only when the screen's maximum width is 600px.</p>
 	<pre>
 	@media screen and (max-width: 600px){
 		nav ul li.right, 
 		nav ul li {float: none;}
 	}
 	</pre>
-	<p>Save your CSS, refresh your page in the browser and try resizing the browser window to simulate the size of a mobile device.  Notice what happens!</p>
+	<p>Save your CSS, refresh your page in the browser and try resizing the browser window to simulate the size of a mobile device. Notice what happens!</p>
 	<!-- end navigation -->
 	
 	<h2>Completing the Lab</h2>
 	<p>Using the steps outlined at the end of Lab 4, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 	
-  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
 	<img src="images/lab7.png" alt="Lab 7 sample">
 
 	<h2>Exploration Questions</h2>
