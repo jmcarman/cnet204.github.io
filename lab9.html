@@ -33,24 +33,24 @@
 		<h2>Overview</h2>
 		<p>This week's lab will cover the following:</p>
 		<ul>
-			<li>Creating a new page, called lab8.html</li>
-			<li>Using HTML5 to embed audio and video navtively</li>
+			<li>Creating a new page, called media.html</li>
+			<li>Using HTML5 to embed audio and video natively.</li>
 		</ul>
 			
 		<h2>Creating a new page</h2>
-		<p>Create a new page called lab8.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+		<p>Create a new page called media.html, that meets the following criteria. Refer to your previous lab instructions to do each of the following if needed.</p>
 		<ol>
 			<li>Use the HTML5 doctype declaration</li>
-			<li>Set the Title to "Lab 8", without the quotes</li>
+			<li>Set the Title to "Media", without the quotes</li>
 			<li>Insert meta tags indicating the encoding (charset) of utf-8, viewport and the author to your name</li>
 			<li>Insert a comment indicating your name and student number</li>
 			<li>Link your style sheet to the page</li>
-			<li>Make use of the main tag, as we did in Lab 3</li>
+			<li>Make use of the main tag, as you did in Lab 3</li>
 			<li>Copy your navigation bar from your index page and modify it to properly indicate your current page</li>
 		</ol>
 		<!-- Introducing audio and video -->
 		<h2>Introducing audio and video</h2>
-		<p>Prior to HTML5, plugins (like Flash) were required to play audio or video in the browser.  With HTML5, audio and video playback are now natively available (without a plugin).</p>
+		<p>Prior to HTML5, plugins (like Flash) were required to play audio or video in the browser. With HTML5, audio and video playback are now natively available (without a plugin).</p>
 		
 		<!-- Audio tag -->
 		<h2>Insert the audio tag</h2>
@@ -58,27 +58,28 @@
 		<pre>&lt;audio controls&gt;
 			&lt;/audio&gt;
 		</pre>
-		<p>Notice the controls attribute.  Without this, the element won't appear in the browser (as there's no way to interact with it).</p>
+		<p>Notice the controls attribute. Without this, the element won't appear in the browser (as there's no way to interact with it).</p>
 		
 		<!-- Adding audio -->
 		<h2>Adding some content</h2>
-		<p>Using this <a href="https://www.videvo.net/royalty-free-music/">free resource (provided by videvo)</a>, select an audio file of your choice and add it using the <a href="https://www.w3schools.com/html/html5_audio.asp">w3schools example</a>.  For this to work you will have to first download the audio file.  You can then upload the file to your server (if you are able to access it).</p>
+		<p>Using this <a href="https://www.videvo.net/royalty-free-music/">free resource (provided by videvo)</a>, select an audio file of your choice and add it using the <a href="https://www.w3schools.com/html/html5_audio.asp">w3schools example</a>. For this to work you will have to first download the audio file. You can then upload the file to GitHub, just like you did the picture in Lab 8.</p>
 
 		<!-- Video tag -->
 		<h2>Insert the video tag</h2>
 			<p>Add the opening video tag and it's corresponding closing tag (at the top of your main section) by adding the following tag.</p>
-		<pre>&lt;video&gt;
+		<pre>
+			&lt;video&gt;
 			&lt;/video&gt;
 		</pre>
 		
 		<!-- Adding video -->
-		<p>Using this <a href="https://www.videvo.net/stock-video-footage/">free resource (provided by the videvo)</a>, select an video of your choice and add it using the <a href="https://www.w3schools.com/html/html5_video.asp">w3schools example</a>.  Be sure to select a video labelled <strong>free</strong>.  Again, for this to work you will have to first download the file.  You can then upload the file to your server (if you are able to access it).  Note the optional autoplay attribute, which isn't ideal - omit this.</p>
-		<p>You may wish to resize your video, using the width and height parameters (included in the w3schools example).  Experiment with these until you achieve a result you're happy with.  You may also wish to add a few line breaks in, to assist in spacing the audio and video elements.</p>
+		<p>Using this <a href="https://www.videvo.net/stock-video-footage/">free resource (provided by the videvo)</a>, select a video of your choice and add it using the <a href="https://www.w3schools.com/html/html5_video.asp">w3schools example</a>. Be sure to select a video labelled <strong>free</strong>. Again, for this to work you will have to first download the file. You can then upload the file to your server (if you are able to access it). Note the optional autoplay attribute, which isn't ideal - omit this.</p>
+		<p>You may wish to resize your video, using the width and height parameters (included in the w3schools example). Experiment with these until you achieve a result you're happy with. You may also wish to add a few line breaks in, to assist in spacing the audio and video elements.</p>
 		
 		<!-- Adding a video from YouTube -->
 		<h2>Adding a video from YouTube</h2>
-		<p>Sometimes you may wish to embed a video from another platform (such as YouTube) instead of hosting your own.  These take up less space, as they are being stored by YouTube, not you.  You can do this using the iframe tag.</p>
-		<p>To add a video from <a href="https://youtube.com">YouTube</a>, first browse to a video you want.  Once you have found your video:</p>
+		<p>Sometimes you may wish to embed a video from another platform (such as YouTube) instead of hosting your own. These take up less space, as they are being stored by YouTube, not you. You can do this using the iframe tag.</p>
+		<p>To add a video from <a href="https://youtube.com">YouTube</a>, first browse to a video you want. Once you have found your video:</p>
 		<ol>
 			<li>Click the share button.</li>
 			<li>Click Embed (the button labelled with &lt; &gt;).</li>
@@ -89,7 +90,7 @@
 		<h2>Completing the Lab</h2>
 		<p>Using the steps outlined at the end of Lab 4, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 		
-		  <p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+		<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
 		<img src="images/lab9.png" alt="Lab 9 sample">
 
 		<h2>Exploration Questions</h2>

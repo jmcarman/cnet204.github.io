@@ -33,16 +33,16 @@
 	<h2>Overview</h2>
     <p>This week's lab will cover the following:</p>
 	<ul>
-		<li>Creating a new page, called about.html</li>
-		<li>Inserting images into a web page</li>
-		<li>Using tables to format and display content</li>
-		<li>Using CSS to float images</li>
-		<li>Applying CSS to stylize text</li>
-		<li>Positioning HTML elements using CSS</li>
+		<li>Creating a new page, called about.html.</li>
+		<li>Inserting images into a web page.</li>
+		<li>Using tables to format and display content.</li>
+		<li>Using CSS to float images.</li>
+		<li>Applying CSS to stylize text.</li>
+		<li>Positioning HTML elements using CSS.</li>
 	</ul>
 	
 	<h2>Creating a new page</h2>
-	<p>Create a new page called about.html, that meets the following criteria.  Refer to your previous lab instructions for instructions on how to do each of the following if needed.</p>
+	<p>Create a new page called about.html, that meets the following criteria. Refer to your previous lab instructions if needed.</p>
 	<ol>
 		<li>Use the HTML5 doctype declaration</li>
 		<li>Set the Title to "About Me", without the quotes</li>
@@ -53,7 +53,7 @@
 	</ol>
 	
 	<h2>Modifying your navigation bar</h2>
-	<p>Copy your navigation bar from your index page and paste it at the top of the body, above the &lt;main&gt; section.  We're going to modify it to properly indicate your current page.</p>
+	<p>Copy your navigation bar from your index page and paste it at the top of the body, above the &lt;main&gt; section. Use the following steps to modify it to properly indicate your current page.</p>
 	<ol>
 		<li>Move the class attribute from it's current position (Home) to the link for About</li>
 		<li>Modify the hyperlink for Home to direct you to "index.html"</li>
@@ -68,42 +68,44 @@
 	
 	<!-- Upload your image -->
 	<h3>To do:</h3>
-	<p>Create a new folder in your local git folder called images, and copy the picture there. This will be pushed to GitHub when you make a commit through VS Code.</p>
+	<p>Create a new folder in your local git folder called images, and copy the picture there. This will be pushed to GitHub when you make a commit through VS Code. Alternatively, you could create the folder and upload your picture directly to GitHub via a web browser.</p>
 	
 	<!-- Insert an image of yourself -->
 	<h3>Insert the image</h3>
-	<p>To insert an image, we're going to use the image tag and provide it with a few parameters, the main ones we'll use are:</p>
-	<ul>
-		<li>src - means source, a relative path to the image in this case</li>
-		<li>alt - alternate text, this will show up if the image can't be loaded</li>
-	</ul>
-	<p>Using the following code example, insert the image.</p>
+	<p>To insert an image, you are going to use the image tag and provide it with a few parameters. The main ones we'll use are:</p>
+	<dl>
+		<dt>src</dt>
+			<dd>This means source. This can be an absolute or relative path to the image. In this case, it is a relative path.</dd>
+		<dt>alt</dt>
+			<dd>Alternate text that will be displayed in the browser if the image can't be loaded.</dd>
+	</dl>
+	<p>Using the following code example, insert the image. Be sure to change <strong>file.jpg</strong> to match the name and file extension for your image. Ideally your image should not have any spaces in the file name. If it does, they must be represented with <strong>%20</strong>.</p>
 	<pre>
 	&lt;img src="images/file.jpg" /&gt;
 	</pre>
 	
 	<!-- Paragraph about yourself, and implement a list -->
 	<h3>To do:</h3>
-	<p>Using the paragraph tag, write an introduction paragraph about yourself.  Implement an ordered or unordered list (your choice) within this, describing your interests.  These can be activities, games, tv shows or movies you watch, etc.</p>
+	<p>Using the paragraph tag, write an introduction paragraph about yourself. Implement an ordered or unordered list (your choice), describing your interests.  These can be activities, games, tv shows or movies you watch, etc.</p>
 	
 	<!-- Table, with your course schedule -->
 	<h2>Introducing Tables</h2>
-	<p>Tables consist of several structural tags.  They're opened and closed with the &lt;table&gt; and &lt;/table&gt; tags respectively.  Tables contain 3 main tags for structure.</p>
+	<p>Tables consist of several structural tags. They're opened and closed with the <strong>&lt;table&gt;</strong> and <strong>&lt;/table&gt;</strong> tags respectively. Tables contain 3 main tags for structure.</p>
 
 	<dl>
 		<dt>&lt;tr&gt; and &lt;/tr&gt;</dt>
-			<dd>Specifies a table row</dd>
+			<dd>Specifies a table row.</dd>
 		<dt>&lt;th&gt; and &lt;/th&gt;</dt>
-			<dd>Specifies a heading</dd>
+			<dd>Specifies a heading.</dd>
 		<dt>&lt;td&gt; and &lt;/td&gt;</dt>
-			<dd>Specifies a cell within the row, or table data</dd>
+			<dd>Specifies a cell within the row, or table data.</dd>
 	</dl>
-	<p>We're going to insert a table containing your course schedule.  This is useful, as you'll be able to access your schedule from your phone as a web page after completion of this lab!</p>
+	<p>You are going to insert a table containing your course schedule. This is useful, as you'll be able to access your schedule from your phone as a web page after completion of this lab!</p>
 	<p>Add an opening table tag, an example follows.</p>
 	<pre>
 		&lt;table&gt;
 	</pre>
-	<p>Start a row, and using the table heading tag specify headings for days of the week.  Leave the first cell blank, as that column is going to contain the start time for our classes.  Your table should include days for every day Monday-Saturday, unlike the sample.</p>
+	<p>Start a row, and using the table heading tag specify headings for days of the week. Leave the first cell blank, as that column is going to contain the start time for our classes. Your table should include days for every day Monday-Friday, unlike the sample. If you have Saturday or Sunday classes, include those days too.</p>
 
 	<pre>
 	&lt;tr&gt;
@@ -113,7 +115,8 @@
 	... 
 	&lt;/tr&gt;
 	</pre>
-	<p>Start a new row, and using the table data tag populate your table.  The first column is our time, so that should indicate 08:30 - 10:20.  You're going to list every class in that time slot, following the sequence outlined in your table header.</p>
+
+	<p>Start a new row, and using the table data tag populate your table. The first column is our time, so that should indicate 08:30 - 10:20. You're going to list every class in that time slot, following the sequence outlined in your table header.</p>
 
 	<pre>
 	&lt;tr&gt;
@@ -121,6 +124,7 @@
 		...
 	&lt;/tr&gt;
 	</pre>
+	
 	<p>Times for classes, for reference include:</p>
 	<ul>
 		<li>08:30 - 10:20</li>
@@ -129,20 +133,23 @@
 		<li>14:30 - 16:20</li>
 		<li>16:30 - 18:20</li>
 		<li>18:30 - 20:20</li>
+		<li>20:30 - 22:20</li>
 	</ul>
+
 	<p>Once you have your class schedule entered in, close your table.</p>
 	<pre>
 	&lt;/table&gt;
 	</pre>
 	
-	<p>If you save and refresh your page, you'll notice the table has inherited the positioning of the list above making it not quite centred.  There's a couple different approaches to fix this; the easiest of which is to insert a break tag in between your list and table.</p>
+	<p>If you save and refresh your page, you'll notice the table has inherited the positioning of the list above making it not quite centred. There are a couple different approaches to fix this; the easiest of which is to insert a break tag in between your list and table.</p>
+	
 	<h3>To do:</h3>
 	<p>Insert a break tag between your list and table.</p>
 	<pre>&lt;br /&gt;</pre>
 
 	<!-- Float the image left -->
 	<h2>Resizing and floating the image</h2>
-	<p>Open your stylesheet (style.css).  Before we float our image, we should probably resize it.  You could open it in Photoshop or Paint (in Windows), but that takes additional time and work.  Instead, we can resize the image using CSS.  When you're resizing an image you should pick either the width or height to resize, and set the other to auto.  You may have to play around with this a bit by making changes and refreshing in your browser.  The following code will resize the image.  Change the values as needed (since the size of your image might be bigger or smaller than mine).</p>
+	<p>Open your stylesheet (style.css). Before you float your image, you should probably resize it. You could open it in Photoshop or Paint (in Windows), but that takes additional time and work. Instead, we can resize the image using CSS. This provides the additional benefit of making the image responsive (or scale with the size of the device it is viewed on). When you're resizing an image you should pick either the width or height to resize, and set the other to auto. You may have to play around with this a bit by making changes and refreshing in your browser. The following code will resize the image. Change the values as needed (since the size of your image might be bigger or smaller than mine).</p>
 	
 	<pre>
 	img {
@@ -151,35 +158,35 @@
 	}
 	</pre>
 	
-	<p>Next, we're going to float the image to the left of the text by adding adding the float parameter in the img selector we just created.</p>
+	<p>Next, float the image to the left of the text by adding adding the float parameter to the img selector we just created.</p>
 	
 	<pre>
 	img {
 		float: left;
 	}
 	</pre>
-	<p>If you refresh your page, you should notice the text now appears to the right of the image.</p>
+	<p>Refresh your page. You should notice the text now appears to the right of the image.</p>
 	
 	<h3>Stylizing our table</h3>
-	<p>The first thing we're going to do, is give our table & the cells within a border.  We're going to accomplish this using a complex selector.</p>
+	<p>The first thing you are going to do, is give your table & the cells within a border. You are going to accomplish this using a complex selector.</p>
 	<pre>
 	th, td {
 	
 	}
 	</pre>	
-	<p>There are a couple different ways we can add a border.  We can use the simpler, longer drawn out method of specifying each of the following:</p>
+	<p>There are a couple different ways we can add a border. You can use the simpler, longer drawn out method of specifying each of the following:</p>
 	<ul>
 		<li>border-width: .25em;</li>
 		<li>border-style: solid;</li>
 		<li>border-color: #000000;</li>
 	</ul>
-	<p>Alternatively, we can use a more complex shorthand to declare the same.  The following would apply the exact same specifications as above, note the difference in syntax.</p>
+	<p>Alternatively, you can use a more complex shorthand to declare the same. The following would apply the exact same specifications as above, note the difference in syntax.</p>
 	<pre>
 		th, td {
 			border: .25em solid #000000;
 		}
 	</pre>
-	<p>Using the above syntax as an example, choose a thickness, style and colour for your border.  The styles you have to choose from are:</p>
+	<p>Using the above syntax as an example, choose a thickness, style and colour for your border. The styles you have to choose from are:</p>
 	<ul>
 		<li>none</li>
 		<li>hidden</li>
@@ -196,11 +203,11 @@
 	
 	<h2>Applying some finishing touches</h2>
 	<h3>Fixing the paragraph background color</h3>
-	<p>You may notice your background colour from your paragraph appears behind your image.  We can remove this by applying a class or id to that particular paragraph, and modify the left margin.  You may need to play around with the units to get it to appear in a manor you're satisfied with.  First, apply an ID to that paragraph.</p>
+	<p>You may notice your background colour from your paragraph appears behind your image. We can remove this by applying a class or id to that particular paragraph, and modify the left margin. You may need to play around with the units to get it to appear in a manor you're satisfied with. First, apply an ID to that paragraph.</p>
 	<pre>
 	&lt;p id="about"&gt;
 	</pre>
-	<p>Now using a complex selector, modify the left margin for paragraphs with the id we just created.</p>
+	<p>Now using a complex selector, modify the left margin for paragraphs with the id you just created.</p>
 	<pre>
 	p#about {
 		margin-left: 5em;
@@ -209,7 +216,7 @@
 	<p>Increase or decrease this number as much as needed, until the paragraph background color appears similar to the provided sample (located at the end of the lab instructions).</p>
 	
 	<h3>Centering your table</h3>
-	<p>The easiest way to center a table, is to set the left and right margin to auto.  Use the following example to center your table.</p>
+	<p>The easiest way to center a table, is to set the left and right margin to auto. Use the following example to center your table. This same method can be applied to centering many elements.</p>
 	<pre>
 	table {
 		margin-left: auto;
@@ -220,7 +227,7 @@
 	<h3>Cleaning up the table formatting</h3>
 	<p>Add line breaks between each course code and room in your table, to make your timetable look nicer.</p>
 	
-	<p>You may also want to increase the padding on your th & td tags, to make your table look a little nicer.  To do that, find the <strong>td, th</strong> selector we used before and add the padding attribute (sample below).  Feel free to play around with the values to get it where you like it.</p>
+	<p>You may also want to increase the padding on your th & td tags, to make your table look a little nicer. To do that, find the <strong>td, th</strong> selector we used before and add the padding attribute (sample below). Feel free to play around with the values to get it where you like it.</p>
 	
 	<pre>
 	td, th {
@@ -231,7 +238,7 @@
 	<h2>Completing the Lab</h2>
 	<p>Using the steps outlined at the end of Lab 4, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 	
-  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
 	<img src="images/lab8.png" alt="Lab 8 sample">
 
 	<h2>Exploration Questions</h2>
