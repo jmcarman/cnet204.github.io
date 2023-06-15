@@ -79,14 +79,35 @@
 	</ol>
 	<span class="tip"><p>Note: You will only be able to access your lab website while your www instance is running.</p></span>
 	
-	<p>Next, log into your <strong>first</strong> instance and issue the following commands. Note the output of each. Substitute your domain name for yourdomainname.xx.</p>
+	<p>Next, login to your <strong>first</strong> instance and issue the following commands. Note the output of each. Substitute your domain name for yourdomainname.xx.</p>
 	<pre>nslookup www.yourdomainname.xx</pre>
 
 	<p>and</p>
 
 	<pre>dig www.yourdomainname.xx</pre>
 
+	<h2>Preparing your system to generate and install an SSL Certificate</h2>
+	<p>Login to your www instance. You are going to install certbot, which will automate configuring HTTPS using Let's Encrypt.</p>
+
+	<h3>Installing Certbot</h3>
+	<p>First, check to see if it is available by issuing the following command.</p>
+	<pre>sudo apt search certbot</pre>
+
+	<p>You should see the following output.</p>
+
+	<img src="images/apt-search-certbot.png" alt="using apt search to confirm certbot is available">
+	
+	<p>Once you have confirmed it is available, install it.</p>
+	
+	<pre>sudo apt -y install certbot</pre>
+
+	<h3>Enabling mod_ssl in Apache</h3>
+	<p>One of the things that makes Apache a popular server choice is that it is modular. Modules to allow additional configuration options can be added to the configuration to customize it as needed. In Ubuntu, apache modules are installed by default; you just have to enable them using the <strong>a2enmod</strong> command. If you want to disable them, use the <strong>a2dismod</strong> command. Enable the SSL module by issuing the following command.</p>
+
+	<pre>sudo a2enmod ssl</pre>
+
 	<h2>Generating an SSL Certificate using Let's Encrypt and certbot</h2>
+	
 
 	<h2>Configuring your Apache server with HTTPS</h2>
 
