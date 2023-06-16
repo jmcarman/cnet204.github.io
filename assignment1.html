@@ -33,40 +33,27 @@
 	<h2>Under Development</h2>
 	<h2>Overview</h2>
 	<p>"The power of the Web is in its universality.  Access by everyone regardless of disability is an essential aspect." - Tim Berners-Lee, W3C Director and inventer of the World Wide Web.  To accomplish this, the W3C has outlined accessibility standards as recommended best practices to follow.</p>
-	<p>You're going to research the <a href="https://www.w3.org/standards/webdesign/accessibility">W3C Web Accessibility Initiative(WAI)</a> and create a webpage (detailed below). You will also register a domain name, generate an SSL certificate and add HTTPS to your Apache server configuration.</p>
-	
-	<h2>Specifications</h2>
-	<ol>
-		<li>Pick and register a domain name using the GitHub Student Developer Pack. (5 marks)</li>
-		<li>Generate an SSL certificate using Let's Encrypt and Certbot. (5 marks)</li>
-		<li>Configure your Apache server with HTTPS. (5 marks)</li>
-		<li>Create a new webpage called accessibility.html</li>
-		<li>Add a link to your new page in your website's navigation bar (on all affected pages - index.html, about.html). (1 mark)</li>
-		<li>Add a comment with your name and student number. (1 mark)
-		<li>Add your updated navigation bar with your active class on the appropriate option. (2 marks)</li>
-		<li>You should use the same stylesheet you've created in the labs.</li>
-		<li>Implement any two of the WAI standards (that haven't already been met by following the lab instructions) into your website. (12 marks)</li>
-		<li>On the new page, include a 250-500 word explaination about why the WAI standards are important and discuss the examples you used. (4 marks)</li>
-	</ol>
+	<p>In this assignment, you are going to research the <a href="https://www.w3.org/standards/webdesign/accessibility">W3C Web Accessibility Initiative(WAI)</a> and create a webpage. You will also register a domain name, generate an SSL certificate and add HTTPS to your Apache server configuration.</p>
 	
 	<h2>Accessing the GitHub Student Developer Pack</h2>
 	<p>Login to <a href="https://education.github.com/">GitHub Education</a> to request access your Student Developer Pack. You will need to navigate to <strong>Students</strong> &gt; Get your Student Developer Pack to request it.</p>
 	<img src="images/navigate-studentdeveloperpack.png" alt="Navigate to Get your Student Developer pack">
 		
-	<p>Click on <strong>Explore More Offers</strong>. This comes with 80+ offers including $200 credit for Microsoft Azure, and three different offers to register a free or discounted domain name.</p>
+	<p>Click on <strong>Explore More Offers</strong>. This comes with 80+ offers including $200 credit for Microsoft Azure, and at least two different offers to register a free or discounted domain name.</p>
 
 	<img src="images/studentdeveloperpack.png" alt="Accessing the Student Developer Pack">
 
 	<p>Have a look through the list of things you get either discounted or free. You will be using a free domain for this course (outlined in the next section). However, you can keep it for as long as you want and repurpose it for anything once this course is done. You may choose any domain name you like, as long as it is available and school appropriate (G rated). You are going to use this domain for Assignment 2 as well.</p>
 
 	<h2>Registering a Domain name</h2>
-	<p>You have three offers for a free (for a year, renewable as long as you are a student) domain through the Student Developer Pack, available through Name.com or Namecheap.com. To access these, click on <strong>Explore More Offers</strong> in the Student Develper Pack. Click on any of the two of these and login with your GitHub account to activate the offer. You may want to view each one to see what top level domains are available. Name.com has more options. However, namecheap has some extremely inexpensive options if you decide to keep the domain and pay for it yourself after a year. You may also need to create an account.</p>
+	<p>You have two offers for a free (for a year, renewable as long as you are a student) domain through the Student Developer Pack, available through Name.com or Namecheap.com. To access these, click on <strong>Explore More Offers</strong> in the Student Develper Pack. Click on any of the two of these and login with your GitHub account to activate the offer. You may want to view each one to see what top level domains are available. Name.com has more options. However, namecheap has some extremely inexpensive options if you decide to keep the domain and pay for it yourself after a year. You may also need to create an account.</p>
 	<img src="images/name.png" alt="name.com">
 	<img src="images/namecheap.png" alt="namecheap">
 
 	<p>This next part will vary depending on who you have registered your domain name with. You are going to add an <strong>A record</strong> for the host <strong>www</strong> with the value of the elastic IP for your www instance in AWS. Here is an example of what it looks like using a <strong>.me</strong> domain through <strong>namecheap</strong>. See below for instructional information and videos on each registrar.</p>
 	<img src="images/namecheap-a-record.png" alt="Adding an A record using namecheap">
 	
+	<br>
 	<a href="https://www.name.com/support/articles/115004893508-adding-an-a-record">Name.com: How to add an A record</a><br>
 	<a href="https://www.namecheap.com/support/knowledgebase/article.aspx/10491/2254/video-how-to-add-an-a-record-for-a-domain-name-in-namecheap-account/">Namecheap: How to add an A record</a>
 
@@ -79,15 +66,15 @@
 	</ol>
 	<span class="tip">Note: You will only be able to access your lab website while your www instance is running.</span>
 	
-	<p>Next, login to your <strong>first</strong> instance and issue the following commands. Note the output of each. Substitute your domain name for yourdomainname.xx.</p>
-	<pre>nslookup www.yourdomainname.xx</pre>
+	<p>Next, login to your <strong>first</strong> instance and issue the following commands. Note the output of each. Substitute your domain name for www.example.com.</p>
+	<pre>nslookup www.example.com</pre>
 
 	<p>and</p>
 
-	<pre>dig www.yourdomainname.xx</pre>
+	<pre>dig www.example.com</pre>
 
 	<h2>Preparing your system to generate and install an SSL Certificate</h2>
-	<p>Login to your www instance. You are going to install Certbot, which will automate configuring HTTPS using Let's Encrypt.</p>
+	<p>Login to your <strong>www</strong> instance. You are going to install Certbot, which will automate configuring HTTPS using Let's Encrypt.</p>
 
 	<h3>Installing Certbot</h3>
 	<p>First, check to see if it is available by issuing the following command.</p>
@@ -102,7 +89,7 @@
 	<pre>sudo apt -y install certbot python3-certbot-apache</pre>
 
 	<h3>Configuring an Apache Virtual Host</h3>
-	<p>Create the and edit a file for your virtual host configuration, you can use either vi or nano. Replace wwwexamplecom with your domain name, with the www and top level domain, but without the <strong>.</strong>. This will allow Certbot to find the correct VirtualHost block and update it.</p>
+	<p>Create the and edit a file for your virtual host configuration. You can use either vi or nano. Replace wwwexamplecom with your domain name, with the www and top level domain, but without the <strong>.</strong>. This will allow Certbot to find the correct VirtualHost block and update it.</p>
 	<pre>sudo vi /etc/apache2/sites-available/wwwexamplecom.conf</pre>
 	
 	<p>Enter the following text (again, replacing the domain name with yours).</p>
@@ -133,6 +120,29 @@
 	<h2>Testing your configuration</h2>
 	<p>Open a web browser try to access your lab website using HTTPS. It should work!</p>
 
+	<h2>Research and Implement the Web Accessibility Initiative (WAI)</h2>
+	<p>Research the Web Accessibility Initiative (WAI) and complete the following:</p>
+	<ol>
+		<li>Create a new webpage called accessibility.html</li>
+		<li>Add a link to your new page in your website's navigation bar (on all affected pages - index.html, about.html).</li>
+		<li>Add a comment with your name and student number.
+		<li>Add your updated navigation bar with your active class on the appropriate option.</li>
+		<li>You should use the same stylesheet you have created in the labs.</li>
+		<li>Implement any two of the WAI standards (that haven't already been met by following the lab instructions) into your website.</li>
+		<li>On the new page, include a 250-500 word explaination about why the WAI standards are important and discuss the examples you used.</li>
+	</ol>
+
+	<h2>Evaluation</h2>
+	<ol>
+		<li>Web site accessed using HTTPS (7.5 marks)</li>
+		<li>Web site accessed using Fully Qualified Domain Name (FQDN) (7.5 marks)</li>
+		<li>Updated Navigation (1 mark)</li>
+		<li>accessibility.html has a comment with your name and student number. (1 mark)</li>
+		<li>accessibility.html navigation uses the active class updated with the appropriate option. (2 marks)</li>
+		<li>Two of the WAI standards (that have not already been met by following the lab instructions) into your website. (12 marks)</li>
+		<li>250-500 word explaination about why the WAI standards are important and discuss the examples you used. (4 marks)</li>
+	</ol>
+	
 	<h2>Submission</h2>
 	<p>Your project should be submitted to your GitHub repository, and the following screenshots uploaded to the assignment dropbox by the due date in order to recieve marks.  Late submissions will recieve a penalty of 10% per day.</p>
 	<ul>
