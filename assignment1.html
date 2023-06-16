@@ -38,7 +38,7 @@
 	<h2>Specifications</h2>
 	<ol>
 		<li>Pick and register a domain name using the GitHub Student Developer Pack. (5 marks)</li>
-		<li>Generate an SSL certificate using Let's Encrypt and certbot. (5 marks)</li>
+		<li>Generate an SSL certificate using Let's Encrypt and Certbot. (5 marks)</li>
 		<li>Configure your Apache server with HTTPS. (5 marks)</li>
 		<li>Create a new webpage called accessibility.html</li>
 		<li>Add a link to your new page in your website's navigation bar (on all affected pages - index.html, about.html). (1 mark)</li>
@@ -87,7 +87,7 @@
 	<pre>dig www.yourdomainname.xx</pre>
 
 	<h2>Preparing your system to generate and install an SSL Certificate</h2>
-	<p>Login to your www instance. You are going to install certbot, which will automate configuring HTTPS using Let's Encrypt.</p>
+	<p>Login to your www instance. You are going to install Certbot, which will automate configuring HTTPS using Let's Encrypt.</p>
 
 	<h3>Installing Certbot</h3>
 	<p>First, check to see if it is available by issuing the following command.</p>
@@ -95,21 +95,43 @@
 
 	<p>You should see the following output.</p>
 
-	<img src="images/apt-search-certbot.png" alt="using apt search to confirm certbot is available">
+	<img src="images/apt-search-certbot.png" alt="using apt search to confirm Certbot is available">
 	
 	<p>Once you have confirmed it is available, install it.</p>
 	
-	<pre>sudo apt -y install certbot</pre>
+	<pre>sudo apt -y install certbot python3-certbot-apache</pre>
 
-	<h3>Enabling mod_ssl in Apache</h3>
-	<p>One of the things that makes Apache a popular server choice is that it is modular. Modules to allow additional configuration options can be added to the configuration to customize it as needed. In Ubuntu, apache modules are installed by default; you just have to enable them using the <strong>a2enmod</strong> command. If you want to disable them, use the <strong>a2dismod</strong> command. Enable the SSL module by issuing the following command.</p>
-
-	<pre>sudo a2enmod ssl</pre>
-
-	<h2>Generating an SSL Certificate using Let's Encrypt and certbot</h2>
+	<h3>Configuring an Apache Virtual Host</h3>
+	<p>Create the and edit a file for your virtual host configuration, you can use either vi or nano. Replace wwwexamplecom with your domain name, with the www and top level domain, but without the <strong>.</strong>. This will allow Certbot to find the correct VirtualHost block and update it.</p>
+	<pre>sudo vi /etc/apache2/sites-available/wwwexamplecom.conf</pre>
 	
+	<p>Enter the following text (again, replacing the domain name with yours).</p>
+	<pre>ServerName www.example.com</pre>
 
-	<h2>Configuring your Apache server with HTTPS</h2>
+	<h3>Testing and Reloading the Apache configuration</h3>
+	<p>Enter the following command to test your Apache configuration.</p>
+	<pre>sudo apache2ctl configtest</pre>
+
+	<p>You should see a message indicating <strong>Syntax OK</strong>. If you don't, double check your file name and contents for errors. Sample output follows.</p>
+	<img src="images/apache2-configtest.png" alt="apache2ctl configtest output ok">
+
+	<p>Now you can reload apache2 using systemctl.</p>
+	<pre>sudo systemctl reload apache2</pre>
+	
+	<h2>Generating an SSL Certificate using Let's Encrypt and Certbot</h2>
+	<p>Now you are ready to generate your SSL certificate using Certbot. You are going to configure Apache to reconfigure and reload the configuration whenever necessary. This way you do not need to worry about updating your SSL certificate every 90 days, which is when certificates issued through Let's Encrypt and Certbot expire. Issue the following command:</p>
+	<pre>sudo certbot --apache</pre>
+
+	<p>At the email address prompt, enter your <strong>Centennial College</strong> issued email.</p>
+	<img src="images/sudocertbotapache.png" alt="sudo certbot apache">
+
+	<p>Accept the terms of service. Answer as you wish for sharing your email, then enter your domain name. See the following example.</p>
+	<img src="images/certbotregister.png" alt="Certbot register ssl">
+
+	<p>Update your security group rules to allow incoming HTTPS traffic from the anywhere IP: 0.0.0.0/0</p>
+
+	<h2>Testing your configuration</h2>
+	<p>Open a web browser try to access your lab website using HTTPS. It should work!</p>
 
 	<h2>Submission</h2>
 	<p>Your project should be submitted to your GitHub repository, and the following screenshots uploaded to the assignment dropbox by the due date in order to recieve marks.  Late submissions will recieve a penalty of 10% per day.</p>
