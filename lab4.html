@@ -224,14 +224,14 @@
 	<h2>Cloning your repository in your Apache server</h2>
 	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, issue the following command to clone your github repository into your home directory.</p>
 	<span class="tip">Important: Be sure to replace username in the following command with YOUR GitHub username.</span>
-	<pre>git clone git@github.com:CNET204/labs-assignment-1-username</pre>
+	<pre>git clone git@github.com:CNET204/labs-4-5-username</pre>
 
 	<p>Issue a command to confirm the repository has been cloned on your Ubuntu server.</p>
 
 	<p>Notice the content from our GitHub repository is all there, but it's not in the right place.  It is in your user's home directory.  It needs to be in document root (/var/www/html), and only root can put it there.</p>
 
-	<p>Issue the following command to recursively copy the contents of your labs-assignment-1-username directory into /var/www/html</p>
-	<pre>sudo cp -R labs-assignment-1-username/* /var/www/html</pre>
+	<p>Issue the following command to recursively copy the contents of your labs-4-5-username directory into /var/www/html</p>
+	<pre>sudo cp -R labs-4-5-username/* /var/www/html</pre>
 
 	<p>Confirm the contents have been written to document root. You should see the following files:</p>
 	<ul>
