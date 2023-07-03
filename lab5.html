@@ -116,13 +116,29 @@
 	p, blockquote, pre {
 	}
 	</pre>
+
+	<h2>Pulling your changes into your Apache server</h2>
+	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, change to the labs-4-5-username directory in your home directory. Be sure to replace username with your username, or this will not work.</p>
+	<pre>
+	cd labs-4-5-username
+	</pre>
+
+	<p>Use git pull to pull the changes in from your repository.</p>
+	<pre>
+	git pull
+	</pre>
+
+	<p>Copy the updated files into your document root.</p>
+	<pre>
+	sudo cp * /var/www/html
+	</pre>
 	
 	<h2>Completing the Lab</h2>
-	<p>Using the steps outlined at the end of <a href="lab4.html">Lab 4</a>, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
+	<p>Take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 	
     <img src="images/lab5.png" alt="Lab 5 sample">
 
-	<p>Upon completion of this lab you should have a simple web page using several tags we talked about in our lecture.  Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>.  To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab).  Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+	<p>Upon completion of this lab you should have a simple web page using several tags we talked about in our lecture. Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
 
 	<h2>Exploration Questions</h2>
 	<p>The following questions are for furthering your knowledge only, and may appear on quizzes or tests at any time later in this course.</p>
