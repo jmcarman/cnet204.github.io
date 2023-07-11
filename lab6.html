@@ -152,11 +152,24 @@
 		&lt;li&gt;&lt;a class="active" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
 	</pre>
 	
-	<h2>Completing the Lab</h2>
-	<p>Using the steps outlined at the end of <a href="lab5.html">Lab 5</a>, pull your GitHub repository into your AWS instance, copy the updated files to document root and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
+	<h2>Cloning your repository in your Apache server</h2>
+	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, issue the following command to clone your github repository into your home directory.</p>
+	<span class="tip">Important: Be sure to replace username in the following command with YOUR GitHub username.</span>
+	<pre>git clone git@github.com:CNET204/labs-6-10-assignment1-username</pre>
+
+	<p>Issue a command to confirm the repository has been cloned on your Ubuntu server.</p>
+
+	<p>Notice the content from our GitHub repository is all there, but it's not in the right place.  It is in your user's home directory.  It needs to be in document root (/var/www/html), and only root can put it there.</p>
+
+	<p>Issue the following command to recursively copy the contents of your labs-6-10-assignment1-username directory into /var/www/html</p>
+	<pre>sudo cp -R labs-6-10-assignment1-username/* /var/www/html</pre>
+
+	<p>Confirm the contents have been written to document root.</p>
 	
-  	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
+	<h2>Completing the Lab</h2>
+	<p>Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
 	<img src="images/lab6.png" alt="Lab 6 sample">
+	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
 
 	<h2>Exploration Questions</h2>
 	<ol>
