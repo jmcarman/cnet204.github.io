@@ -139,9 +139,23 @@
 	<p>Save your CSS, refresh your page in the browser and try resizing the browser window to simulate the size of a mobile device. Notice what happens!</p>
 	<!-- end navigation -->
 	
+	<h2>Pulling your changes into your Apache server</h2>
+	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, change to the labs-6-10-assignment-1-username directory in your home directory. Be sure to replace username with your username, or this will not work.</p>
+	<pre>
+	cd labs-6-10-assignment-1-username
+	</pre>
+
+	<p>Use git pull to pull the changes in from your repository.</p>
+	<pre>
+	git pull
+	</pre>
+
+	<p>Copy the updated files into your document root.</p>
+	<pre>
+	sudo cp * /var/www/html
+	</pre>
+
 	<h2>Completing the Lab</h2>
-	<p>Using the steps outlined at the end of Lab 4, clone your GitHub repository into your AWS instance and take a screenshot. Your page should look similar to the following output. If it does not, go back and complete whatever you've missed.</p>
-	
   	<p>Your page should validate using the <a href="https://validator.w3.org/">w3schools html validator</a> & <a href="https://jigsaw.w3.org/css-validator/">css validator</a>. To submit your lab you need to submit the code to your GitHub repo (which you did in already in the lab). Additionally, you need to submit a screenshot of it running your server to the assignment folder in eCentennial.</p>
 	<img src="images/lab7.png" alt="Lab 7 sample">
 
