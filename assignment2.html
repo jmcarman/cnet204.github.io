@@ -51,7 +51,7 @@
 	</pre>
 
 	<p>Access your GitHub repository through a web browser</p>
-	<p>Login to GitHub and access your repository.  Click on settings (screenshot below):</p>
+	<p>Login to GitHub and access your repository.  Click on <strong>Settings</strong> (screenshot below):</p>
 	<img src="images/github-settings.png" alt="GitHub repository settings">
 
 		<p>Click on the <strong>Source</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Deploy from a branch</strong>.</p>
@@ -62,6 +62,27 @@
 
 	<p>Scroll to the top of your GitHub Pages configuration page and you should see a URL to access your site.</p>
 	<img src="images/github-pages-url.png" alt="GitHub pages url">
+
+	<h2>Configuring GitHub Pages with a custom domain</h2>
+	<p>Now you are going to configure GitHub Pages to use a custom domain. You are going to use a sub domain of the domain you registered in assignment 1. Click on <strong>Settings</strong> in your assignment 2 GitHub repo.</p>
+	<img src="images/github-pages-settings-custom-domain.png" alt="GitHub pages setting a custom domain">
+
+	<p>Scroll down to the <strong>Custom domain</strong> section and enter your sub domain name in the text box. Click <strong>Save</strong>.</p>
+	<img src="images/github-pages-custom-domain.png" alt="GitHub pages custom domain">
+
+	<p>Login to your DNS provider (that you registered in Assignment 1). Add a CNAME record that points to <em>youruser.github.io</em>.</p>
+	<img src="images/github.pages.dns.png" alt="GitHub pages DNS">
+
+	<p>Go back to your GitHub Pages settings. Under <strong>Custom Domain</strong>, click <strong>Check again</strong> until you see the message <strong>DNS check successful</strong>. Then check the box beside <strong>Enforce HTTPS</strong>.</p>
+
+	<h2>Checking DNS settings from the command line</h2>
+	<p>Open a command prompt and issue nslookup a1.<em>yourdomain.tld</em>, replacing yourdomain.tld with your apex domain name and tld. You should see output similar to the following.</p>
+	<img src="images/github-pages-nslookup.png" alt="GitHub pages nslookup">
+
+	<p>You can also confirm using <strong>dig</strong> from your www instance. You should see output similar to the following.</p>
+	<img src="images/github-pages-dig.png" alt="GitHub pages dig">
+	
+	<p>Try accessing your GitHub pages site through a web browser. It should now work using DNS.</p>
 
 	<h2>Creating a Website</h2>
 	<p>Individually or (optionally) in a group of 2 (2 people would submit 1 website): You will complete a multi-page website using the tools and techniques we've covered in Labs 1-10.  Choose one of the following topics and fulfill the required pages detailed below.  <strong>All materials need to be submitted to your GitHub repository and all screenshots uploaded to the dropbox on e.centennial by the due date in order to recieve marks.</strong>  If you're completing this as a group, only one group member needs to submit the project (and include both names).</p>
