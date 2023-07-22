@@ -43,9 +43,8 @@
 	<p>Assignment 2 can be done <strong>individually</strong> or optionally in a <strong>group of 2</strong>. You need to decide how you are going to work on Assignment 2 before you proceed. If you are working in a group of 2, you can choose which group member's domain name you are using for this assignment. Before you begin, you need to create your GitHub repositiory for assignment 2 using one of the following links. You will be using this for Assignment 2.</p>
 	<ul>
 		<li><strong>Individual:</strong> use the following <a href="https://classroom.github.com/a/ggGjJD7F" target="_blank">link</a> to set up your Assignment 2 repository.</li>
-		<li><strong>Group: </strong> use the following <a href="hhttps://classroom.github.com/a/P7RPqfWd" target="_blank">link</a> to set up your Assignment 2 repository.</li>
+		<li><strong>Group: </strong> use the following <a href="https://classroom.github.com/a/P7RPqfWd" target="_blank">link</a> to set up your Assignment 2 repository.</li>
 	</ul>
-	
 
 	<h2>Creating a test index page</h2>
 	<p>Create the file <strong>index.html</strong> in your Assignment GitHub repository with the following sample code. You will replace this later, this is just for testing the configuration.</p>
@@ -60,21 +59,33 @@
 			&lt;/body&gt;
 		&lt;/html&gt;
 	</pre>
-
+	
 	<p>Access your GitHub repository through a web browser</p>
-	<p>Login to GitHub and access your repository.  Click on <strong>Settings</strong> (screenshot below):</p>
+	<p>Login to GitHub and access your repository.  Click on settings (screenshot below):</p>
 	<img src="images/github-settings.png" alt="GitHub repository settings">
 
-		<p>Click on the <strong>Source</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Deploy from a branch</strong>.</p>
+	<p>Click on <strong>Pages</strong>. Use the <strong>Source</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Deploy from a branch</strong>.</p>
 	<img src="images/github-pages-source.png" alt="GitHub pages source">
 
-	<p>Click on the <strong>Branch</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Main</strong>.</p>
+	<p>Click on the <strong>Branch</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Main</strong>. Click Save.</p>
 	<img src="images/github-pages-select-branch.png" alt="GitHub pages select branch">
 
-	<p>Scroll to the top of your GitHub Pages configuration page and you should see a URL to access your site.</p>
+	<p>Scroll to the top of your GitHub Pages configuration page and you should see a URL to access your site.  You may need to refresh your browser window.</p>
 	<img src="images/github-pages-url.png" alt="GitHub pages url">
 
 	<h2>Configuring GitHub Pages with a custom domain</h2>
+	<p>Before you can configure a custom domain for your GitHub Pages site, you need to add a verified domain to your GitHub Profile. Go to your profile page, click Settings > Pages. You should see the following screen.</p>
+	<img src="images/github-pages-add-domain.png" alt="GitHub pages add domain">
+
+	<p>Click on <strong>Add domain</strong>. Enter your domain name in the text box and click <strong>Add domain</strong>. You should see the following screen.</p>
+	<img src="images/github-pages-verify-domain.png" alt="GitHub pages verify domain">
+
+	<h2>Creating your DNS records</h2>
+	<p>Login to your domain name registrar, and add a txt record. Copy the output from the <strong>Add a verified domain</strong> screen in GitHub to your record.  The following screenshot shows the output using namecheap.com.</p>
+	<img src="images/github-pages-dns-txt-record.png" alt="GitHub pages DNS txt record">
+
+	<p>Now go back to your GitHub Pages settings and click <strong>Verify</strong>.</p>
+
 	<p>Now you are going to configure GitHub Pages to use a custom domain. You are going to use a sub domain of the domain you registered in assignment 1. Click on <strong>Settings</strong> in your assignment 2 GitHub repo.</p>
 	<img src="images/github-pages-settings-custom-domain.png" alt="GitHub pages setting a custom domain">
 
