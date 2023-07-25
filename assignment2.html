@@ -29,9 +29,10 @@
    </ul>
 </nav>
 <main>
+	<h1>Under Development</h1>
 	<h1>Assignment 2 - Fall 2023 - Due Friday, December 15th at 11:59pm</h1>
 	<h2>Overview</h2>
-	<p>In this assignment you are going to learn how to automate deploying a static website from GitHub using <strong>GitHub Pages</strong> and configure GitHub Pages to use a custom domain. This will allow you to deploy a website directly from your GitHub repository without needing to configure a server. You will not be using AWS in this assignment. Steps for configuring your repository to use GitHub pages are are provided below. You will then use this infrastructure to build a website. This website will be automatically deployed from your GitHub repository. The website specifications are included below.</p>
+	<p>In this assignment you are going to learn how to automate deploying a static website from GitHub using <strong>GitHub Pages</strong>. This will allow you to deploy a website directly from your GitHub repository without needing to configure a server. You will not be using AWS in this assignment. Steps for configuring your repository to use GitHub pages are are provided below. You will then use this infrastructure to build a website. This website will be automatically deployed from your GitHub repository. The website specifications are included below.</p>
 	
 	<h2>Lecture Slides</h2>
 	<div class="container">
@@ -40,12 +41,11 @@
 
 
 	<h2>Accepting the Assignment link to create your GitHub repository</h2>
-	<p>Assignment 2 can be done <strong>individually</strong> or optionally in a <strong>group of 2</strong>. You need to decide how you are going to work on Assignment 2 before you proceed. If you are working in a group of 2, you can choose which group member's domain name you are using for this assignment. Before you begin, you need to create your GitHub repositiory for assignment 2 using one of the following links. You will be using this for Assignment 2.</p>
+	<p>Assignment 2 can be done <strong>individually</strong> or optionally in a <strong>group of 2</strong>. You need to decide how you are going to work on Assignment 2 before you proceed. Before you begin, you need to create your GitHub repositiory for Assignment 2 using one of the following links. You will be using this for Assignment 2.</p>
 	<ul>
 		<li><strong>Individual:</strong> use the following <a href="https://classroom.github.com/a/ggGjJD7F" target="_blank">link</a> to set up your Assignment 2 repository.</li>
-		<li><strong>Group: </strong> use the following <a href="hhttps://classroom.github.com/a/P7RPqfWd" target="_blank">link</a> to set up your Assignment 2 repository.</li>
+		<li><strong>Group: </strong> use the following <a href="https://classroom.github.com/a/P7RPqfWd" target="_blank">link</a> to set up your Assignment 2 repository.</li>
 	</ul>
-	
 
 	<h2>Creating a test index page</h2>
 	<p>Create the file <strong>index.html</strong> in your Assignment GitHub repository with the following sample code. You will replace this later, this is just for testing the configuration.</p>
@@ -60,40 +60,19 @@
 			&lt;/body&gt;
 		&lt;/html&gt;
 	</pre>
-
-	<p>Access your GitHub repository through a web browser</p>
-	<p>Login to GitHub and access your repository.  Click on <strong>Settings</strong> (screenshot below):</p>
+	
+	<h2>Access your GitHub repository through a web browser</h2>
+	<p>Login to GitHub and access your repository.  Click on settings (screenshot below):</p>
 	<img src="images/github-settings.png" alt="GitHub repository settings">
 
-		<p>Click on the <strong>Source</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Deploy from a branch</strong>.</p>
+	<p>Click on <strong>Pages</strong>. Use the <strong>Source</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Deploy from a branch</strong>.</p>
 	<img src="images/github-pages-source.png" alt="GitHub pages source">
 
-	<p>Click on the <strong>Branch</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Main</strong>.</p>
+	<p>Click on the <strong>Branch</strong> drop down under <strong>Build and Deploy</strong> and select <strong>Main</strong>. Click Save.</p>
 	<img src="images/github-pages-select-branch.png" alt="GitHub pages select branch">
 
-	<p>Scroll to the top of your GitHub Pages configuration page and you should see a URL to access your site.</p>
+	<p>Scroll to the top of your GitHub Pages configuration page and you should see a URL to access your site.  You may need to refresh your browser window.</p>
 	<img src="images/github-pages-url.png" alt="GitHub pages url">
-
-	<h2>Configuring GitHub Pages with a custom domain</h2>
-	<p>Now you are going to configure GitHub Pages to use a custom domain. You are going to use a sub domain of the domain you registered in assignment 1. Click on <strong>Settings</strong> in your assignment 2 GitHub repo.</p>
-	<img src="images/github-pages-settings-custom-domain.png" alt="GitHub pages setting a custom domain">
-
-	<p>Scroll down to the <strong>Custom domain</strong> section and enter your sub domain name in the text box. Click <strong>Save</strong>.</p>
-	<img src="images/github-pages-custom-domain.png" alt="GitHub pages custom domain">
-
-	<p>Login to your DNS provider (that you registered in Assignment 1). Add a CNAME record that points to <em>youruser.github.io</em>.</p>
-	<img src="images/github-pages-dns.png" alt="GitHub pages DNS">
-
-	<p>Go back to your GitHub Pages settings. Under <strong>Custom Domain</strong>, click <strong>Check again</strong> until you see the message <strong>DNS check successful</strong>. Then check the box beside <strong>Enforce HTTPS</strong>.</p>
-
-	<h2>Checking DNS settings from the command line</h2>
-	<p>Open a command prompt and issue nslookup a1.<em>yourdomain.tld</em>, replacing yourdomain.tld with your apex domain name and tld. You should see output similar to the following.</p>
-	<img src="images/github-pages-nslookup.png" alt="GitHub pages nslookup">
-
-	<p>You can also confirm using <strong>dig</strong> from your www instance. You should see output similar to the following.</p>
-	<img src="images/github-pages-dig.png" alt="GitHub pages dig">
-	
-	<p>Try accessing your GitHub pages site through a web browser. It should now work using DNS.</p>
 
 	<h2>Creating a Website</h2>
 	<p>Individually or (optionally) in a group of 2 (2 people would submit 1 website): You will complete a multi-page website using the tools and techniques we've covered in Labs 1-10.  Choose one of the following topics and fulfill the required pages detailed below. <strong>All materials need to be submitted to your GitHub repository and all screenshots uploaded to the dropbox on e.centennial by the due date in order to recieve marks.</strong> If you're completing this as a group, only one group member needs to submit the project (and include both names).</p>

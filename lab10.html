@@ -129,13 +129,13 @@
 	
 	<h2>Adding input fields</h2>
 	<p>Add a field for First Name, with a type of text and a name of firstName</p>
-	<pre>First Name: &lt;input type="text" name="firstName" value=&lt;?php echo $fName;?&gt;"&gt;&lt;span class="error"&gt;&lt;?php echo $fNameErr;?&gt;&lt;/span&gt;</pre>
+	<pre>First Name: &lt;input type="text" name="firstName" value="&lt;?php echo $fName;?&gt;"&gt;&lt;span class="error"&gt;&lt;?php echo $fNameErr;?&gt;&lt;/span&gt;</pre>
 	<p>Each input field must have a name attribute to be submitted. If you leave this out, the data from that field won't be sent to the server for processing. The embedded PHP code are the variables your PHP script will use. These will be explained later in the lab.</p>
 	
 	<h3>To do:</h3>
 	<p>Using the above First Name input field syntax, and the input types described above that add the following fields to your form:</p>
 	<ul>
-		<li>Last Name with a type of text, a value of $lName, and error $fNameErr</li>
+		<li>Last Name with a type of text, a value of $lName, and error $lNameErr</li>
 		<li>Email with a type of email, a value of $email, and error $emailErr</li>
 		<li>Password with a type of password, a value of $password, and error $passwordErr</li>
 		<li>Date of Birth with a type of date, a value of $dob, and error $dobErr</li>
