@@ -69,6 +69,8 @@
 	<p>Before copying this into your GitHub account settings, you'll want to test it. Issue the following command to test it:</p>
 	<pre>ssh -T git@github.com</pre>
 
+	<p>This should fail, because you have't added your ssh key to GitHub.</p>
+
 	<p>You should see the following output:</p>
 	<img src="images/github-test-rsa.png" alt="Testing the RSA keypair for github.com">
 
@@ -81,6 +83,15 @@
 		<li>Click <strong>New SSH key</strong>, give it an appropriate title and paste in your public key (see following screenshot).</li>
 	</ul>
 	<img src="images/github-new-ssh-key.png" alt="Adding your public key to github.com">
+
+	<p>Try issuing the following command again. It should work now.</p>
+	<pre>ssh -T git@github.com</pre>
+
+	<p>This should fail, because you have't added your ssh key to GitHub.</p>
+
+	<p>You should see the following output:</p>
+	<img src="images/github-test-rsa.png" alt="Testing the RSA keypair for github.com">
+
 	<p>You will use this later in the lab.</p>
 
 	<h2>Creating your Github Repo for your Labs</h2>
