@@ -46,13 +46,13 @@
 	</div>
 	
 	<h2>Investigating the AWS Learner Lab</h2>
-	<p>You should have recieved an email (in your Centennial College email) from your professor inviting you to participate in the AWS Academy Learner Lab. If you have recieved and accepted this invitation you may proceed with this lab. If you have not recieved this invitation you should contact your professor immediately.  You may continue with the rest of the lab once you have recieved the invitation. Here is a sample email.</p>
+	<p>You should have received an email (in your Centennial College email) from your professor inviting you to participate in the AWS Academy Learner Lab. If you have received and accepted this invitation you may proceed with this lab. If you have not received this invitation you should contact your professor immediately.  You may continue with the rest of the lab once you have received the invitation. Here is a sample email.</p>
 
 	<img src="images/aws-invitation.png" alt="AWS Learner Lab invitation">
 	
-	<p>The AWS Learner Lab provides a sandbox environment where you can build, configure and deploy AWS assets such as instances. There are some limitations as to what you can do, however it provides all the functionality we require for this course. In the first 3 labs you will be learning how to build an Apache Web Server in AWS. You will use this Apache Web Server to publish your web pages on in Labs 4-10. You are limited to $100 credit at no cost within the learner lab.  Once this runs out, all your work will be deleted automatically. Additionally, there is no way to add funds to this pool. If you follow the lab instructions properly you should not have any issues.</p>
+	<p>The AWS Learner Lab provides a sandbox environment where you can build, configure and deploy AWS assets such as instances. There are some limitations as to what you can do, however it provides all the functionality we require for this course. In the first 3 labs you will be learning how to build an Apache Web Server in AWS. You will use this Apache Web Server to publish your web pages on in Labs 4-10. You are limited to $100 credit at no cost within the learner lab.  Once this runs out your learner lab will be disabled. Additionally, there is no way to add funds to this pool. If you follow the lab instructions properly you should not have any issues.</p>
 
-	<p>Once you have accepted your invitation and logged in to the <a href="https://awsacademy.instructure.com/login/canvas">AWS Learner Lab</a> navigate to <strong>Courses</strong> (on the left hand side) &gt; <strong>Modules</strong> &gt; <strong>Learner Lab</strong>. You should see a screen that looks like the following:</p>
+	<p>Once you have accepted your invitation and logged into the <a href="https://awsacademy.instructure.com/login/canvas">AWS Learner Lab</a> navigate to <strong>Courses</strong> (on the left hand side) &gt; <strong>Modules</strong> &gt; <strong>Learner Lab</strong>. You should see a screen that looks like the following:</p>
 	<img src="images/learnerlabhome.png" alt="AWS Learner Lab first screen">
 
 	<p>Some important things to note on this screen:</p>
@@ -62,7 +62,7 @@
 			<dt>Stop Lab</dt>
 				<dd>Stops the Learner Lab environment.</dd>
 			<dt>Used $0 of $100</dt>
-				<dd>Shows the balance used of your $100 credit. If this hits $100 of $100 used, your work is gone.  Be careful.</dd>
+				<dd>Shows the balance used of your $100 credit. If this hits $100 of $100 used, your learner lab is disabled.  Be careful.</dd>
 			<dt>AWS with a red dot next to it</dt>
 				<dd>Once your lab has started, this will turn green. You can then click on this to open the environment.</dd>
 		</dl>
@@ -91,7 +91,7 @@
 	<p>This will allow incoming SSH connections from anywhere. We will use this in the next part to connect to your instance. The screenshot below shows what your inbound rules should look like:</p>
 	<img src="images/awssg-inboundrules.png" alt="AWS Inbound Rules - Lab 1">
 
-	<h2>Exploring Amazon Elastic Cloud Compute (EC2))</h2>
+	<h2>Exploring Amazon Elastic Cloud Compute (EC2)</h2>
 	<p>EC2 is where you will end up spending the most amount of time configuring things in this course. From here you can do things like launch instances, manage networking services and much more. To access EC2, click on <strong>Services</strong> (top left corner beside the AWS icon), and navigate to <strong>Compute &gt; EC2.</strong> You may wish to add this to your favourites for easy access by hovering over and clicking the star. Your initial screen should look something like the following. w3schools has some <a href="https://www.w3schools.com/aws/aws_cloudessentials_ec2intro.php">additional information</a>.</p>
 
 	<img src="images/awsec2.png" alt="AWS EC2">
@@ -107,7 +107,7 @@
 	<h2>Creating SSH key pairs &amp; using public key cryptography</h2>
 	<p>Under <strong>Key pair (login)</strong> click Create new key pair. Give it the name cnet204, accept the rest of the defaults and click "Create key pair".</p>  <span class="tip">Important: Do not lose your key pair or you will be unable to connect to your instance using SSH.</span>
 
-	<p>Under <strong>Network settings</strong> click Select existing security group. Click the dropdown and check the default.  Click Launch instance.  Once it has finished completing (you should see a success message), click <strong>Connect to instance</strong>.</p>
+	<p>Under <strong>Network settings</strong> click Select existing security group. Click the dropdown and check the default. Click Launch instance. Once it has finished completing (you should see a success message), click <strong>Connect to instance</strong>.</p>
 	<p>Note there are a few ways to connect to your instance from here. The two easiest to use are:</p>
 	<ul>
 		<li>EC2 Instance Connect: Allows you to connect to your instance from within your web browser.</li>
