@@ -124,18 +124,18 @@
 	<p>You should see the following output:</p>
 	<img src="images/apache-running.png" alt="Confirming Apache is running">
 
-	<h2>Accessing your Apache server through a browser</h2>
-	<p>In EC2, Navigate to Instances and click on the Instance ID for your www instance. In the right side, under <strong>Public IPv4 DNS</strong> click on the open address link. This will send an HTTP request to your Apache server. This will fail, because we haven't allowed inbound HTTP (port 80) traffic in the Security Group settings. Seecurity Groups will deny all traffic that isn't implicitly allowed.</p>
+	<h2>Accessing your Apache server through a web browser</h2>
+	<p>In EC2, Navigate to Instances and click on the Instance ID for your www instance. In the right side, under <strong>Public IPv4 DNS</strong> click on the open address link. This will send an HTTP request to your Apache server. This will fail, because we haven't allowed inbound HTTP (port 80) traffic in the Security Group settings. Security Groups will deny all traffic that isn't implicitly allowed.</p>
 
 	<h2>Modifying VPC Security Groups</h2>
 	<p>Browse to Security Groups (in EC2 under Network & Security), and click on the Security Group ID for the default security group. Under InBound rules, click on <strong>Edit inbound rules</strong>, and select HTTP from the drop down with a source of 0.0.0.0/0, and click <strong>Save rules</strong>. Your screen should look like the following:</p>
 	<img src="images/sg-inbound-http.png" alt="Adding inbound HTTP to the security group">
 
-	<h2>Accessing your Apache server from a web browser</h2>
+	<h2>Accessing your Apache server through a web browser</h2>
 	<p>It's time to test to see if everything's working properly. Browse to your instance details in EC2 by clicking on Instances, then the Instance ID next to your www instance (screenshot below).</p>
 	<img src="images/aws-instance-id.png" alt="AWS Instance ID">
 
-	<p>Click open address beside your Public IPv4 address. You should see the default Apache test page (screenshot below). If you do not, edit your url and change <strong>https://</strong> to <strong>http://</strong>. You will learn how to configure <strong>https</strong> in assignment 1. Accessing your server through <strong>HTTP</strong> will be fine until then.</p>
+	<p>Click open address beside your Public IPv4 address. You should see the default Apache test page (screenshot below). If you do not, edit your url and change <strong>https://</strong> to <strong>http://</strong>. You will learn how to configure <strong>https</strong> in assignment 1. Accessing your server through <strong>http</strong> will be fine until then.</p>
 	<img src="images/apache-default.png" alt="Apache Test Page">
 
 	<h2>Implementing an elastic IP in AWS</h2>
