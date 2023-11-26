@@ -108,6 +108,7 @@ nav ul li.right {
     nav ul li {float: none;}
 	nav {
 		position: relative;
+		overflow: auto;
 	}
 }
 
