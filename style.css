@@ -106,6 +106,9 @@ nav ul li.right {
 @media screen and (max-width: 600px){
     nav ul li.right, 
     nav ul li {float: none;}
+	nav {
+		position: relative;
+	}
 }
 
 /* end of navigation*/
