@@ -58,8 +58,17 @@ dt {
 dd {
 	margin-bottom: 1em;
 }
-
+main {
+	margin-top: 7em;
+}
 /* start of navigation */
+nav {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1;
+}
+
 nav ul  {
     list-style-type: none;
     margin: 0;
@@ -144,6 +153,7 @@ img.sample {
   
 .responsive-iframe {
 	position: absolute;
+	z-index: -1;
 	top: 0;
 	left: 0;
 	bottom: 0;
