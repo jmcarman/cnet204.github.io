@@ -2,7 +2,7 @@ body {
     background: #ffffff;
     color: #000000;
     margin: 0;
-	font-size: 12pt;
+	font-size: 1em;
 }
 
 main {
@@ -40,7 +40,7 @@ pre {
 	color: #bcce1e;
 	background-color: #000000;
 	white-space: pre-line;
-	padding: 0.25em;
+	padding: 0.75em;
 }
 
 dl {
@@ -167,4 +167,37 @@ img.sample {
 	border: none;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #0e0c36;
+		color: #ffffff;
+		margin: 0;
+		font-size: 1em;
+	}
+
+	h1 {
+		color: #ffffff;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	h2, h3, h4, h5, h6 {
+		background-color: #000000;
+		color: #bcce1e;
+	}
+
+	pre {
+		border-radius: .25em;
+		padding: .75em;
+		white-space: pre-line;
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+
+	main :link {
+		color: #04c1fa;
+	}
 }
