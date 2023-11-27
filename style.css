@@ -200,4 +200,8 @@ img.sample {
 	main :link {
 		color: #04c1fa;
 	}
+
+	main :visited {
+		color: #91b6c2;
+	}
 }
