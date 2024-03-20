@@ -151,6 +151,12 @@
 		<li>If login is successful, you should see a prompt like this: ubuntu@ip-172-31-91-76:~$</li>
 	</ul>
 
+	<h3>Adding a Passphrase to your RSA key</h3>
+	<p>It is a good idea to add a passphrase to your RSA key pair to provide an extra layer of security. Once added, you will need to enter your passphrase it every time you connect to your instance using SSH. If you do not add a passphrase, you will not need to enter a passphrase every time you connect to your instance using SSH.</p>
+	<p>Open a command prompt on your PC and change to the directory your RSA key is in (likely the Downloads folder).Issue the following command to add a passphrase to your RSA key. Enter your desired passphrase when prompted.</p>
+
+	<pre>ssh-keygen -p -o -f cnet204.pem</pre>
+
 	<h2>Completing the Lab</h2>
 	<p>Take a screenshot of your successful connection and submit that to the dropbox on eCentennial for proof of completion. The following Exploration Questions are for furthering your knowledge only, and may appear on quizzes or tests at any time later in this course.</p>
 
