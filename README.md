@@ -6,6 +6,6 @@ This GitHub repository contains the lab and assignment instructions for CNET204:
 # Contact by email: 
 jcarman1@my.centennialcollege.ca
 
-jason.carman@senecacollege.ca
+jason.carman@senecapolytechnic.ca
 
 jasonmcarman@gmail.com
