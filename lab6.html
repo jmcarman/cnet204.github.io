@@ -46,7 +46,7 @@
 	</div>
 
 	<h2>Creating your Github Repo for your Labs</h2>
-	<p>Use the following <a href="https://classroom.github.com/a/UOvrrk3X" target="_blank">link</a> to set up your labs 6-10 repository. You will be using this for labs the rest of the labs in the course (including this one), and for Assignment 1.</p>
+	<p>Use the following <a href="https://classroom.github.com/a/PBfM6Dbx" target="_blank">link</a> to set up your labs 6-10 repository. You will be using this for labs the rest of the labs in the course (including this one), and for Assignment 1.</p>
 
 	<p>Copy your index.html and style.css into the labs 6-10 repository. You will need those files for the remaining labs.</p>
 
@@ -153,17 +153,20 @@
 		&lt;li&gt;&lt;a class="active" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
 	</pre>
 	
+	<h2>Installing your AWS pem key via GitHub Secret</h2>
+	<p>Repeat the steps outlined in <a href="lab4.html">Lab 4</a> to add your AWS ssh key (.pem file) to your <strong>Labs-10-assignment-1</strong> repo.</p>
+
 	<h2>Cloning your repository in your Apache server</h2>
 	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, issue the following command to clone your github repository into your home directory.</p>
 	<span class="tip">Important: Be sure to replace username in the following command with YOUR GitHub username.</span>
-	<pre>git clone git@github.com:CNET204/labs-6-10-assignment-1-username</pre>
+	<pre>git clone git@github.com:CNET204/labs-6-10-and-assignment-1-username</pre>
 
 	<p>Issue a command to confirm the repository has been cloned on your Ubuntu server.</p>
 
 	<p>Notice the content from our GitHub repository is all there, but it's not in the right place.  It is in your user's home directory.  It needs to be in document root (/var/www/html), and only root can put it there.</p>
 
 	<p>Issue the following command to recursively copy the contents of your labs-6-10-assignment-1-username directory into /var/www/html</p>
-	<pre>sudo cp -R labs-6-10-assignment-1-username/* /var/www/html</pre>
+	<pre>sudo cp -R labs-6-10-and-assignment-1-username/* /var/www/html</pre>
 
 	<p>Confirm the contents have been written to document root.</p>
 	

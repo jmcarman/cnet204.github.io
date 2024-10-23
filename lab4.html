@@ -55,7 +55,7 @@
 	<p>In the next steps you will be accessing GitHub classroom. You will also be using git with Visual Studio Code to push your code (web pages) to github.com, where you will then pull them into your Apache web server. These tools are all free, open source, and commonly used in web development.</p>
 
 	<h2>Introduction to Git & GitHub</h2>
-	<p>Use the following <a href="https://classroom.github.com/a/26xPO8A9" target="_blank">link</a> to set up your access to the Introduction to Git &amp; Github materials (provided by GitHub Classroom).  Read through and everything before you continue. The purpose of this exercise is to familiarize yourself with Git &amp; Github. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under <strong>Optional next steps</strong>. You are <strong>required</strong> to add your <strong>name</strong> and a short <strong>bio</strong> to access the <a href="https://education.github.com/pack">Student Developer Pack</a> which comes with free access to a ton of useful industry tools and services. You will need access to this for assignment 1, so you can register a domain name (for free!).</p>
+	<p>Use the following <a href="https://classroom.github.com/a/x0FHlTbg" target="_blank">link</a> to set up your access to the Introduction to Git &amp; Github materials (provided by GitHub Classroom).  Read through and everything before you continue. The purpose of this exercise is to familiarize yourself with Git &amp; Github. To submit this, edit the instructions (README.md) by clicking on the pencil in the top right corner. You may wish to complete any of the additional items under <strong>Optional next steps</strong>. You are <strong>required</strong> to add your <strong>name</strong> and a short <strong>bio</strong> to access the <a href="https://education.github.com/pack">Student Developer Pack</a> which comes with free access to a ton of useful industry tools and services. You will need access to this for assignment 1, so you can register a domain name (for free!).</p>
 
 	<p>You may want to install the GitHub mobile app. It allows you access to your GitHub profile and repos from the comfort of your smart phone. It also allows you to secure your GitHub.com account with two-factor authentication if you wish to. You can install it for <a href="https://github.com/mobile">Android or iOS</a>.</p>
 
@@ -89,7 +89,7 @@
 	<pre>ssh -T git@github.com</pre>
 	
 	<h2>Creating your Github Repo for your Labs</h2>
-	<p>Use the following <a href="https://classroom.github.com/a/ryRVI0an" target="_blank">link</a> to set up your labs 4-5 repository. You will be using this for labs 4 & 5</p>
+	<p>Use the following <a href="https://classroom.github.com/a/yUvD6w5z" target="_blank">link</a> to set up your labs 4-5 repository. You will be using this for labs 4 & 5</p>
 
 	<p>Next, you will set up your development tools (Visual Studio Code or VS Code and Git). Follow the sections for setup on a Shared Computer by Accessing GitHub Codespaces or on your Personal Computer.</p>
 
@@ -226,8 +226,65 @@
 	</ol>
 	<p>You've made your first commit! You will be doing this many times over the course of the semester. It will get easier with repetition.</p>
 	
+	<h2>Installing your AWS pem key via GitHub Secret</h2>
+	<p>You are going to add your AWS ssh key (.pem) to your GitHub repository as a secret. This will allow you to SSH to your AWS instance from the terminal in Codespaces without specifying the location of the key. To do this:</p>
+	
+	<p>Add your .pem file as a GitHub secret called "SSH_KEY" using the following steps in **YOUR** new repository:</p>
+	<ul>
+		<li>Go to <strong>Settings</strong> (top right corner)</li>
+		<li>Click on <strong>Secrets and variables</strong></li>
+		<li>Click on <strong>Codespaces</strong></li>
+		<li>Click the Green button labelled <strong>New repository secret</strong></li>
+	</ul>
+	
+	<p>View your key (.pem) from the command line using the cat command. To do this:</p>
+	<ul>
+		<li>In Windows: launch a PowerShell terminal by clicking on <strong>Start</strong> and typing <strong>powershell</strong>.</li>
+		<li>In macOS: launch a terminal by clicking on <strong>Finder</strong>, then <strong>Applications</strong>, then <strong>Utilities</strong>, and finally <strong>Terminal</strong>.</li>
+		<li>In Linux: launch a terminal by clicking on the terminal icon in your taskbar or by pressing <strong>Ctrl+Alt+T</strong>.</li>
+	</ul>
+
+	<p>Once you have your terminal open, change to the directory your key is located. This may be your Downloads folder, or on the College PC your H drive:</p>
+	<pre>cd Downloads</pre>
+	<p>OR</p>
+	<pre>H:</pre>
+
+	<p>View the contents of your key using the cat command:</p>
+	<pre>cat cnet204.pem</pre>
+	
+	<p>Using the mouse, highlight the output of the key carefully including the lines <strong>-----BEGIN RSA PRIVATE KEY-----</strong> and <strong>-----END RSA PRIVATE KEY-----</strong>. Your output should look similar to the following:</p>
+	<img src="images/highlight-key.png" alt="Highlighting the key with the cat command">
+
+	<p>Copy the key to your clipboard by right-clicking on the highlighted text, right-clicking the PowerShell window title bar and selecting <strong>Edit</strong> and selecting <strong>Copy</strong> from the context menu. The following screenshot is for reference.</p>
+	<img src="images/copy-key.png" alt="Copying the key to the clipboard">
+
+	<p>Login to Github, and go to your GitHub repository for Labs 4-5. You are going to add a GitHub secret and paste the key into the secret field. With the following information:</p>
+
+	<ul>
+		<li>With the name <strong>SSH_KEY</strong></li>
+		<li>In the <strong>Secret</strong> field, paste in the contents of your .pem file (cat from your local command line and copy/paste)</li>
+	</ul>
+
+
+	<p>Your screen should look as follows (note, in the screenshot the secret field has been left empty):</p>
+	<img src="images/new-secret.png" alt="Adding a new secret to your repository">
+	
+	<p>Click the green button labelled **Add secret**.</p>
+	
+	<p>To apply the secret to your Codespaces container, you will need to rebuild it. To do this:</p>
+	<ol>
+		<li>In the bottom left corner, left-click where it says <strong>Codespaces</strong>.</li>
+		<li>Click <strong>Rebuild container</strong> from the menu that appears in the top center.</li>
+	</ol>
+	
+	<p>Once the container has been rebuilt, you can SSH to your AWS instance from the Terminal in Codespaces without specifying the location of the key. ie: ssh ubuntu@*ip or FQDN*. You now have the command line access to your web server from within Codespaces! Note, your instance is likely not on and this will not currently work. Continue to the next steps to access your instance from the command line in Codespaces.</p>
+
 	<h2>Cloning your repository in your Apache server</h2>
-	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH.  Once you have logged in, issue the following command to clone your github repository into your home directory.</p>
+	<p>Start your <strong>www</strong> instance in the AWS Learner Lab, and connect to it using SSH from Codespaces by issuing the following command:</p>
+	<pre>ssh ubuntu@*ip or FQDN*</pre>
+	
+	<p>You do not need to connect using the EC2 instance connect. However, you now have two methods for accessing your instance. Once you have logged in, issue the following command to clone your github repository into your home directory.</p>
+
 	<span class="tip">Important: Be sure to replace username in the following command with YOUR GitHub username.</span>
 	<pre>git clone git@github.com:CNET204/labs-4-5-username</pre>
 
