@@ -58,9 +58,16 @@ dt {
 dd {
 	margin-bottom: 1em;
 }
+
 main {
 	margin-top: 7em;
 }
+
+.subheading {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.5em;
+}	
 /* start of navigation */
 nav {
 	position: fixed;
